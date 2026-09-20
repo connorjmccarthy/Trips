@@ -659,6 +659,39 @@ test.describe('go mode', () => {
   });
 });
 
+test.describe('the day-by-day chart', () => {
+  // Every bar used to render at its 2px min-height, on every trip: .bar-fill had
+  // a percentage height and its flex parent had no definite height to resolve it
+  // against. The chart looked like a row of dashes.
+  for (const trip of ['japan', 'europe']) {
+    test(`${trip}: bars have real heights, not a row of dashes`, async ({ page }) => {
+      await boot(page, '#/budget', { trip });
+      const fills = page.locator('.bar-fill');
+      await expect(fills.first()).toBeVisible();
+      const heights = await fills.evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().height)));
+      expect(new Set(heights).size, 'every bar is the same height, so they have collapsed').toBeGreaterThan(2);
+      expect(Math.max(...heights), 'the tallest bar barely leaves the baseline').toBeGreaterThan(40);
+    });
+  }
+
+  test('a room is spread across its nights and still sums to the same money', async ({ page }) => {
+    await boot(page, '#/budget');
+    const r = await page.evaluate(async () => {
+      const m = await import('/src/views/budget.js');
+      const t = {
+        meta: {},
+        days: [], stays: [{ id: 's', status: 'planned', pricePerNightAud: 100, nights: 3, checkIn: '2027-02-10' }],
+        flights: { confirmed: [], legs: [] },
+      };
+      const by = m.spendByDay(t, m.budgetLines(t));
+      return { by, sum: Object.values(by).reduce((a, b) => a + b, 0), total: m.budgetSummary(t).total };
+    });
+    expect(Object.keys(r.by).sort()).toEqual(['2027-02-10', '2027-02-11', '2027-02-12']);
+    expect(r.sum).toBe(300);
+    expect(r.total).toBe(300);   // spreading it must not change the money
+  });
+});
+
 test.describe("Dad's trip", () => {
   test('the plan spans the whole trip and nothing is priced twice', async ({ page }) => {
     await boot(page, '#/budget');

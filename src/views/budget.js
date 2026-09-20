@@ -37,6 +37,32 @@ export function budgetLines(t) {
   return lines;
 }
 
+// What each day of the trip actually costs. Itinerary lines sit on their own
+// date; a room is spread across the nights it covers, because "this hotel cost
+// A$440" tells you nothing about which days were expensive. Budget-page lines
+// (food, insurance, contingency) carry no date and stay out, which the caption
+// says. The totals are untouched: spreading a stay across its nights sums back
+// to the same number.
+export function spendByDay(t, lines) {
+  const av = activeVariant(t);
+  const by = {};
+  for (const l of lines) if (l.date) by[l.date] = (by[l.date] || 0) + l.aud;
+  for (const st of t.stays || []) {
+    if (!['planned', 'booked'].includes(st.status) || !inVariant(st, av)) continue;
+    const rate = Number(st.pricePerNightAud) || 0;
+    const nights = Math.round(Number(st.nights) || 0);
+    if (!rate || nights < 1 || !st.checkIn) continue;
+    const per = rate / splitOf(st);
+    for (let n = 0; n < nights; n++) {
+      const d = new Date(`${st.checkIn}T00:00:00Z`);
+      d.setUTCDate(d.getUTCDate() + n);
+      const iso = d.toISOString().slice(0, 10);
+      by[iso] = (by[iso] || 0) + per;
+    }
+  }
+  return by;
+}
+
 export function budgetSummary(t) {
   const lines = budgetLines(t);
   const total = lines.reduce((s, l) => s + l.aud, 0);
@@ -97,12 +123,30 @@ export function render(root, { store, navigate }) {
     el('tbody', {}, ...cats.map(([c, v]) => el('tr', {}, el('td', {}, c), el('td', { class: 'num' }, fmtMoney(v.total)), shared ? el('td', { class: 'num' }, fmtMoney(v.mine)) : null, el('td', { class: 'num' }, fmtMoney(v.booked)), el('td', { class: 'num' }, total ? `${Math.round(v.total / total * 100)}%` : ''))), el('tr', { class: 'total' }, el('td', {}, 'Total'), el('td', { class: 'num' }, fmtMoney(total)), shared ? el('td', { class: 'num' }, fmtMoney(mine)) : null, el('td', { class: 'num' }, fmtMoney(booked)), el('td', { class: 'num' }, '100%'))),
   )) : empty('Nothing costed yet')));
 
-  // By day
-  const byDay = {};
-  for (const l of lines) if (l.date) byDay[l.date] = (byDay[l.date] || 0) + l.aud;
+  // By day. A bar chart of mostly-empty days is noise, so it only renders when
+  // enough of the trip actually costs something; the category table above is the
+  // better read otherwise.
+  const byDay = spendByDay(t, lines);
   const days = sortBy(t.days || [], (d) => d.date);
-  const max = Math.max(1, ...Object.values(byDay));
-  if (days.length) root.append(section('Day by day (itinerary costs only)', el('div', { class: 'card' }, el('div', { class: 'bars', role: 'img', 'aria-label': 'Daily spend bars' }, ...days.map((d) => { const v = byDay[d.date] || 0; return el('div', { class: 'bar', title: `${fmtDate(d.date)}: ${fmtMoney(v)}` }, el('div', { class: 'bar-fill', style: { height: `${Math.max(2, v / max * 100)}%` } }), el('div', { class: 'bar-label' }, String(new Date(d.date).getDate()))); })), el('div', { class: 'small muted', style: { marginTop: '8px' } }, 'Flights and stays are shown by category above rather than by day.'))));
+  const costed = days.filter((d) => (byDay[d.date] || 0) > 0.005);
+  if (days.length >= 3 && costed.length >= Math.max(3, days.length * 0.25)) {
+    const max = Math.max(...costed.map((d) => byDay[d.date]));
+    const peak = costed.reduce((a, b) => (byDay[b.date] > byDay[a.date] ? b : a));
+    // 37 date labels do not fit on a phone, so thin them and always keep the ends.
+    const every = Math.ceil(days.length / 12);
+    root.append(section('Day by day', el('div', { class: 'card' },
+      // With 37 days on a phone a 6px gap is wider than the bar it separates.
+      el('div', { class: 'bars', role: 'img', style: { gap: days.length > 20 ? '2px' : '6px' }, 'aria-label': `Daily spend across ${days.length} days, highest ${fmtMoney(byDay[peak.date])} on ${fmtDate(peak.date)}` },
+        ...days.map((d, n) => {
+          const v = byDay[d.date] || 0;
+          const show = n === 0 || n === days.length - 1 || n % every === 0;
+          return el('div', { class: `bar ${v > 0.005 ? '' : 'zero'}`, title: `${fmtDate(d.date)}: ${v > 0.005 ? fmtMoney(v) : 'nothing booked'}` },
+            el('div', { class: 'bar-track' }, el('div', { class: 'bar-fill', style: { height: `${v > 0.005 ? Math.max(6, v / max * 100) : 2}%` } })),
+            el('div', { class: 'bar-label' }, show ? String(Number(d.date.slice(8, 10))) : ''));
+        })),
+      el('div', { class: 'small muted', style: { marginTop: '10px' } },
+        `Biggest day is ${fmtDate(peak.date)} at ${fmtMoney(byDay[peak.date])}. Room rates are spread across the nights they cover. Food, insurance and anything else added on this page has no date, so it is not in here.`))));
+  }
 
   // All lines
   root.append(section('Every line', el('div', { class: 'row-list' }, ...sortBy(lines, (l) => -l.aud).map((l) => el('div', { class: 'row', style: l.manual ? {} : { cursor: 'pointer' }, onClick: () => { if (l.manual) editLine(store, l.manual); else navigate(l.source === 'itinerary' ? `itinerary/${l.date}` : l.source); } },

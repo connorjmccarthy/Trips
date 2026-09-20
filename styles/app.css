@@ -404,10 +404,17 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 tr.total td { font-weight: 700; background: var(--bg-sunken); }
 
 /* Bars (budget by day) */
-.bars { display: flex; align-items: flex-end; gap: 6px; height: 120px; padding-top: 8px; }
-.bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
-.bar-fill { width: 100%; background: var(--info); border-radius: 6px 6px 2px 2px; min-height: 2px; }
-.bar-label { font-size: 10px; color: var(--text-3); white-space: nowrap; }
+/* A percentage height resolves against the parent's height, and the parent only
+   has one if it is definite. `align-items: flex-end` made each .bar shrink to its
+   content, so .bar-fill's height:NN% had nothing to resolve against, fell back to
+   auto, and every bar in every trip rendered at its 2px min-height. The columns
+   stretch now, and .bar-track is the definite box the fill is a percentage of. */
+.bars { display: flex; align-items: stretch; gap: 6px; height: 132px; padding-top: 8px; }
+.bar { flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.bar-track { flex: 1; min-height: 0; display: flex; align-items: flex-end; }
+.bar-fill { width: 100%; background: var(--info); border-radius: 4px 4px 2px 2px; min-height: 2px; }
+.bar.zero .bar-fill { background: var(--border-strong); }
+.bar-label { font-size: 10px; color: var(--text-3); white-space: nowrap; text-align: center; min-height: 12px; }
 
 /* Forms */
 .form { display: flex; flex-direction: column; gap: 14px; }

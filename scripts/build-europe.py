@@ -246,8 +246,8 @@ checklist = [
 budget = [
   # Flights and ticketed activities are priced on the itinerary; beds on Stays.
   # This page is only for what has no home of its own, so nothing counts twice.
-  dict(id='bg9', category='Food', label='Food and drink in the UK, about 26 days', amount=1170, currency='AUD', status='estimate',
-       notes='About A$45 a day. That is low, and it is low because you are staying at your daughter\u2019s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. If you eat out every night this number doubles and the trip does not fit.'),
+  dict(id='bg9', category='Food', label='Food and drink in the UK, about 18 days', amount=810, currency='AUD', status='estimate',
+       notes='About A$45 a day over the eighteen days you are actually in the UK. It is low because you are staying at your daughter\u2019s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. Eat out every night and this doubles. The other days are covered elsewhere: eleven on the ship with meals included, two ashore in Bergen, eight in Spain.'),
   dict(id='bg10', category='Food', label='Food and drink in Spain, 8 days', amount=400, currency='AUD', status='estimate',
        notes='About A$50 a day, and Galicia is good value. The men\u00fa del d\u00eda is three courses, bread and a glass of wine for 12 to 15 euro at lunchtime, which is how to eat on a walking day. The named meals in Melide and Santiago are on the itinerary already.'),
   dict(id='bg11', category='Food', label='Eating ashore in Norway, 2 days', amount=250, currency='AUD', status='estimate',
@@ -264,12 +264,12 @@ budget = [
 ]
 
 questions = [
-  dict(id='q0', question='The trip costs about A$4,685 and your budget is A$3,000 to A$4,000. Which version do you want?',
-       why='This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter\u2019s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino block is A$1,300 (flights A$300, seven nights A$415, the train to Sarria, eight days of eating, the bag transfer). Everything else, the five weeks in London, the two days in Bergen either side of the ship, the football, insurance and getting about, is A$3,385. So the whole decision is whether the walk is worth A$1,300 and going A$685 over.',
-       options=['Keep the Camino and go to about A$4,700',
-                'Drop the Camino and land at about A$3,750',
-                'Keep the Camino and find the A$685 somewhere else'],
-       recommendation='Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$685 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.',
+  dict(id='q0', question='The trip costs about A$4,325 and your budget is A$3,000 to A$4,000. Which version do you want?',
+       why='This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter\u2019s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino block is A$1,300 (flights A$300, seven nights A$415, the train to Sarria, eight days of eating, the bag transfer). Everything else, the seventeen nights at your daughter\u2019s, the two days in Bergen either side of the ship, the football, insurance and getting about, is A$3,025. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,385. The whole decision is whether the walk is worth about A$950 of real difference and going A$325 over.',
+       options=['Keep the Camino and go to about A$4,325',
+                'Drop the Camino and land at about A$3,385',
+                'Keep the Camino and find the A$325 somewhere else'],
+       recommendation='Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$325 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.',
        answer='', resolved=False),
   dict(id='q0b', question='Is the Arsenal ticket already paid for?',
        why='It is in the budget at A$160. If you have already bought it, that is A$160 off the number above and it is not part of the A$3,000 to A$4,000 you are planning to spend.',
@@ -291,16 +291,29 @@ questions = [
        recommendation='Use it. Nobody at the Pilgrim\u2019s Office asks and the Compostela is identical. Six days at 63 in Galician rain carrying 8 kg is a different walk to carrying 3 kg, and A$80 is the cheapest comfort on this trip.',
        answer='', resolved=False),
   dict(id='q4', question='Which nights at your daughter\u2019s, and have you actually asked her?',
-       why='Twenty-seven nights. At London hotel rates that is about A$5,900, and it is the only reason any of this fits in A$4,000. Every night that turns into a hotel puts about A$220 back on the total, so four nights in a hotel is the whole Camino.',
-       options=['All of it, she has offered', 'Most of it, a few nights elsewhere', 'Need to ask her'],
+       why='Seventeen nights, in three blocks: five in early December, eleven over Christmas and New Year, and one at the end. At London hotel rates that is about A$3,700, and it is the single biggest reason any of this fits. Every night that turns into a hotel puts about A$220 back on the total, so six nights in a hotel is the whole Camino.',
+       options=['All seventeen, she has offered', 'Most of them, a few nights elsewhere', 'Need to ask her'],
        recommendation='Ask her outright and take the answer at face value. Five weeks is a long time to have a guest, even your own father, and it is much better to know in October than in December.',
        answer='', resolved=False),
 ]
 
 stays = [
-  dict(id='sy1', name='Your daughter\u2019s place', town='London', status='booked', nights=27,
-       pricePerNightAud=0, type='Family',
-       notes='TWENTY-SEVEN NIGHTS, AND THEY ARE WHY THIS TRIP IS AFFORDABLE AT ALL. At London hotel rates that is about A$5,900. The whole budget depends on this, so ask her properly and early rather than assuming, and be ready to hear that some nights do not suit. Each night that turns into a hotel puts roughly A$220 back on the total.'),
+  # Seventeen nights at his daughter's, in three blocks, with real dates so the
+  # count is checkable rather than asserted. It was written as one row of 27,
+  # which was ten nights of wishful arithmetic.
+  dict(id='sy1a', name='Your daughter\u2019s, 5 to 10 Dec', town='London', status='booked',
+       pricePerNightAud=0, nights=5, checkIn='2026-12-05', checkOut='2026-12-10', type='Family',
+       notes='The first five nights, before you fly to Bergen.'),
+  dict(id='sy1b', name='Your daughter\u2019s, 22 Dec to 2 Jan', town='London', status='booked',
+       pricePerNightAud=0, nights=11, checkIn='2026-12-22', checkOut='2027-01-02', type='Family',
+       notes='The long block: home off the ship on the 22nd, Christmas, the football on the 30th, New Year, then away to Spain on the 2nd. Eleven nights, and the reason this trip fits a budget at all.'),
+  dict(id='sy1c', name='Your daughter\u2019s, 9 to 10 Jan', town='London', status='booked',
+       pricePerNightAud=0, nights=1, checkIn='2027-01-09', checkOut='2027-01-10', type='Family',
+       notes='Back from Santiago, one night, then home. SEVENTEEN NIGHTS AT HERS IN TOTAL. At London hotel rates that is about A$3,700, which is most of the difference between this trip happening and not. Ask her about all three blocks at once rather than in instalments.'),
+  dict(id='sy0', name='Hurtigruten, Bergen to Kirkenes and back', town='Hurtigruten', status='booked',
+       pricePerNightAud=0, nights=11, checkIn='2026-12-11', checkOut='2026-12-22',
+       type='Cabin on the coastal express',
+       notes='Eleven nights, already paid, so it costs nothing more. Here so the Stays page can always answer where you are sleeping tonight, which on the 16th of December in the Arctic is a fair question. Meals are included; the only money on these days is ashore.'),
   dict(id='sy3', name='Bergen, night of 10 Dec', town='Bergen', status='planned', pricePerNightAud=220, nights=1,
        checkIn='2026-12-10', checkOut='2026-12-11', distance='Walkable to Bryggen and the Hurtigruten terminal',
        type='Hotel or guesthouse',
@@ -394,6 +407,28 @@ for _iso in ('2027-01-02', '2027-01-09'):
     assert datetime.date.fromisoformat(_iso).weekday() in (0, 2, 5), \
         '%s is not a Ryanair Stansted-Santiago day' % _iso
 
+# Every night of the trip has to be slept somewhere, and exactly once. This is
+# what catches a stay whose night count was asserted rather than counted: the
+# first version of this file claimed 27 nights at his daughter's when the real
+# answer is 17, and nothing noticed.
+_trip_nights = (datetime.date.fromisoformat(END) - datetime.date.fromisoformat(START)).days
+_slept = {}
+for _s in stays:
+    if _s.get('status') not in ('planned', 'booked') or not _s.get('checkIn'):
+        continue
+    _n = int(_s.get('nights') or 0)
+    _span = (datetime.date.fromisoformat(_s['checkOut']) - datetime.date.fromisoformat(_s['checkIn'])).days
+    assert _n == _span, '%s says %d nights but %s to %s is %d' % (_s['id'], _n, _s['checkIn'], _s['checkOut'], _span)
+    for _k in range(_n):
+        _d = (datetime.date.fromisoformat(_s['checkIn']) + datetime.timedelta(days=_k)).isoformat()
+        assert _d not in _slept, 'two beds on the night of %s: %s and %s' % (_d, _slept[_d], _s['id'])
+        _slept[_d] = _s['id']
+assert len(_slept) == _trip_nights, 'the trip is %d nights but the stays cover %d' % (_trip_nights, len(_slept))
+_first = datetime.date.fromisoformat(START)
+for _k in range(_trip_nights):
+    _d = (_first + datetime.timedelta(days=_k)).isoformat()
+    assert _d in _slept, 'nowhere to sleep on the night of %s' % _d
+
 # Money must come from exactly one place per category or the total is wrong.
 # Flights and ticketed activities are priced on the itinerary, beds on Stays.
 # This catches a budget line that quietly duplicates either, which it did once.
@@ -415,7 +450,7 @@ trip = dict(
     mapRegion='', travelMode='transit',
     features=dict(flights=True, budget=True, points=False),
     categories=['Flights', 'Accommodation', 'Transport', 'Food', 'Activities', 'Other'],
-    about='Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Costed at about A$4,685 on top of the flights and the cruise you have already paid, which is over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.',
+    about='Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Costed at about A$4,325 on top of the flights and the cruise you have already paid, which is still a little over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.',
   ),
   days=days,
   flights=dict(confirmed=[], legs=[], lounges=[]),

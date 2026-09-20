@@ -9,7 +9,7 @@
       "EUR": 0.57,
       "NOK": 6.7
     },
-    "updatedAt": "2026-09-20T08:06:19Z",
+    "updatedAt": "2026-09-20T08:37:43Z",
     "version": 1,
     "mapRegion": "",
     "travelMode": "transit",
@@ -26,7 +26,7 @@
       "Activities",
       "Other"
     ],
-    "about": "Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Costed at about A$4,685 on top of the flights and the cruise you have already paid, which is over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.",
+    "about": "Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Costed at about A$4,325 on top of the flights and the cruise you have already paid, which is still a little over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.",
     "seedIds": {
       "checklist": [
         "e1",
@@ -59,7 +59,10 @@
         "f8"
       ],
       "stays": [
-        "sy1",
+        "sy1a",
+        "sy1b",
+        "sy1c",
+        "sy0",
         "sy3",
         "sy6",
         "sy7",
@@ -823,14 +826,52 @@
   "points": {},
   "stays": [
     {
-      "id": "sy1",
-      "name": "Your daughter’s place",
+      "id": "sy1a",
+      "name": "Your daughter’s, 5 to 10 Dec",
       "town": "London",
       "status": "booked",
-      "nights": 27,
       "pricePerNightAud": 0,
+      "nights": 5,
+      "checkIn": "2026-12-05",
+      "checkOut": "2026-12-10",
       "type": "Family",
-      "notes": "TWENTY-SEVEN NIGHTS, AND THEY ARE WHY THIS TRIP IS AFFORDABLE AT ALL. At London hotel rates that is about A$5,900. The whole budget depends on this, so ask her properly and early rather than assuming, and be ready to hear that some nights do not suit. Each night that turns into a hotel puts roughly A$220 back on the total."
+      "notes": "The first five nights, before you fly to Bergen."
+    },
+    {
+      "id": "sy1b",
+      "name": "Your daughter’s, 22 Dec to 2 Jan",
+      "town": "London",
+      "status": "booked",
+      "pricePerNightAud": 0,
+      "nights": 11,
+      "checkIn": "2026-12-22",
+      "checkOut": "2027-01-02",
+      "type": "Family",
+      "notes": "The long block: home off the ship on the 22nd, Christmas, the football on the 30th, New Year, then away to Spain on the 2nd. Eleven nights, and the reason this trip fits a budget at all."
+    },
+    {
+      "id": "sy1c",
+      "name": "Your daughter’s, 9 to 10 Jan",
+      "town": "London",
+      "status": "booked",
+      "pricePerNightAud": 0,
+      "nights": 1,
+      "checkIn": "2027-01-09",
+      "checkOut": "2027-01-10",
+      "type": "Family",
+      "notes": "Back from Santiago, one night, then home. SEVENTEEN NIGHTS AT HERS IN TOTAL. At London hotel rates that is about A$3,700, which is most of the difference between this trip happening and not. Ask her about all three blocks at once rather than in instalments."
+    },
+    {
+      "id": "sy0",
+      "name": "Hurtigruten, Bergen to Kirkenes and back",
+      "town": "Hurtigruten",
+      "status": "booked",
+      "pricePerNightAud": 0,
+      "nights": 11,
+      "checkIn": "2026-12-11",
+      "checkOut": "2026-12-22",
+      "type": "Cabin on the coastal express",
+      "notes": "Eleven nights, already paid, so it costs nothing more. Here so the Stays page can always answer where you are sleeping tonight, which on the 16th of December in the Arctic is a fair question. Meals are included; the only money on these days is ashore."
     },
     {
       "id": "sy3",
@@ -1006,11 +1047,11 @@
     {
       "id": "bg9",
       "category": "Food",
-      "label": "Food and drink in the UK, about 26 days",
-      "amount": 1170,
+      "label": "Food and drink in the UK, about 18 days",
+      "amount": 810,
       "currency": "AUD",
       "status": "estimate",
-      "notes": "About A$45 a day. That is low, and it is low because you are staying at your daughter’s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. If you eat out every night this number doubles and the trip does not fit."
+      "notes": "About A$45 a day over the eighteen days you are actually in the UK. It is low because you are staying at your daughter’s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. Eat out every night and this doubles. The other days are covered elsewhere: eleven on the ship with meals included, two ashore in Bergen, eight in Spain."
     },
     {
       "id": "bg10",
@@ -1358,14 +1399,14 @@
   "questions": [
     {
       "id": "q0",
-      "question": "The trip costs about A$4,685 and your budget is A$3,000 to A$4,000. Which version do you want?",
-      "why": "This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter’s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino block is A$1,300 (flights A$300, seven nights A$415, the train to Sarria, eight days of eating, the bag transfer). Everything else, the five weeks in London, the two days in Bergen either side of the ship, the football, insurance and getting about, is A$3,385. So the whole decision is whether the walk is worth A$1,300 and going A$685 over.",
+      "question": "The trip costs about A$4,325 and your budget is A$3,000 to A$4,000. Which version do you want?",
+      "why": "This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter’s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino block is A$1,300 (flights A$300, seven nights A$415, the train to Sarria, eight days of eating, the bag transfer). Everything else, the seventeen nights at your daughter’s, the two days in Bergen either side of the ship, the football, insurance and getting about, is A$3,025. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,385. The whole decision is whether the walk is worth about A$950 of real difference and going A$325 over.",
       "options": [
-        "Keep the Camino and go to about A$4,700",
-        "Drop the Camino and land at about A$3,750",
-        "Keep the Camino and find the A$685 somewhere else"
+        "Keep the Camino and go to about A$4,325",
+        "Drop the Camino and land at about A$3,385",
+        "Keep the Camino and find the A$325 somewhere else"
       ],
-      "recommendation": "Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$685 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.",
+      "recommendation": "Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$325 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.",
       "answer": "",
       "resolved": false
     },
@@ -1421,10 +1462,10 @@
     {
       "id": "q4",
       "question": "Which nights at your daughter’s, and have you actually asked her?",
-      "why": "Twenty-seven nights. At London hotel rates that is about A$5,900, and it is the only reason any of this fits in A$4,000. Every night that turns into a hotel puts about A$220 back on the total, so four nights in a hotel is the whole Camino.",
+      "why": "Seventeen nights, in three blocks: five in early December, eleven over Christmas and New Year, and one at the end. At London hotel rates that is about A$3,700, and it is the single biggest reason any of this fits. Every night that turns into a hotel puts about A$220 back on the total, so six nights in a hotel is the whole Camino.",
       "options": [
-        "All of it, she has offered",
-        "Most of it, a few nights elsewhere",
+        "All seventeen, she has offered",
+        "Most of them, a few nights elsewhere",
         "Need to ask her"
       ],
       "recommendation": "Ask her outright and take the answer at face value. Five weeks is a long time to have a guest, even your own father, and it is much better to know in October than in December.",

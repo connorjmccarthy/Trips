@@ -708,9 +708,15 @@ test.describe("Dad's trip", () => {
         // flights are priced on the plan only; beds on Stays only
         flightSources: [...new Set(byCat.Flights || [])].sort(),
         stackedBeds: [...new Set(byCat.Accommodation || [])].sort(),
+        nights: t.stays.filter((x) => ['planned', 'booked'].includes(x.status) && x.checkIn).reduce((n, x) => n + x.nights, 0),
+        londonNights: t.stays.filter((x) => x.town === 'London' && ['planned', 'booked'].includes(x.status)).reduce((n, x) => n + x.nights, 0),
       };
     });
     expect(r.days).toBe(37);
+    // 36 nights, each slept in exactly one bed. "27 nights at his daughter's"
+    // was ten nights of wishful arithmetic and nothing caught it.
+    expect(r.nights).toBe(36);
+    expect(r.londonNights).toBe(17);
     expect([r.first, r.last]).toEqual(['2026-12-05', '2027-01-10']);
     expect(r.flightSources).toEqual(['itinerary']);
     expect(r.stackedBeds).toEqual(['stays']);
@@ -718,7 +724,7 @@ test.describe("Dad's trip", () => {
     // over it at about A$4,700, which is a decision on the Decisions page, not
     // an accident. If an edit pushes it past A$5,000 that is worth knowing.
     expect(r.total).toBeGreaterThan(3000);
-    expect(r.total).toBeLessThan(5000);
+    expect(r.total).toBeLessThan(4600);
   });
 
   test('the Camino lands on the only days Ryanair flies, and every stage is there', async ({ page }) => {

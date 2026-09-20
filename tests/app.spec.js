@@ -681,8 +681,11 @@ test.describe("Dad's trip", () => {
     expect([r.first, r.last]).toEqual(['2026-12-05', '2027-01-10']);
     expect(r.flightSources).toEqual(['itinerary']);
     expect(r.stackedBeds).toEqual(['stays']);
-    expect(r.total).toBeGreaterThan(8000);
-    expect(r.total).toBeLessThan(11000);
+    // His budget is A$3-4k on top of the flights and cruise. The plan sits just
+    // over it at about A$4,700, which is a decision on the Decisions page, not
+    // an accident. If an edit pushes it past A$5,000 that is worth knowing.
+    expect(r.total).toBeGreaterThan(3000);
+    expect(r.total).toBeLessThan(5000);
   });
 
   test('the Camino lands on the only days Ryanair flies, and every stage is there', async ({ page }) => {

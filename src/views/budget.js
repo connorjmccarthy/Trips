@@ -13,7 +13,7 @@ export function budgetLines(t) {
   const rates = tripRates(t);
   const av = activeVariant(t);
   const lines = [];
-  const add = (l, src) => { const split = splitOf(src); const paid = !!src?.paid; lines.push({ ...l, status: paid ? 'booked' : l.status, paid, split, mine: l.aud / split }); };
+  const add = (l, src) => { const split = splitOf(src); const paid = !!src?.paid; lines.push({ ...l, status: paid ? 'booked' : l.status, paid, optional: src?.status === 'idea', split, mine: l.aud / split }); };
   for (const leg of t.flights?.legs || []) {
     const o = (leg.options || []).find((x) => x.id === leg.chosenOptionId);
     if (!o) continue;
@@ -72,17 +72,19 @@ export function budgetSummary(t) {
   // Money that has actually been charged, which is a smaller number than
   // "booked" whenever something is prepaid later or settled in cash on arrival.
   const paid = lines.filter((l) => l.paid).reduce((s, l) => s + l.aud, 0);
+  // Still an idea rather than a plan: money he could choose not to spend.
+  const optional = lines.filter((l) => l.optional).reduce((s, l) => s + l.aud, 0);
   const minePaid = lines.filter((l) => l.paid).reduce((s, l) => s + l.mine, 0);
   // Only a trip with shared lines needs the "your share" half of the page.
   const shared = lines.some((l) => l.split > 1);
-  return { total, booked, paid, mine, mineBooked, minePaid, shared, lines };
+  return { total, booked, paid, optional, mine, mineBooked, minePaid, shared, lines };
 }
 
 export function render(root, { store, navigate }) {
   const t = store.trip;
   // Reachable only by a stale bookmark; the router sends you to Overview instead.
   if (!store.showMoney) { root.append(el('div', { class: 'callout' }, el('span', { class: 'ico' }, '💰'), el('div', {}, el('strong', {}, 'The budget is switched off. '), 'Turn it back on under Settings if this is your own device.'))); return; }
-  const { total, booked, paid, mine, mineBooked, minePaid, shared, lines } = budgetSummary(t);
+  const { total, booked, paid, optional, mine, mineBooked, minePaid, shared, lines } = budgetSummary(t);
   const nights = Math.max(1, (t.days || []).length - 1);
   const groupSize = (t.people || []).length;
   root.append(el('div', { class: 'page-head' }, el('div', {}, el('h2', { class: 'page-title' }, 'Budget'), el('p', { class: 'page-sub' }, (variantList(t).find((x) => x.id === activeVariant(t))?.name ? `${variantList(t).find((x) => x.id === activeVariant(t)).name}. ` : '') + 'Pulled automatically from chosen flights, planned stays and itinerary costs, plus anything you add here.')), el('div', { class: 'page-actions' }, el('button', { class: 'btn btn-primary btn-sm', type: 'button', onClick: () => editLine(store, null) }, '+ Add line'))));
@@ -90,7 +92,9 @@ export function render(root, { store, navigate }) {
   root.append(el('div', { class: 'grid grid-stats' },
     shared
       ? stat('Your share', fmtMoney(mine, 'AUD', { compact: true }), `of ${fmtMoney(total, 'AUD', { compact: true })} across the group`)
-      : stat('Total plan', fmtMoney(total, 'AUD', { compact: true }), 'AUD, excluding points'),
+      : stat('Total plan', fmtMoney(total, 'AUD', { compact: true }), optional > total * 0.05
+          ? `${fmtMoney(total - optional, 'AUD', { compact: true })} of it you will spend, ${fmtMoney(optional, 'AUD', { compact: true })} you might`
+          : 'AUD, excluding points'),
     lines.some((l) => l.paid)
       ? stat('Paid so far', fmtMoney(shared ? minePaid : paid, 'AUD', { compact: true }), `of ${fmtMoney(shared ? mineBooked : booked, 'AUD', { compact: true })} committed`)
       : stat('Locked in', fmtMoney(shared ? mineBooked : booked, 'AUD', { compact: true }), shared ? 'your share of booked lines' : 'booked lines'),
@@ -150,7 +154,7 @@ export function render(root, { store, navigate }) {
 
   // All lines
   root.append(section('Every line', el('div', { class: 'row-list' }, ...sortBy(lines, (l) => -l.aud).map((l) => el('div', { class: 'row', style: l.manual ? {} : { cursor: 'pointer' }, onClick: () => { if (l.manual) editLine(store, l.manual); else navigate(l.source === 'itinerary' ? `itinerary/${l.date}` : l.source); } },
-    el('div', { class: 'row-main' }, el('div', { class: 'row-title' }, l.label, pill(l.status === 'booked' ? 'booked' : 'planned', l.paid ? 'Paid' : l.status === 'booked' ? 'Booked' : 'Estimate'), l.split > 1 ? el('span', { class: 'variant-tag' }, `÷${l.split}`) : null), el('div', { class: 'row-sub' }, `${l.category} · from ${{ flights: 'Flights', stays: 'Stays', itinerary: 'Plan', manual: 'this page' }[l.source]}`)),
+    el('div', { class: 'row-main' }, el('div', { class: 'row-title' }, l.label, pill(l.status === 'booked' ? 'booked' : 'planned', l.paid ? 'Paid' : l.status === 'booked' ? 'Booked' : l.optional ? 'Optional' : 'Estimate'), l.split > 1 ? el('span', { class: 'variant-tag' }, `÷${l.split}`) : null), el('div', { class: 'row-sub' }, `${l.category} · from ${{ flights: 'Flights', stays: 'Stays', itinerary: 'Plan', manual: 'this page' }[l.source]}`)),
     el('div', { class: 'row-side' }, el('div', { class: 'big' }, fmtMoney(l.split > 1 ? l.mine : l.aud)), l.split > 1 ? el('div', { class: 'sm' }, `${fmtMoney(l.aud)} ÷ ${l.split}`) : null),
   )))));
 }

@@ -710,6 +710,8 @@ test.describe("Dad's trip", () => {
         stackedBeds: [...new Set(byCat.Accommodation || [])].sort(),
         nights: t.stays.filter((x) => ['planned', 'booked'].includes(x.status) && x.checkIn).reduce((n, x) => n + x.nights, 0),
         londonNights: t.stays.filter((x) => x.town === 'London' && ['planned', 'booked'].includes(x.status)).reduce((n, x) => n + x.nights, 0),
+        core: Math.round(total - m.budgetSummary(t).optional),
+        optional: Math.round(m.budgetSummary(t).optional),
       };
     });
     expect(r.days).toBe(37);
@@ -724,7 +726,26 @@ test.describe("Dad's trip", () => {
     // over it at about A$4,700, which is a decision on the Decisions page, not
     // an accident. If an edit pushes it past A$5,000 that is worth knowing.
     expect(r.total).toBeGreaterThan(3000);
-    expect(r.total).toBeLessThan(4900);
+    expect(r.total).toBeLessThan(5100);
+    // The number that actually matters to him: what he cannot avoid spending.
+    expect(r.core).toBeLessThanOrEqual(4100);
+    expect(r.optional).toBeGreaterThan(500);
+  });
+
+  test('every day of the cruise says something, and the polar night is flagged', async ({ page }) => {
+    await boot(page, '#/overview');
+    const r = await page.evaluate(async () => {
+      const t = await (await fetch('/data/europe.json')).json();
+      const cruise = t.days.filter((d) => d.date >= '2026-12-12' && d.date <= '2026-12-21');
+      return {
+        n: cruise.length,
+        blank: cruise.filter((d) => !d.items.length && !d.notes).map((d) => d.date),
+        polar: t.days.some((d) => /polar night/i.test(d.notes || '')),
+      };
+    });
+    expect(r.n).toBe(10);
+    expect(r.blank, 'a day at sea with nothing on it').toEqual([]);
+    expect(r.polar, 'nothing warns him the sun stops rising').toBe(true);
   });
 
   test('the Camino lands on the only days Ryanair flies, and every stage is there', async ({ page }) => {

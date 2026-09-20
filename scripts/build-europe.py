@@ -93,22 +93,61 @@ days = [
     item('b8', '21:30', 'boat', 'Hurtigruten sails for Kirkenes', location='Bergen', status='booked',
          notes='CONFIRMED 21:30, so today is genuinely yours. Hurtigruten\u2019s published Bergen time is 20:30 and yours says 21:30, which may be a seasonal difference or the particular ship. Either way BE IN THE TERMINAL BY 19:45 and you cannot be caught out. They ask for 30 minutes before departure as a minimum; two hours early with a coffee is a better evening than a taxi you are shouting at.')]),
   # ---------------------------------------------------------------- cruise
-  day('2026-12-12', 'At sea, heading north', 'Hurtigruten', '', []),
-  day('2026-12-13', 'At sea, heading north', 'Hurtigruten', '', []),
-  day('2026-12-14', 'At sea, heading north', 'Hurtigruten',
-      'Somewhere around here you cross the Arctic Circle. They make a thing of it.', []),
-  day('2026-12-15', 'Tromsø and the lights country', 'Hurtigruten',
-      'The middle of the voyage is the best of the northern lights window. Dress for standing still outside in the cold, which is much colder than walking in it.', []),
-  day('2026-12-16', 'North Cape and Kirkenes', 'Hurtigruten', '', []),
-  day('2026-12-17', 'Kirkenes, then turn south', 'Hurtigruten',
-      'The turning point. From here you see by day the ports you passed in the dark.', []),
-  day('2026-12-18', 'Southbound', 'Hurtigruten', '', []),
-  day('2026-12-19', 'Southbound', 'Hurtigruten', '', []),
-  day('2026-12-20', 'Southbound', 'Hurtigruten', '', []),
-  day('2026-12-21', 'Southbound, last full day', 'Hurtigruten', 'Pack tonight.', []),
+  day('2026-12-12', 'Alesund, and the last of the daylight', 'Hurtigruten',
+      'Day two. The ship calls at Floro and Maloy before dawn, then sits in Alesund most of the day, which is the longest call of the whole voyage and the one to get off for. Molde and Kristiansund after dark.', [
+    item('h12a', '09:45', 'boat', 'Alesund, the long winter call', location='Alesund, Norway', endTime='20:00',
+         cost=0, currency='NOK',
+         notes='Ten hours alongside, which is more than anywhere else on the voyage. Alesund burned down in 1904 and was rebuilt entirely in art nouveau, so it looks like nowhere else in Norway. The walk up the 418 steps of Aksla for the view over the islands is the thing to do, and you are still far enough south that there is real daylight to do it in. Everything is a short walk from the quay.')]),
+  day('2026-12-13', 'Trondheim', 'Hurtigruten',
+      'Day three. A long morning in Trondheim, then north all afternoon. About six hours of light today and it is the last you will see properly for a fortnight.', [
+    item('h13a', '08:30', 'boat', 'Trondheim: Nidaros Cathedral', location='Trondheim, Norway', endTime='12:00',
+         cost=0, currency='NOK',
+         notes='Three and a half hours, enough for the one thing worth doing. Nidaros is the northernmost medieval cathedral in the world, built over the grave of St Olav, and it was a pilgrimage destination for five hundred years, which given where you are walking in January is a nice piece of symmetry. About 20 minutes on foot from the quay. The Bakklandet quarter of old wooden houses is on the way back.')]),
+  day('2026-12-14', 'Across the Arctic Circle', 'Hurtigruten',
+      'Day four, and the day the trip changes. You cross the Arctic Circle in the morning; the ship makes a thing of it. From tonight the sun does not rise again until you are back south of it on the 20th.', [
+    item('h14a', '07:30', 'boat', 'Crossing the Arctic Circle', location='66 degrees 33 minutes north',
+         notes='There is a marker on a small island and usually a ceremony on deck involving a ladle of ice water down the neck. Take it in good humour; it is over in a minute and you get a certificate.'),
+    item('h14b', '12:30', 'boat', 'Bodo', location='Bodo, Norway', endTime='15:00',
+         notes='Two and a half hours in the afternoon twilight. Then the ship turns into the Lofoten islands and calls at Stamsund and Svolvaer in the dark, which is the stretch you will see properly on the way back south.')]),
+  day('2026-12-15', 'Tromso, and the first real chance of lights', 'Hurtigruten',
+      'Day five. THE FIRST DAY OF PROPER POLAR NIGHT: no sunrise at all, just four or five hours of blue twilight around the middle of the day. Tromso in the afternoon is the highlight of the northbound leg.', [
+    item('h15a', '14:15', 'boat', 'Tromso, four hours ashore', location='Tromso, Norway', endTime='18:30',
+         cost=0, currency='NOK',
+         notes='THE BEST STOP ON THE WAY NORTH and a proper little city, 350 km inside the Arctic Circle. The Arctic Cathedral with its white glass front is ten minutes over the bridge; there is often an evening concert. Otherwise the Polaria aquarium, or just a beer in one of the pubs on Storgata, which is a very good thing to do in the dark at three in the afternoon. THIS IS ALSO THE BEST AURORA LATITUDE ON THE WHOLE VOYAGE, so if the sky is clear tonight, do not go to bed early.'),
+    item('h15b', '21:00', 'activity', 'Up on deck if the sky is clear', status='idea',
+         notes='The ship dims the outside lights when the aurora shows and usually wakes people over the tannoy. Dress as if you are standing still outside in the Arctic, because you are: thermals, hat, gloves, and more than you think. A phone on night mode will photograph it better than your eyes see it.')]),
+  day('2026-12-16', 'The top of Europe: Hammerfest and the North Cape', 'Hurtigruten',
+      'Day six, and the furthest north you will ever be unless you go out of your way. Hammerfest before breakfast, then the long call at Honningsvag, which is the jumping-off point for the North Cape itself.', [
+    item('h16a', '11:00', 'boat', 'Honningsvag, for the North Cape', location='Honningsvag, Norway', endTime='14:30',
+         cost=1100, currency='NOK', status='idea',
+         notes='The one excursion on this voyage most people say they would pay for again: a coach out to Nordkapp, the cliff at the top of Europe, and the globe monument on the edge of it. In December it is dark, usually blowing, and genuinely wild, which is rather better than the summer coach-park version. Roughly 1,100 kroner and it goes through the ship. BOOK IT ON BOARD ON DAY ONE, because it is the excursion that sells out. If you skip it, Honningsvag itself is a small fishing town and three hours is plenty.')]),
+  day('2026-12-17', 'Kirkenes, and the ship turns round', 'Hurtigruten',
+      'Day seven. The far end: Kirkenes is 400 km east of Helsinki and fifteen minutes from the Russian border. In at nine, out at half twelve, and from there everything is the way home.', [
+    item('h17a', '09:00', 'boat', 'Kirkenes: the turning point', location='Kirkenes, Norway', endTime='12:30',
+         notes='Three and a half hours. The excursions here are the memorable ones: a snowmobile or husky run, or the King Crab safari where they pull a crab the size of a dustbin lid out of a hole in the ice and then cook it for you. Both book through the ship. If you would rather not, the town is small and the Andersgrotta wartime bomb shelter is ten minutes away; Kirkenes was bombed more than 300 times in the war and is one of the most bombed places in Europe, which is a piece of history almost nobody knows.'),
+    item('h17b', '12:30', 'boat', 'Southbound from here',
+         notes='Everything you passed in the dark on the way up, you now see in the twilight on the way down. That is the whole design of the round voyage and it is why it is worth doing both ways.')]),
+  day('2026-12-18', 'Back along Finnmark', 'Hurtigruten',
+      'Day eight. Honningsvag before six, Hammerfest late morning, then the long run to Tromso which you reach near midnight. A quiet day: read, eat, watch the coast go past in the blue.', [
+    item('h18a', '11:00', 'boat', 'Hammerfest', location='Hammerfest, Norway', endTime='12:45',
+         notes='Claims to be the northernmost town in the world, which is disputed but nobody local will thank you for saying so. Just under two hours, enough to walk up to the Meridian Column or join the Royal and Ancient Polar Bear Society, which is a genuine thing and costs about 250 kroner for a lifetime membership and a certificate.')]),
+  day('2026-12-19', 'Lofoten in daylight', 'Hurtigruten',
+      'Day nine, and the best scenery of the voyage. The Lofoten wall of peaks that you passed in the dark on the 14th, you now sail along in the middle of the day. If there is one day to be on deck with a hot drink rather than in the lounge, it is this one.', [
+    item('h19a', '12:00', 'boat', 'Along the Lofoten wall', location='Lofoten Islands, Norway',
+         notes='A line of sharp black peaks rising straight out of the sea with fishing villages tucked underneath, and in December the low blue light on the snow does something to it that summer photographs never show. Svolvaer and Stamsund are the calls. Wrap up and go outside; this is the one people remember.')]),
+  day('2026-12-20', 'Back over the Circle', 'Hurtigruten',
+      'Day ten. Bodo in the morning, then south across the Arctic Circle again around the middle of the day, and the sun comes back. Not much of it, but it rises, which after six days it is oddly moving.', [
+    item('h20a', '10:00', 'boat', 'Bodo, and the Circle southbound', location='Bodo, Norway',
+         notes='After Bodo the ship recrosses 66 degrees 33 minutes and you are out of the polar night. Sandnessjoen and Bronnoysund in the afternoon, with the Seven Sisters mountains on the port side if the cloud lifts.')]),
+  day('2026-12-21', 'Trondheim again, southbound', 'Hurtigruten',
+      'Day eleven, and the last full day aboard. Trondheim in the afternoon this time. PACK TONIGHT, not in the morning.', [
+    item('h21a', '13:00', 'boat', 'Trondheim, afternoon call', location='Trondheim, Norway',
+         notes='A couple of hours. If you did the cathedral on the way up, the Bakklandet lanes and a coffee are the better use of it now.'),
+    item('h21b', '20:00', 'note', 'Settle the bar bill and pack',
+         notes='Ask reception tonight what time you can get off tomorrow and whether they will hold your bag. Docking is 14:45 and your hotel will not have a room ready before then anyway.')]),
   day('2026-12-22', 'Back in Bergen', 'Bergen',
       'Off the ship at 14:45 and STAYING IN BERGEN TONIGHT. You could chase an evening flight to London but it is two days before Christmas, the airports are at their worst, and if it goes wrong you are stranded on the 23rd. One calm night is worth the hotel.', [
-    item('c1', '14:45', 'boat', 'Hurtigruten docks in Bergen', status='booked',
+    item('c1', '14:45', 'boat', 'Hurtigruten docks in Bergen', location='Hurtigruten terminal, Nostegaten 30, Bergen', status='booked',
          notes='Eleven nights done.'),
     item('c2', '15:30', 'stay', 'One night in Bergen', location='See Stays',
          notes='Same hotel as the 10th if they have it, and you will know the way. Eleven nights on a ship and then straight onto a plane two days before Christmas was never a good idea: this way you sleep, and if a flight goes wrong tomorrow you have a day of slack instead of none.'),
@@ -154,26 +193,26 @@ days = [
          notes='GET YOUR CREDENCIAL TONIGHT if you have not already: the pilgrim passport you collect stamps in. The parish church and most pilgrim hostels in Sarria issue them for a couple of euros. Without it there is no Compostela at the other end.')]),
   day('2027-01-03', 'Sarria to Portomarín, 22 km', 'Portomarín',
       'Day one. Rolling farmland, oak woods and stone hamlets. Light from about 08:45 to 18:15, so leave by 09:00 and you have hours in hand.', [
-    item('g1', '09:00', 'activity', 'Walk Sarria to Portomarín', endTime='15:30', cost=0, currency='EUR',
+    item('g1', '09:00', 'activity', 'Walk Sarria to Portomarín', location='Sarria to Portomarin, Camino Frances', endTime='15:30', cost=0, currency='EUR',
          notes='22 km, five to six hours at a steady pace with stops. The 100 km marker is just outside Sarria and everybody photographs it. TWO STAMPS A DAY from here on, from bars, churches or hostels, because the last 100 km has the stricter rule. Portomarín is reached over a long bridge and up a staircase, which is a cruel finish, and the village was moved stone by stone when they dammed the river.')]),
   day('2027-01-04', 'Portomarín to Palas de Rei, 25 km', 'Palas de Rei',
       'The longest day of the six. Start early.', [
-    item('g2', '08:45', 'activity', 'Walk Portomarín to Palas de Rei', endTime='15:30', cost=0, currency='EUR',
+    item('g2', '08:45', 'activity', 'Walk Portomarín to Palas de Rei', location='Portomarin to Palas de Rei, Camino Frances', endTime='15:30', cost=0, currency='EUR',
          notes='25 km with a long steady climb out of Portomarín in the first two hours. Get it done in the morning. There are bars at Gonzar and Ventas de Narón for coffee and a stamp.')]),
   day('2027-01-05', 'Palas de Rei to Arz\u00faa, 29 km', 'Arz\u00faa',
       'THE LONG DAY, and the price of two nights in Santiago instead of one. Twenty-nine kilometres is a lot in January, so leave in the dark and take the whole day over it.', [
-    item('g3', '08:15', 'activity', 'Walk Palas de Rei to Arz\u00faa', endTime='16:00', cost=0, currency='EUR',
+    item('g3', '08:15', 'activity', 'Walk Palas de Rei to Arz\u00faa', location='Palas de Rei to Arzua via Melide, Camino Frances', endTime='16:00', cost=0, currency='EUR',
          notes='29 km, seven to eight hours with proper stops, which is why the bag goes in the van today whatever you decide about the other days. Light is about 08:45 to 18:15, so a head torch for the first half hour and you still have an hour spare at the end. This is the standard stage that five-day walkers do; it is long, not hard, and the ground is gentle.'),
     item('g3b', '12:00', 'food', 'Octopus in Melide, halfway', location='Pulper\u00eda Ez\u00e9quiel, Melide',
          endTime='13:00', cost=15, currency='EUR',
          notes='Melide is almost exactly the midpoint and it is the octopus town. Pulpo a feira, octopus with paprika, olive oil and coarse salt on a wooden plate, with the rough house wine in a white bowl. You would have slept here on the six-day version; now you eat here instead, which is the better half of the deal. Do not rush it, you have the daylight.')]),
   day('2027-01-06', 'Arz\u00faa to O Pedrouzo, 20 km', 'O Pedrouzo',
       'Back to a normal day, and a Spanish public holiday.', [
-    item('g5', '09:00', 'activity', 'Walk Arz\u00faa to O Pedrouzo', endTime='14:30', cost=0, currency='EUR',
+    item('g5', '09:00', 'activity', 'Walk Arz\u00faa to O Pedrouzo', location='Arzua to O Pedrouzo, Camino Frances', endTime='14:30', cost=0, currency='EUR',
          notes='20 km through eucalyptus woods, gentle after yesterday. TODAY IS D\u00cdA DE REYES, Epiphany, which is a bigger day in Spain than Christmas: shops shut, some bars shut, parades the evening before. The walking is unaffected but buy what you need on the 5th. Arz\u00faa is the cheese town, a soft cow\u2019s cheese called tetilla, so take some with you.')]),
   day('2027-01-07', 'O Pedrouzo to Santiago, 20 km. You arrive', 'Santiago de Compostela',
       'The last day. Leave in the dark and you are at the cathedral by lunchtime.', [
-    item('g6', '08:00', 'activity', 'Walk O Pedrouzo into Santiago', endTime='13:30', cost=0, currency='EUR',
+    item('g6', '08:00', 'activity', 'Walk O Pedrouzo into Santiago', location='O Pedrouzo to Santiago de Compostela, Camino Frances', endTime='13:30', cost=0, currency='EUR',
          notes='20 km. Past the airport, over Monte do Gozo where pilgrims first see the spires, then down into the old city and under the archway into Pra\u00e7a do Obradoiro with the cathedral in front of you. 116 km on foot. Take your time on the last hour; there is no train to catch and you have two nights here.'),
     item('g7', '14:30', 'activity', 'Collect your Compostela at the Pilgrim\u2019s Office',
          location='Oficina del Peregrino, R\u00faa das Carretas 33', cost=0, currency='EUR',
@@ -193,7 +232,7 @@ days = [
          notes='Tomorrow you fly. Galician white wine is albari\u00f1o and it is excellent, so have that rather than the beer tonight.')]),
   day('2027-01-09', 'Santiago to London', 'London',
       'Fly back today. Stansted, then across London.', [
-    item('h1', '11:30', 'flight', 'Ryanair, Santiago to Stansted', cost=150, currency='AUD', status='idea',
+    item('h1', '11:30', 'flight', 'Ryanair, Santiago to Stansted', location='Santiago de Compostela airport to London Stansted', cost=150, currency='AUD', status='idea',
          notes='Saturday is one of the three days it flies. CONFIRM THE RETURN DAY when you book: the outbound runs Mon, Wed and Sat and the return usually matches, but check before you commit to the 9th. Stansted to central London is the Stansted Express, about 50 minutes.'),
     item('h2', '18:00', 'stay', 'Last night at your daughter\u2019s', location='See Stays',
          notes='Tomorrow is a 13:40 flight out of Heathrow, so you need to leave hers by about 09:30. A Heathrow hotel would be easier but it is A$180 and the budget has no room for easier.')]),
@@ -201,7 +240,7 @@ days = [
       'Thirty-six nights. Home tomorrow.', [
     item('z1', '10:00', 'transfer', 'To Heathrow', location='London Heathrow',
          notes='Be at the airport by 10:40 for a 13:40 departure. A Sunday, so check the night before for engineering works on whichever line you are using.'),
-    item('z2', '13:40', 'flight', 'Heathrow to Brisbane', status='booked',
+    item('z2', '13:40', 'flight', 'Heathrow to Brisbane', location='London Heathrow', status='booked',
          notes='CLAIM YOUR VAT REFUND BEFORE YOU DROP THE BAG if you bought anything substantial in Spain or Ireland. The UK no longer does tax-free shopping for visitors, but the EU does, so Spanish and Irish purchases over about €100 qualify and the refund desk is landside.')]),
 ]
 
@@ -275,8 +314,8 @@ budget = [
 ]
 
 questions = [
-  dict(id='q0', question='The trip costs about A$4,790 and your budget is A$3,000 to A$4,000. Which version do you want?',
-       why='This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter\u2019s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino and Santiago block is A$1,610 (flights A$300, seven nights A$630 in real named places rather than a guess, the train to Sarria, eight days of eating, the bag transfer, the free day at the end). Everything else, the sixteen nights at your daughter\u2019s, the three days in Bergen either side of the ship, the football, insurance and getting about, is A$3,180. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,540. The whole decision is whether the walk is worth about A$1,250 and going A$790 over. ONE REAL LEVER IF YOU WANT IT: the Galician public albergues are about 10 euro a bunk against 45 for a room, and some stay open through January. Four of the five walking nights in a bunk instead of a room takes about A$250 off. At 63, in the rain, that is a genuine trade and not an obvious one.',
+  dict(id='q0', question='The trip costs about A$4,950, but only A$4,000 of that is money you have to spend. Which version do you want?',
+       why='This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter\u2019s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: A$950 of the total is marked Optional on the Budget page and you can simply not do it: the North Cape coach at A$165, Bletchley Park, the Finisterre bus, a few meals. Ignore all of it and the trip is A$4,000, which is your ceiling to the dollar. The rest of this answer is about the part you cannot ignore. The Camino and Santiago block is A$1,610 (flights A$300, seven nights A$630 in real named places rather than a guess, the train to Sarria, eight days of eating, the bag transfer, the free day at the end). Everything else, the sixteen nights at your daughter\u2019s, the three days in Bergen either side of the ship, the football, insurance and getting about, is A$3,180. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,540. The whole decision is whether the walk is worth about A$1,250 and going A$790 over. ONE REAL LEVER IF YOU WANT IT: the Galician public albergues are about 10 euro a bunk against 45 for a room, and some stay open through January. Four of the five walking nights in a bunk instead of a room takes about A$250 off. At 63, in the rain, that is a genuine trade and not an obvious one.',
        options=['Keep the Camino, private rooms, about A$4,790',
                 'Keep the Camino but sleep in albergues, about A$4,540',
                 'Drop the Camino and land at about A$3,540'],
@@ -392,6 +431,17 @@ food = [
        why='Three courses, bread and a glass of wine for about €12 to €15, served between about 13:30 and 15:30. It is how Spain eats lunch and it is the best value on this trip by a mile.', priceBand='€'),
 ]
 
+FLIGHTS = [
+  dict(id='out', flight='(flight number to add)', from_='Brisbane', to='London Heathrow',
+       date='2026-12-04', arrDate='2026-12-05', dep='(to add)', arr='16:10', cabin='Economy',
+       duration='about 24 h with one stop',
+       notes='BOOKED. Arrives Heathrow 16:10 on Saturday 5 December. Ask whoever booked it for the flight numbers, the airline and the stopover airport, and Connor will put them in; then this page tells you your seat and your connection instead of just the landing time. Check in online 24 hours before and pick an aisle seat: on a 24-hour flight you will want to get up without climbing over anyone.'),
+  dict(id='home', flight='(flight number to add)', from_='London Heathrow', to='Brisbane',
+       date='2027-01-10', arrDate='2027-01-11', dep='13:40', arr='(to add)', cabin='Economy',
+       duration='about 24 h with one stop',
+       notes='BOOKED. Leaves Heathrow 13:40 on Sunday 10 January, so be at the airport by 10:40 and leave your daughter\u2019s by about 09:30. A Sunday, so check the night before for engineering works on whichever line you are taking.'),
+]
+
 places = [
   dict(id='py1', name='London Heathrow', kind='airport', town='London', lat=51.4700, lng=-0.4543),
   dict(id='py2', name='London Gatwick', kind='airport', town='London', lat=51.1537, lng=-0.1821, notes='For Bergen.'),
@@ -477,6 +527,45 @@ if any(x.get('status') in ('planned', 'booked') and x.get('pricePerNightAud') fo
 _clash = (_priced & {b.get('category') for b in budget}) - {'Food', 'Transport', 'Other'}
 assert not _clash, 'priced twice, on the plan and on the budget page: %s' % sorted(_clash)
 
+SOUVENIRS = [
+  dict(id='v1', category='Spirits and bar', name='Norwegian aquavit', ml=500, priceBand='kr kr', status='idea',
+       where='Vinmonopolet, the state liquor shop, in Bergen or Tromso. NOT the ship',
+       why='Potato spirit flavoured with caraway and aged in sherry casks, and the ones that have crossed the equator in a ship\u2019s hold are a real thing, not a marketing story. Linie is the famous one. Almost impossible to buy in Australia and it is what Norwegians actually drink at Christmas.',
+       notes='Alcohol in Norway is sold only at Vinmonopolet, which shuts early and all day Sunday, so buy it on the 11th in Bergen while you have the afternoon. It is expensive there; buying at the airport on the way out is genuinely cheaper.'),
+  dict(id='v2', category='Spirits and bar', name='Irish whiskey, if you get to Dublin', ml=700, priceBand='\u20ac\u20ac', status='idea',
+       where='Any Dublin off-licence, or the airport',
+       why='Redbreast 12 or Green Spot are the two worth the allowance: both are A$100 or more in Australia and about half that in Ireland. Guinness itself is not worth carrying, because you can buy it at home and the whole point of it is that it is poured properly.',
+       notes='Only if Dublin goes back in. See Decisions.'),
+  dict(id='v3', category='Spirits and bar', name='Albarino, a bottle from Galicia', ml=750, priceBand='\u20ac', status='idea',
+       where='Any shop in Santiago',
+       why='The white wine of Galicia, crisp and salty, and about 6 euro there against A$35 here. Heavy for what it is, so one bottle, and only if the allowance is not already spoken for.'),
+  dict(id='v4', category='The Camino', name='Your Compostela', priceBand='free', status='planned',
+       where='The Pilgrim\u2019s Office, Santiago, 8 January',
+       why='The certificate with your name on it in Latin. The best souvenir of this entire trip and it costs nothing. THEY SELL A CARDBOARD TUBE FOR A EURO OR TWO: buy it. A rolled certificate in a suitcase for two days does not survive.'),
+  dict(id='v5', category='The Camino', name='A scallop shell', priceBand='\u20ac', status='planned',
+       where='Anywhere on the Camino; most pilgrims tie one to the pack at the start',
+       why='The symbol of the Camino since the middle ages and the thing every pilgrim carries. A euro or two, weighs nothing, and it is the one object that will mean something in ten years.'),
+  dict(id='v6', category='Food and snacks', name='Norwegian brown cheese, and other food rules', priceBand='kr', status='idea',
+       where='Any Norwegian supermarket',
+       why='Brunost is caramelised whey, sweet and strange and genuinely Norwegian. Commercially packaged hard cheese is usually fine into Australia.',
+       notes='DECLARE EVERY FOOD ITEM ON THE INCOMING CARD, without exception. Commercially packaged, shelf-stable and sealed is almost always waved through once declared. The soft cheeses are the risk: the tetilla in Arzua and anything from a market stall is unsealed dairy and will be taken off you. Nothing containing meat, ever. Declaring something that turns out to be fine costs thirty seconds; not declaring something that is not fine starts at a A$2,000 fine.'),
+  dict(id='v7', category='For other people', name='Work out who actually gets something, before you go', priceBand='\u20ac', status='idea',
+       where='Decide at home, buy on the last few days',
+       why='Five weeks is a long time to carry things you bought in week one. Write the names down before you leave and buy everything in Santiago and London at the end, when you know what is left in the bag and in the budget.'),
+  dict(id='v8', category='Everyday things', name='Nothing bulky, and nothing in week one', priceBand='', status='idea',
+       where='n/a',
+       why='You are carrying your own bag up a hill in Galicia in January. Anything bought before the 8th of January has to be carried over 116 km or posted home. Buy at the end.'),
+]
+
+SOUVENIR_GUIDE = [
+  dict(title='What Australia lets you bring in',
+       body='Two limits and both work the same cruel way: go over and duty is charged on the WHOLE lot, not just the excess. Alcohol: 2.25 litres per adult, which is three ordinary bottles and nothing more, and buying at the airport does not change it because the limit is on what you bring in rather than where you bought it. General goods: A$900, covering gifts, souvenirs, electronics and the rest. A bottle or two and a few small things will not trouble either. The meter at the top of this page counts anything you mark as on the list or bought, so keep it honest and it will tell you when to stop.'),
+  dict(title='Declare the food. All of it.',
+       body='Australian biosecurity is the strictest border you will cross and the incoming passenger card is not a formality. Declare all food, plant and wooden items without exception. Sealed, commercially packaged, shelf-stable things are almost always allowed through once declared. Anything with meat in it is prohibited outright. Unsealed dairy, fresh produce and dried plant material will be taken off you. The red lane costs you thirty seconds; the fine starts at A$2,000.'),
+  dict(title='Tax back on the way out of Europe',
+       body='Spain and Ireland refund the VAT on purchases over about 100 euro in one shop if you are leaving the EU, which you are. Ask for the form in the shop, keep the receipt, and find the refund desk at the airport BEFORE you check the bag, because they may want to see what you bought. The UK stopped doing this for visitors in 2021, so nothing bought in London qualifies. On the amounts you are likely to spend this is probably not worth chasing, but the Galician wine plus a jacket could tip it over.'),
+]
+
 trip = dict(
   meta=dict(
     title='Dad’s Trip 2026/27', start=START, end=END, homeCurrency='AUD',
@@ -484,12 +573,12 @@ trip = dict(
     mapRegion='', travelMode='transit',
     features=dict(flights=True, budget=True, points=False),
     categories=['Flights', 'Accommodation', 'Transport', 'Food', 'Activities', 'Other'],
-    about='Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 116 km of the Camino, with two nights in Santiago at the end. Costed at about A$4,790 on top of the flights and the cruise you have already paid, which is still a little over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.',
+    about='Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 116 km of the Camino, with two nights in Santiago at the end. About A$4,000 of it you will certainly spend and another A$950 only if you choose to, on top of the flights and the cruise already paid. The A$4,000 is the top of your budget exactly, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.',
   ),
   days=days,
-  flights=dict(confirmed=[], legs=[], lounges=[]),
-  people=[], foodGuide=[], staysGuide=[], souvenirGuide=[],
-  points={}, stays=stays, food=food, souvenirs=[], budget=budget, checklist=checklist,
+  flights=dict(confirmed=FLIGHTS, legs=[], lounges=[]),
+  people=[], foodGuide=[], staysGuide=[], souvenirGuide=SOUVENIR_GUIDE,
+  points={}, stays=stays, food=food, souvenirs=SOUVENIRS, budget=budget, checklist=checklist,
   places=places, questions=questions,
 )
 

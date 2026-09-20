@@ -496,6 +496,30 @@ test.describe('sharing the link', () => {
     await expect(page.locator('#trip-switch')).toBeHidden();
   });
 
+  test('the Bali link does not show Dad his own trip, and the reverse', async ({ page, isMobile }) => {
+    // Shared means shared with SOMEONE. Two audiences hold two links and
+    // neither should see the other's plan.
+    await asGuest(page);                                  // no ?for=, so the group link
+    await expect(page.locator('#brand-title')).toHaveText('Bali 2026');
+    if (isMobile) await page.locator('#menu-btn').click();
+    await expect(page.locator('#trip-switch button', { hasText: 'Dad' })).toHaveCount(0);
+    await expect(page.locator('#main')).not.toContainText('northern lights');
+  });
+
+  test("Dad's link shows Dad's trip and nothing else", async ({ page, isMobile }) => {
+    page.on('pageerror', () => {});
+    await page.route(/fonts\.googleapis\.com|fonts\.gstatic\.com|tile\.openstreetmap\.org|api\.github\.com/, (r) => r.abort());
+    await page.goto('/?for=dad#/overview');
+    await expect(page.locator('#brand-title')).toHaveText(/Dad/);
+    if (isMobile) await page.locator('#menu-btn').click();
+    for (const other of ['Bali', 'Japan', 'Ubud']) {
+      await expect(page.locator('#trip-switch button', { hasText: other })).toHaveCount(0);
+    }
+    // and the device remembers, so the link only has to be right once
+    await page.goto('/#/overview');
+    await expect(page.locator('#brand-title')).toHaveText(/Dad/);
+  });
+
   test('the money switch brings the budget back on a trip that keeps one', async ({ page, isMobile }) => {
     await asGuest(page, '#/settings');
     await page.getByLabel('Show money (Budget page, totals and prices)').check();

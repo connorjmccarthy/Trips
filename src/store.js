@@ -26,6 +26,26 @@ const write = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); retu
 // it gets the private trips without you having to go and find the switch.
 const DEFAULT_SETTINGS = { owner: 'connorjmccarthy', repo: 'Trips', branch: 'main', token: '', theme: 'system', autoSync: true, vaultSync: false, vaultPass: '', paths: {}, showBudget: false };
 
+// A shared trip is shared with SOMEONE, not with everyone holding any link.
+// The Bali group and Dad are different audiences and must not see each other's
+// plans, so each shared trip names its audience and each link says which
+// audience it is for: .../Trips/?for=dad. A device remembers the first one it
+// is given, so the link only has to be right once. No audience named, on the
+// link or on the device, means the default one, which keeps every link already
+// sent to the Bali group working exactly as it did.
+const DEFAULT_AUDIENCE = 'group';
+const audienceOf = (t) => t.audience || DEFAULT_AUDIENCE;
+
+function audienceFromUrl() {
+  try {
+    const q = new URLSearchParams(location.search).get('for');
+    // Tolerate ...#/overview?for=dad too, because that is what people paste.
+    const h = location.hash.includes('?') ? new URLSearchParams(location.hash.split('?')[1]).get('for') : null;
+    const v = (q || h || '').trim().toLowerCase();
+    return /^[a-z0-9-]{1,32}$/.test(v) ? v : null;
+  } catch { return null; }
+}
+
 // Pages serves this from https://<user>.github.io/<repo>/, so the repo name is
 // sitting in the URL. Reading it there means renaming the repo does not quietly
 // break sync on a device that saved the old name.
@@ -60,13 +80,18 @@ class Store {
   constructor() {
     migrateLegacy();
     this.trips = read(APP.trips, FALLBACK_TRIPS);
+    // Settings first: which trips this device may see depends on its audience,
+    // and the trip it opens on has to be one of those. Landing someone on a
+    // trip that is not theirs is how a link leaks.
+    this.settings = { ...DEFAULT_SETTINGS, ...read(APP.settings, {}) };
+    const given = audienceFromUrl();
+    if (given && this.settings.audience !== given) { this.settings.audience = given; write(APP.settings, this.settings); }
     const chosen = read(APP.tripId, null);
     this.pickedTrip = !!chosen;            // false until you have actually chosen one
-    this.tripId = chosen || this.trips[0]?.id || 'japan';
+    this.tripId = chosen || this.visibleTrips()[0]?.id || this.trips[0]?.id || 'japan';
     this.keys = keysFor(this.tripId);
     this.trip = null;
     this.meta = read(this.keys.meta, { dirty: false, remoteSha: null, lastSyncAt: null, seedUpdatedAt: null, vaultSha: null, vaultDirty: false });
-    this.settings = { ...DEFAULT_SETTINGS, ...read(APP.settings, {}) };
     const detected = detectRepo();
     if (detected && this.settings.repo !== detected) { this.settings.repo = detected; write(APP.settings, this.settings); }
     this.vault = read(this.keys.vault, { fields: {}, itemSecrets: {} });
@@ -85,7 +110,17 @@ class Store {
     if (typeof this.settings.showAllTrips === 'boolean') return this.settings.showAllTrips;
     return !!this.settings.token;   // never chosen: a device that can write is yours
   }
-  visibleTrips() { return this.showsPrivateTrips() ? this.trips : this.trips.filter((x) => x.shared !== false); }
+  get audience() { return this.settings.audience || DEFAULT_AUDIENCE; }
+  visibleTrips() {
+    if (this.showsPrivateTrips()) return this.trips;          // your own device: everything
+    const mine = this.audience;
+    return this.trips.filter((x) => x.shared !== false && audienceOf(x) === mine);
+  }
+  // The link to hand to a given audience, ready to copy out of Settings.
+  shareLink(audience = this.audience) {
+    const base = location.href.split('#')[0].split('?')[0];
+    return audience === DEFAULT_AUDIENCE ? base : `${base}?for=${encodeURIComponent(audience)}`;
+  }
   // A section exists only if the trip asks for it. Money needs the trip to have a
   // budget at all AND this device to have asked to see it.
   tripHas(feature) { return tripHas(this.trip, feature); }

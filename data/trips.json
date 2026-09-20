@@ -2,6 +2,19 @@
   "active": "bali",
   "trips": [
     {
+      "id": "europe",
+      "name": "Dad's Trip 2026/27",
+      "short": "Dad",
+      "ico": "🌌",
+      "mark": "🌌",
+      "file": "data/europe.json",
+      "vault": "data/vault-europe.enc",
+      "start": "2026-12-05",
+      "end": "2027-01-10",
+      "shared": true,
+      "audience": "dad"
+    },
+    {
       "id": "bali",
       "name": "Bali 2026",
       "short": "Bali",

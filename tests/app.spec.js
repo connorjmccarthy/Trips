@@ -716,7 +716,7 @@ test.describe("Dad's trip", () => {
     // 36 nights, each slept in exactly one bed. "27 nights at his daughter's"
     // was ten nights of wishful arithmetic and nothing caught it.
     expect(r.nights).toBe(36);
-    expect(r.londonNights).toBe(17);
+    expect(r.londonNights).toBe(16);
     expect([r.first, r.last]).toEqual(['2026-12-05', '2027-01-10']);
     expect(r.flightSources).toEqual(['itinerary']);
     expect(r.stackedBeds).toEqual(['stays']);
@@ -724,7 +724,7 @@ test.describe("Dad's trip", () => {
     // over it at about A$4,700, which is a decision on the Decisions page, not
     // an accident. If an edit pushes it past A$5,000 that is worth knowing.
     expect(r.total).toBeGreaterThan(3000);
-    expect(r.total).toBeLessThan(4600);
+    expect(r.total).toBeLessThan(4900);
   });
 
   test('the Camino lands on the only days Ryanair flies, and every stage is there', async ({ page }) => {
@@ -733,9 +733,18 @@ test.describe("Dad's trip", () => {
       const t = await (await fetch('/data/europe.json')).json();
       const walks = t.days.flatMap((d) => d.items.filter((i) => /^Walk /.test(i.title)).map(() => d.date));
       const fly = t.days.flatMap((d) => d.items.filter((i) => /Santiago de Compostela|Santiago to Stansted/.test(i.location || i.title) && i.type === 'flight').map(() => d.date));
-      return { walks, fly };
+      const santiagoNights = t.stays.filter((s) => s.town === 'Santiago de Compostela').reduce((n, s) => n + s.nights, 0);
+      return { walks, fly, santiagoNights };
     });
-    expect(r.walks).toEqual(['2027-01-03', '2027-01-04', '2027-01-05', '2027-01-06', '2027-01-07', '2027-01-08']);
+    // Five stages, not six: the 29 km day through Melide is what buys the
+    // second night in Santiago, and he must fly out on the Saturday.
+    expect(r.walks).toEqual(['2027-01-03', '2027-01-04', '2027-01-05', '2027-01-06', '2027-01-07']);
+    expect(r.santiagoNights, 'the rest day after the walk has gone').toBe(2);
+    // fly holds both Santiago legs, so the return is the last one, not the first.
+    const arrive = r.walks[r.walks.length - 1];
+    const home = r.fly[r.fly.length - 1];
+    const gap = (new Date(home) - new Date(arrive)) / 86400000;
+    expect(gap, 'no rest day between walking in and flying out').toBeGreaterThanOrEqual(2);
     // Ryanair only flies Stansted-Santiago on Mon, Wed and Sat
     for (const d of r.fly) expect([1, 3, 6]).toContain(new Date(d).getUTCDay() || 7);
   });

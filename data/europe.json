@@ -9,7 +9,7 @@
       "EUR": 0.57,
       "NOK": 6.7
     },
-    "updatedAt": "2026-09-20T08:37:43Z",
+    "updatedAt": "2026-09-20T08:48:40Z",
     "version": 1,
     "mapRegion": "",
     "travelMode": "transit",
@@ -26,7 +26,7 @@
       "Activities",
       "Other"
     ],
-    "about": "Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Costed at about A$4,325 on top of the flights and the cruise you have already paid, which is still a little over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.",
+    "about": "Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Arsenal on the 30th, and the last 116 km of the Camino, with two nights in Santiago at the end. Costed at about A$4,790 on top of the flights and the cruise you have already paid, which is still a little over your budget, so the first thing on Decisions is what to do about that. Open Go to see only what is happening now.",
     "seedIds": {
       "checklist": [
         "e1",
@@ -63,11 +63,11 @@
         "sy1b",
         "sy1c",
         "sy0",
+        "sy4",
         "sy3",
         "sy6",
         "sy7",
         "sy8",
-        "sy9",
         "sy10",
         "sy11",
         "sy12",
@@ -126,6 +126,7 @@
         "b8",
         "c1",
         "c2",
+        "c2b",
         "c3",
         "x1",
         "e1",
@@ -135,11 +136,14 @@
         "g1",
         "g2",
         "g3",
-        "g4",
+        "g3b",
         "g5",
         "g6",
         "g7",
         "g8",
+        "g9",
+        "g10",
+        "g11",
         "h1",
         "h2",
         "z1",
@@ -439,34 +443,45 @@
         },
         {
           "id": "c2",
-          "time": "16:00",
-          "type": "transfer",
-          "title": "Straight to Flesland for the evening flight",
+          "time": "15:30",
+          "type": "stay",
+          "title": "One night in Bergen",
           "status": "planned",
-          "location": "Bergen Flesland",
-          "endTime": "17:15",
-          "notes": "The Bybanen light rail from the centre takes about 45 minutes. A hotel night in Bergen is A$220 you do not have to spend, which is why this is an evening flight rather than a lie-in."
+          "location": "See Stays",
+          "notes": "Same hotel as the 10th if they have it, and you will know the way. Eleven nights on a ship and then straight onto a plane two days before Christmas was never a good idea: this way you sleep, and if a flight goes wrong tomorrow you have a day of slack instead of none."
         },
         {
-          "id": "c3",
-          "time": "19:30",
-          "type": "flight",
-          "title": "Norwegian, Bergen to Gatwick",
+          "id": "c2b",
+          "time": "18:00",
+          "type": "food",
+          "title": "Last dinner in Norway",
           "status": "idea",
-          "location": "Bergen Flesland to London Gatwick",
-          "cost": 150,
-          "currency": "AUD",
-          "notes": "CHECK AN EVENING FLIGHT ACTUALLY EXISTS ON 22 DEC BEFORE YOU RELY ON THIS. Norwegian runs this route most days and the last departure is usually late evening, but 22 December is peak Christmas traffic. If there is nothing after about 18:00, add a night in Bergen and fly on the 23rd instead: that is A$220 and it is worth paying rather than cutting it fine with an 11-night cruise behind you."
+          "location": "Bergen centre",
+          "cost": 450,
+          "currency": "NOK",
+          "notes": "The one proper Norwegian meal of the trip. You have eaten on the ship for eleven nights and you are about to be in England for three weeks."
         }
       ]
     },
     {
       "id": "d20261223",
       "date": "2026-12-23",
-      "title": "London, Christmas Eve eve",
+      "title": "Bergen to London",
       "base": "London",
-      "notes": "Nothing planned. Recover.",
-      "items": []
+      "notes": "Unhurried. Christmas Eve is tomorrow and you will be at hers by the evening.",
+      "items": [
+        {
+          "id": "c3",
+          "time": "12:00",
+          "type": "flight",
+          "title": "Norwegian, Bergen to Gatwick",
+          "status": "idea",
+          "location": "Bergen Flesland to London Gatwick",
+          "cost": 150,
+          "currency": "AUD",
+          "notes": "A middle-of-the-day flight, not the last one out. Book it with the outbound. Allow 45 minutes on the Bybanen from the centre to Flesland and get to the airport early: the 23rd of December is one of the busiest flying days of the year."
+        }
+      ]
     },
     {
       "id": "d20261224",
@@ -652,20 +667,33 @@
     {
       "id": "d20270105",
       "date": "2027-01-05",
-      "title": "Palas de Rei to Melide, 15 km",
-      "base": "Melide",
-      "notes": "A short day on purpose, after the long one.",
+      "title": "Palas de Rei to Arzúa, 29 km",
+      "base": "Arzúa",
+      "notes": "THE LONG DAY, and the price of two nights in Santiago instead of one. Twenty-nine kilometres is a lot in January, so leave in the dark and take the whole day over it.",
       "items": [
         {
           "id": "g3",
-          "time": "09:30",
+          "time": "08:15",
           "type": "activity",
-          "title": "Walk Palas de Rei to Melide",
+          "title": "Walk Palas de Rei to Arzúa",
           "status": "planned",
-          "endTime": "13:30",
+          "endTime": "16:00",
           "cost": 0,
           "currency": "EUR",
-          "notes": "15 km, three to four hours. Melide is the octopus town: Pulpería Ezéquiel is the famous one and pulpo a feira, octopus with paprika, olive oil and coarse salt on a wooden plate, is what you eat there. Earned it.",
+          "notes": "29 km, seven to eight hours with proper stops, which is why the bag goes in the van today whatever you decide about the other days. Light is about 08:45 to 18:15, so a head torch for the first half hour and you still have an hour spare at the end. This is the standard stage that five-day walkers do; it is long, not hard, and the ground is gentle.",
+          "placeId": "py15"
+        },
+        {
+          "id": "g3b",
+          "time": "12:00",
+          "type": "food",
+          "title": "Octopus in Melide, halfway",
+          "status": "planned",
+          "location": "Pulpería Ezéquiel, Melide",
+          "endTime": "13:00",
+          "cost": 15,
+          "currency": "EUR",
+          "notes": "Melide is almost exactly the midpoint and it is the octopus town. Pulpo a feira, octopus with paprika, olive oil and coarse salt on a wooden plate, with the rough house wine in a white bowl. You would have slept here on the six-day version; now you eat here instead, which is the better half of the deal. Do not rush it, you have the daylight.",
           "placeId": "py14"
         }
       ]
@@ -673,30 +701,9 @@
     {
       "id": "d20270106",
       "date": "2027-01-06",
-      "title": "Melide to Arzúa, 14 km",
-      "base": "Arzúa",
-      "notes": "The shortest day, and a Spanish public holiday.",
-      "items": [
-        {
-          "id": "g4",
-          "time": "09:30",
-          "type": "activity",
-          "title": "Walk Melide to Arzúa",
-          "status": "planned",
-          "endTime": "13:00",
-          "cost": 0,
-          "currency": "EUR",
-          "notes": "14 km through eucalyptus woods. TODAY IS DÍA DE REYES, Epiphany, and it is a bigger day in Spain than Christmas: shops shut, some bars shut, and there are parades the evening before. The walking is unaffected but buy anything you need the day before. Arzúa is the cheese town, a soft cow’s cheese called tetilla.",
-          "placeId": "py15"
-        }
-      ]
-    },
-    {
-      "id": "d20270107",
-      "date": "2027-01-07",
       "title": "Arzúa to O Pedrouzo, 20 km",
       "base": "O Pedrouzo",
-      "notes": "Last full day before Santiago.",
+      "notes": "Back to a normal day, and a Spanish public holiday.",
       "items": [
         {
           "id": "g5",
@@ -707,17 +714,17 @@
           "endTime": "14:30",
           "cost": 0,
           "currency": "EUR",
-          "notes": "20 km, gentle. You start meeting people who are also finishing tomorrow.",
+          "notes": "20 km through eucalyptus woods, gentle after yesterday. TODAY IS DÍA DE REYES, Epiphany, which is a bigger day in Spain than Christmas: shops shut, some bars shut, parades the evening before. The walking is unaffected but buy what you need on the 5th. Arzúa is the cheese town, a soft cow’s cheese called tetilla, so take some with you.",
           "placeId": "py16"
         }
       ]
     },
     {
-      "id": "d20270108",
-      "date": "2027-01-08",
+      "id": "d20270107",
+      "date": "2027-01-07",
       "title": "O Pedrouzo to Santiago, 20 km. You arrive",
       "base": "Santiago de Compostela",
-      "notes": "The last day. Leave in the dark if you want to reach the cathedral by lunchtime.",
+      "notes": "The last day. Leave in the dark and you are at the cathedral by lunchtime.",
       "items": [
         {
           "id": "g6",
@@ -728,7 +735,7 @@
           "endTime": "13:30",
           "cost": 0,
           "currency": "EUR",
-          "notes": "20 km. Past the airport, over Monte do Gozo where pilgrims first see the spires, then down into the old city and under the archway into Praça do Obradoiro with the cathedral in front of you. 115 km on foot. Take your time on the last hour.",
+          "notes": "20 km. Past the airport, over Monte do Gozo where pilgrims first see the spires, then down into the old city and under the archway into Praça do Obradoiro with the cathedral in front of you. 116 km on foot. Take your time on the last hour; there is no train to catch and you have two nights here.",
           "placeId": "py17"
         },
         {
@@ -740,19 +747,61 @@
           "location": "Oficina del Peregrino, Rúa das Carretas 33",
           "cost": 0,
           "currency": "EUR",
-          "notes": "Bring the credencial with its two stamps a day. They check it, ask why you walked, and write your name on the certificate in Latin. Free. There is a queue; in January it will be short. THE PILGRIM MASS at the cathedral is usually at noon and again at 19:30, and the botafumeiro, the giant swinging incense burner, is not swung at every mass, so ask at the office which one to go to.",
+          "notes": "Bring the credencial with its two stamps a day. They check it, ask why you walked, and write your name on the certificate in Latin. Free, and in January the queue is short. Ask them which Pilgrim’s Mass the botafumeiro is swung at, the giant incense burner on ropes; it is not every mass and it is the thing to see. Masses are usually noon and 19:30.",
           "placeId": "py18"
         },
         {
           "id": "g8",
-          "time": "19:00",
+          "time": "19:30",
           "type": "food",
           "title": "Dinner on Rúa do Franco",
           "status": "planned",
           "location": "Rúa do Franco, behind the cathedral",
           "cost": 35,
           "currency": "EUR",
-          "notes": "The street of restaurants. Octopus, pimientos de Padrón, scallops, and Estrella Galicia, which is the local beer and very good. This is the meal at the end of the walk, so have the good one.",
+          "notes": "The street of restaurants. Scallops, pimientos de Padrón, and Estrella Galicia, which is the local beer and very good. The meal at the end of the walk, so have the good one.",
+          "placeId": "py17"
+        }
+      ]
+    },
+    {
+      "id": "d20270108",
+      "date": "2027-01-08",
+      "title": "A day in Santiago, with nothing to walk",
+      "base": "Santiago de Compostela",
+      "notes": "THE DAY YOU ASKED FOR. Six days of getting up in the dark and now a morning with nowhere to be. Either see Santiago properly or go to the end of the world; both are good and you cannot do both well.",
+      "items": [
+        {
+          "id": "g9",
+          "time": "09:00",
+          "type": "activity",
+          "title": "Option one: Santiago properly",
+          "status": "idea",
+          "location": "The old town",
+          "notes": "The cathedral itself, which you only glanced at yesterday, plus the museum and the rooftop tour over the old city, which is the one worth booking. The Pilgrim’s Mass at noon with the botafumeiro if it is swinging today. Then the Mercado de Abastos, the produce market, which is the second most visited thing in the city and where you buy lunch and have it cooked for you at a stall. An old stone city that is a pleasure to be lost in, and everything is within fifteen minutes on foot. About 15 euro for the rooftop tour and the museum; the budget carries the Finisterre option below instead, because it is the dearer of the two and you can only spend the day once.",
+          "placeId": "py17"
+        },
+        {
+          "id": "g10",
+          "time": "09:00",
+          "type": "activity",
+          "title": "Option two: the bus to Finisterre, the end of the world",
+          "status": "idea",
+          "location": "Santiago bus station, Monbus to Fisterra",
+          "cost": 30,
+          "currency": "EUR",
+          "notes": "Cape Finisterre is where the Romans thought the land stopped, and it is where many pilgrims carry on to after Santiago. The lighthouse, the 0 km marker, the Atlantic and nothing beyond it. Monbus runs it: the direct service is about 1h15 each way, the scenic coastal one nearly 3 hours, so take the direct one at least in one direction or you spend the day on a bus. CHECK THE WINTER TIMETABLE AT MONBUS.ES, because January services are thinner than summer. About 30 euro return. In January the cape is wild and often empty, which is rather the point."
+        },
+        {
+          "id": "g11",
+          "time": "19:00",
+          "type": "food",
+          "title": "Last dinner in Spain",
+          "status": "planned",
+          "location": "Rúa do Franco or the market quarter",
+          "cost": 30,
+          "currency": "EUR",
+          "notes": "Tomorrow you fly. Galician white wine is albariño and it is excellent, so have that rather than the beer tonight.",
           "placeId": "py17"
         }
       ]
@@ -839,15 +888,15 @@
     },
     {
       "id": "sy1b",
-      "name": "Your daughter’s, 22 Dec to 2 Jan",
+      "name": "Your daughter’s, 23 Dec to 2 Jan",
       "town": "London",
       "status": "booked",
       "pricePerNightAud": 0,
-      "nights": 11,
-      "checkIn": "2026-12-22",
+      "nights": 10,
+      "checkIn": "2026-12-23",
       "checkOut": "2027-01-02",
       "type": "Family",
-      "notes": "The long block: home off the ship on the 22nd, Christmas, the football on the 30th, New Year, then away to Spain on the 2nd. Eleven nights, and the reason this trip fits a budget at all."
+      "notes": "The long block: home from Bergen on the 23rd, Christmas Eve, Christmas, the football on the 30th, New Year, then away to Spain on the 2nd. Ten nights, and the reason this trip fits a budget at all."
     },
     {
       "id": "sy1c",
@@ -859,7 +908,7 @@
       "checkIn": "2027-01-09",
       "checkOut": "2027-01-10",
       "type": "Family",
-      "notes": "Back from Santiago, one night, then home. SEVENTEEN NIGHTS AT HERS IN TOTAL. At London hotel rates that is about A$3,700, which is most of the difference between this trip happening and not. Ask her about all three blocks at once rather than in instalments."
+      "notes": "Back from Santiago, one night, then home. SIXTEEN NIGHTS AT HERS IN TOTAL. At London hotel rates that is about A$3,500, which is most of the difference between this trip happening and not. Ask her about all three blocks at once rather than in instalments."
     },
     {
       "id": "sy0",
@@ -874,6 +923,19 @@
       "notes": "Eleven nights, already paid, so it costs nothing more. Here so the Stays page can always answer where you are sleeping tonight, which on the 16th of December in the Arctic is a fair question. Meals are included; the only money on these days is ashore."
     },
     {
+      "id": "sy4",
+      "name": "Bergen, night of 22 Dec",
+      "town": "Bergen",
+      "status": "planned",
+      "pricePerNightAud": 220,
+      "nights": 1,
+      "checkIn": "2026-12-22",
+      "checkOut": "2026-12-23",
+      "type": "Hotel or guesthouse",
+      "distance": "Walkable from the Hurtigruten terminal",
+      "notes": "Off the ship at 14:45 with nowhere to be. Book the same place as the 10th if you can: you will already know the walk from the terminal, which is worth something after eleven nights at sea. A$220, and it buys you a day of slack before flying two days before Christmas."
+    },
+    {
       "id": "sy3",
       "name": "Bergen, night of 10 Dec",
       "town": "Bergen",
@@ -884,86 +946,91 @@
       "checkOut": "2026-12-11",
       "distance": "Walkable to Bryggen and the Hurtigruten terminal",
       "type": "Hotel or guesthouse",
-      "notes": "The only hotel night before the ship, and it is not negotiable: you do not fly to a cruise on the day it sails. Bergen is expensive but the centre is small, so anything near Bryggen or the fish market walks to everything including the terminal. Look at guesthouses and the Bergen YMCA as well as hotels."
+      "notes": "The night before the ship, and it is not negotiable: you do not fly to a cruise on the day it sails. Bergen is expensive but the centre is small, so anything near Bryggen or the fish market walks to everything including the terminal. Look at guesthouses and the Bergen YMCA as well as hotels."
     },
     {
       "id": "sy6",
-      "name": "Sarria, night of 2 Jan",
+      "name": "Sarria: Hotel Mar de Plata, or Casa Matías",
       "town": "Sarria",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-02",
-      "checkOut": "2027-01-03",
-      "type": "Pensión or albergue"
-    },
-    {
-      "id": "sy7",
-      "name": "Portomarín, night of 3 Jan",
-      "town": "Portomarín",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-03",
-      "checkOut": "2027-01-04",
-      "type": "Pensión or albergue"
-    },
-    {
-      "id": "sy8",
-      "name": "Palas de Rei, night of 4 Jan",
-      "town": "Palas de Rei",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-04",
-      "checkOut": "2027-01-05",
-      "type": "Pensión or albergue"
-    },
-    {
-      "id": "sy9",
-      "name": "Melide, night of 5 Jan",
-      "town": "Melide",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-05",
-      "checkOut": "2027-01-06",
-      "type": "Pensión or albergue"
-    },
-    {
-      "id": "sy10",
-      "name": "Arzúa, night of 6 Jan",
-      "town": "Arzúa",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-06",
-      "checkOut": "2027-01-07",
-      "type": "Pensión or albergue"
-    },
-    {
-      "id": "sy11",
-      "name": "O Pedrouzo, night of 7 Jan",
-      "town": "O Pedrouzo",
-      "status": "planned",
-      "pricePerNightAud": 55,
-      "nights": 1,
-      "checkIn": "2027-01-07",
-      "checkOut": "2027-01-08",
-      "type": "Pensión or albergue",
-      "notes": "THE SIX CAMINO NIGHTS AT ABOUT A$55 EACH. In January the Xunta de Galicia public albergues are about 10 euro for a bunk and many stay open, while a pensión with your own room and a hot shower is 35 to 45 euro. A$55 a night assumes a mix. At 63, walking six days in the rain, take the private room on the nights you feel it and the bunk on the nights you do not. A drying room is worth paying for."
-    },
-    {
-      "id": "sy12",
-      "name": "Santiago de Compostela, night of 8 Jan",
-      "town": "Santiago de Compostela",
       "status": "planned",
       "pricePerNightAud": 85,
       "nights": 1,
-      "checkIn": "2027-01-08",
+      "checkIn": "2027-01-02",
+      "checkOut": "2027-01-03",
+      "type": "Hotel, 25 rooms",
+      "address": "Sarria, Lugo",
+      "distance": "On the Camino, in the town centre",
+      "priceNote": "Mar de Plata 45-58 euro a room, listed as open year round",
+      "notes": "MAR DE PLATA IS THE PICK: about 45 to 58 euro, twenty-five rooms, and it is listed as open all year, which in January is the thing that matters most. Casa Matías (Albergue Matías Locanda) is the other good one, 45 to 50 euro for a private room or 12 euro for a bunk if you want to try the albergue once. Hotel Alfonso IX on Rúa Peregrino is the smart option at 55 to 90 euro, also year round, by the river. Get your credencial stamped wherever you sleep; that is stamp one of the two you need tomorrow."
+    },
+    {
+      "id": "sy7",
+      "name": "Portomarín: Pensión Portomiño",
+      "town": "Portomarín",
+      "status": "planned",
+      "pricePerNightAud": 80,
+      "nights": 1,
+      "checkIn": "2027-01-03",
+      "checkOut": "2027-01-04",
+      "type": "Pensión, private rooms with ensuite",
+      "distance": "In the village, on the Camino",
+      "priceNote": "40 to 75 euro depending on room and season",
+      "notes": "Singles, doubles and twins, all with their own bathroom, and used to pilgrims. Portomarín is small, so book ahead rather than turning up: in January half the village is shut. Remember the town was moved stone by stone up the hill when they dammed the river, and you arrive over the long bridge and up a staircase, which is a cruel last hundred metres after 22 km."
+    },
+    {
+      "id": "sy8",
+      "name": "Palas de Rei: Pensión Plaza, or Casa Camino",
+      "town": "Palas de Rei",
+      "status": "planned",
+      "pricePerNightAud": 80,
+      "nights": 1,
+      "checkIn": "2027-01-04",
+      "checkOut": "2027-01-05",
+      "type": "Pensión with private rooms",
+      "distance": "Town centre, on the Camino",
+      "notes": "Pensión Plaza does private rooms with ensuite, laundry and wifi, which after two days of walking in the rain makes the laundry the selling point. Pensión Restaurante Casa Camino is the other, and having the restaurant downstairs is worth something on a night when you do not want to go out again. Palas de Rei is a proper Camino hub with cafes and a supermarket, so this is the night to buy whatever you need for the 29 km tomorrow."
+    },
+    {
+      "id": "sy10",
+      "name": "Arzúa: Pensión Casa Frade",
+      "town": "Arzúa",
+      "status": "planned",
+      "pricePerNightAud": 80,
+      "nights": 1,
+      "checkIn": "2027-01-05",
+      "checkOut": "2027-01-06",
+      "type": "Pensión, 6 rooms, all ensuite",
+      "distance": "In the centre of Arzúa",
+      "notes": "THE NIGHT AFTER THE 29 KM DAY, so do not economise here. Six rooms, all with their own bathroom, television and wifi, in the middle of town. Hotel Suiza is the step up at about 64 euro if Casa Frade is full. Only six rooms, so book this one first of the five. Buy some tetilla, the local soft cheese, before the shops shut: tomorrow is Epiphany and Spain closes."
+    },
+    {
+      "id": "sy11",
+      "name": "O Pedrouzo: Pensión Arca, or 9 de Abril",
+      "town": "O Pedrouzo",
+      "status": "planned",
+      "pricePerNightAud": 80,
+      "nights": 1,
+      "checkIn": "2027-01-06",
+      "checkOut": "2027-01-07",
+      "type": "Pensión with private rooms",
+      "distance": "Town centre, 500 m off the Camino",
+      "notes": "Pensión Arca gets called the best bed in O Pedrouzo by people who have tried several. Pensión 9 de Abril is the other, in the centre, rooms with ensuite and a view. Pensión Pedrouzo is the third. Last night before Santiago, and you will want an early start, so ask tonight whether they can do breakfast before eight or leave you something out."
+    },
+    {
+      "id": "sy12",
+      "name": "Santiago: Hospedería San Martín Pinario",
+      "town": "Santiago de Compostela",
+      "status": "planned",
+      "pricePerNightAud": 115,
+      "nights": 2,
+      "checkIn": "2027-01-07",
       "checkOut": "2027-01-09",
-      "type": "Hotel or pensión",
-      "notes": "The night you arrive. Spend a bit more and stay in the old town within sight of the cathedral. You will have walked 115 km to get there."
+      "type": "Converted 16th-century monastery, opposite the cathedral",
+      "address": "Praça da Inmaculada 3, Santiago de Compostela",
+      "distance": "Directly opposite the cathedral",
+      "url": "https://www.sanmartinpinario.es/",
+      "priceNote": "About 100 to 165 a night; pilgrim rates are often cheaper, so ask",
+      "notes": "BOOK THIS ONE BEFORE ANY OF THE OTHERS. It is a working monastery turned hotel directly across the square from the cathedral, it has been putting up pilgrims for four hundred years, and the dining room is a vaulted hall. Plain rooms, and that is the point. It is the single best thing you can arrange for the end of this walk: you come under the archway into the square having walked 116 km, and your bed is right there. Two nights, the 7th and the 8th. Ask about the pilgrim rate when you book, and show the Compostela. If it is full, Hotel Costa Vella has a garden and Hotel Altaïr is the design one, both in the old town."
     },
     {
       "id": "sy5",
@@ -1047,29 +1114,29 @@
     {
       "id": "bg9",
       "category": "Food",
-      "label": "Food and drink in the UK, about 18 days",
-      "amount": 810,
+      "label": "Food and drink in the UK, about 17 days",
+      "amount": 765,
       "currency": "AUD",
       "status": "estimate",
-      "notes": "About A$45 a day over the eighteen days you are actually in the UK. It is low because you are staying at your daughter’s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. Eat out every night and this doubles. The other days are covered elsewhere: eleven on the ship with meals included, two ashore in Bergen, eight in Spain."
+      "notes": "About A$45 a day over the eighteen days you are actually in the UK. It is low because you are staying at your daughter’s: breakfast at home, a pub lunch most days, dinner in more often than out, and a few pints. Eat out every night and this doubles. The other days are covered elsewhere: eleven on the ship with meals included, three ashore in Bergen, eight in Spain."
     },
     {
       "id": "bg10",
       "category": "Food",
       "label": "Food and drink in Spain, 8 days",
-      "amount": 400,
+      "amount": 300,
       "currency": "AUD",
       "status": "estimate",
-      "notes": "About A$50 a day, and Galicia is good value. The menú del día is three courses, bread and a glass of wine for 12 to 15 euro at lunchtime, which is how to eat on a walking day. The named meals in Melide and Santiago are on the itinerary already."
+      "notes": "About A$50 a day, and Galicia is good value. The menú del día is three courses, bread and a glass of wine for 12 to 15 euro at lunchtime, which is how to eat on a walking day. The four named meals, the octopus in Melide and the three in Santiago, are priced on the itinerary already, so this is everything around them: breakfasts, the bar stops for your two stamps a day, and the coffee you will want at 9am in the rain."
     },
     {
       "id": "bg11",
       "category": "Food",
-      "label": "Eating ashore in Norway, 2 days",
-      "amount": 250,
+      "label": "Eating ashore in Norway, 3 days",
+      "amount": 220,
       "currency": "AUD",
       "status": "estimate",
-      "notes": "Meals on the ship are included, so this is only Bergen, where a pint is about A$16 and a modest lunch A$35. Two days, so stop converting and enjoy it."
+      "notes": "Meals on the ship are included, so this is only Bergen: the 10th and 11th on the way out and the 22nd on the way back. A pint is about A$16 and a modest lunch A$35. The fish market on the 11th and the last dinner on the 22nd are priced on the itinerary, so this is everything around them. Three days out of thirty-six, so stop converting and enjoy it."
     },
     {
       "id": "bg14",
@@ -1183,9 +1250,9 @@
     {
       "id": "e10",
       "group": "Book these",
-      "text": "Seven nights on the Camino: Sarria, Portomarín, Palas de Rei, Melide, Arzúa, O Pedrouzo, Santiago",
+      "text": "Seven nights on the Camino, and book Santiago first",
       "due": "2026-11-30",
-      "notes": "BOOK THESE AHEAD, do not walk in. Most pilgrim albergues close from Christmas to mid-January, so this is a hotel and guesthouse walk rather than a hostel one. That costs more, about A$120 a night, and at 63 with a private room and a hot shower every night it is the better trip anyway. Somewhere with a drying room is worth paying for in Galician January."
+      "notes": "All seven are named on the Stays page with what they cost: Mar de Plata in Sarria, Portomino in Portomarin, Plaza in Palas de Rei, Casa Frade in Arzua, Arca in O Pedrouzo, and two nights at San Martin Pinario in Santiago. BOOK SAN MARTIN PINARIO FIRST, then Casa Frade, which has only six rooms. RING OR EMAIL EACH ONE rather than booking blind: plenty of Camino lodging shuts between Christmas and mid-January, and a booking site showing availability is not the same as a door that opens. Ask two questions every time: are you open on that date, and do you have a drying room. The second matters more than it sounds in Galician January."
     },
     {
       "id": "e11",
@@ -1399,14 +1466,14 @@
   "questions": [
     {
       "id": "q0",
-      "question": "The trip costs about A$4,325 and your budget is A$3,000 to A$4,000. Which version do you want?",
-      "why": "This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter’s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino block is A$1,300 (flights A$300, seven nights A$415, the train to Sarria, eight days of eating, the bag transfer). Everything else, the seventeen nights at your daughter’s, the two days in Bergen either side of the ship, the football, insurance and getting about, is A$3,025. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,385. The whole decision is whether the walk is worth about A$950 of real difference and going A$325 over.",
+      "question": "The trip costs about A$4,790 and your budget is A$3,000 to A$4,000. Which version do you want?",
+      "why": "This is the only question that matters and everything else follows from it. The number above already assumes the cheap version of everything: every London night at your daughter’s, no hotel in Bergen on the way home, the Camino slept in a mix of bunks and cheap rooms, and about A$45 a day on food. Dublin has already been cut. What is left, in round numbers: the Camino and Santiago block is A$1,610 (flights A$300, seven nights A$630 in real named places rather than a guess, the train to Sarria, eight days of eating, the bag transfer, the free day at the end). Everything else, the sixteen nights at your daughter’s, the three days in Bergen either side of the ship, the football, insurance and getting about, is A$3,180. Drop the walk and you would eat in London those eight days instead, so it lands near A$3,540. The whole decision is whether the walk is worth about A$1,250 and going A$790 over. ONE REAL LEVER IF YOU WANT IT: the Galician public albergues are about 10 euro a bunk against 45 for a room, and some stay open through January. Four of the five walking nights in a bunk instead of a room takes about A$250 off. At 63, in the rain, that is a genuine trade and not an obvious one.",
       "options": [
-        "Keep the Camino and go to about A$4,325",
-        "Drop the Camino and land at about A$3,385",
-        "Keep the Camino and find the A$325 somewhere else"
+        "Keep the Camino, private rooms, about A$4,790",
+        "Keep the Camino but sleep in albergues, about A$4,540",
+        "Drop the Camino and land at about A$3,540"
       ],
-      "recommendation": "Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$325 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.",
+      "recommendation": "Keep it. You are 63, you are going to be on that side of the world once, and A$1,300 for six days walking into Santiago with the certificate at the end is the cheapest big thing on this whole trip. If the A$790 has to come from somewhere, it comes from eating out less in London, where you have a kitchen and a daughter, not from the walk.",
       "answer": "",
       "resolved": false
     },
@@ -1462,9 +1529,9 @@
     {
       "id": "q4",
       "question": "Which nights at your daughter’s, and have you actually asked her?",
-      "why": "Seventeen nights, in three blocks: five in early December, eleven over Christmas and New Year, and one at the end. At London hotel rates that is about A$3,700, and it is the single biggest reason any of this fits. Every night that turns into a hotel puts about A$220 back on the total, so six nights in a hotel is the whole Camino.",
+      "why": "Sixteen nights, in three blocks: five in early December, ten over Christmas and New Year, and one at the end. At London hotel rates that is about A$3,500, and it is the single biggest reason any of this fits. Every night that turns into a hotel puts about A$220 back on the total, so six nights in a hotel is the whole Camino.",
       "options": [
-        "All seventeen, she has offered",
+        "All sixteen, she has offered",
         "Most of them, a few nights elsewhere",
         "Need to ask her"
       ],

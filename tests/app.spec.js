@@ -659,6 +659,46 @@ test.describe('go mode', () => {
   });
 });
 
+test.describe("Dad's trip", () => {
+  test('the plan spans the whole trip and nothing is priced twice', async ({ page }) => {
+    await boot(page, '#/budget');
+    const r = await page.evaluate(async () => {
+      const m = await import('/src/views/budget.js');
+      const t = await (await fetch('/data/europe.json')).json();
+      const { total, lines } = m.budgetSummary(t);
+      const byCat = {};
+      for (const l of lines) (byCat[l.category] ||= []).push(l.source);
+      return {
+        days: t.days.length,
+        first: t.days[0].date, last: t.days[t.days.length - 1].date,
+        total: Math.round(total),
+        // flights are priced on the plan only; beds on Stays only
+        flightSources: [...new Set(byCat.Flights || [])].sort(),
+        stackedBeds: [...new Set(byCat.Accommodation || [])].sort(),
+      };
+    });
+    expect(r.days).toBe(37);
+    expect([r.first, r.last]).toEqual(['2026-12-05', '2027-01-10']);
+    expect(r.flightSources).toEqual(['itinerary']);
+    expect(r.stackedBeds).toEqual(['stays']);
+    expect(r.total).toBeGreaterThan(8000);
+    expect(r.total).toBeLessThan(11000);
+  });
+
+  test('the Camino lands on the only days Ryanair flies, and every stage is there', async ({ page }) => {
+    await boot(page, '#/overview');
+    const r = await page.evaluate(async () => {
+      const t = await (await fetch('/data/europe.json')).json();
+      const walks = t.days.flatMap((d) => d.items.filter((i) => /^Walk /.test(i.title)).map(() => d.date));
+      const fly = t.days.flatMap((d) => d.items.filter((i) => /Santiago de Compostela|Santiago to Stansted/.test(i.location || i.title) && i.type === 'flight').map(() => d.date));
+      return { walks, fly };
+    });
+    expect(r.walks).toEqual(['2027-01-03', '2027-01-04', '2027-01-05', '2027-01-06', '2027-01-07', '2027-01-08']);
+    // Ryanair only flies Stansted-Santiago on Mon, Wed and Sat
+    for (const d of r.fly) expect([1, 3, 6]).toContain(new Date(d).getUTCDay() || 7);
+  });
+});
+
 test.describe('what has actually been paid', () => {
   test('paid lines add up to the card statement, and a booked flight is counted once', async ({ page }) => {
     await boot(page, '#/budget');

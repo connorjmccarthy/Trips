@@ -9,7 +9,7 @@
       "EUR": 0.57,
       "NOK": 6.7
     },
-    "updatedAt": "2026-09-20T07:39:40Z",
+    "updatedAt": "2026-09-20T07:55:35Z",
     "version": 1,
     "mapRegion": "",
     "travelMode": "transit",
@@ -26,7 +26,7 @@
       "Activities",
       "Other"
     ],
-    "about": "Five weeks away: London with your daughter, eleven nights chasing the northern lights, Christmas in London, the football on the 30th, and one more big thing in January. Four times are fixed and the rest is still being decided. Everything open is on the Decisions page, one question at a time.",
+    "about": "Thirty-six nights: London with your daughter, eleven on the Hurtigruten chasing the northern lights, Christmas in London, Dublin for the Guinness, Arsenal on the 30th, and the last 115 km of the Camino into Santiago. Open Go to see only what is happening now. Everything still to decide is on Decisions, one question at a time.",
     "seedIds": {
       "checklist": [
         "e1",
@@ -35,41 +35,117 @@
         "e4",
         "e5",
         "e6",
-        "e7"
+        "e7",
+        "e8",
+        "e9",
+        "e10",
+        "e11",
+        "e12",
+        "e13",
+        "e14",
+        "e15",
+        "e16",
+        "e17",
+        "e18"
       ],
       "food": [
         "f1",
         "f2",
         "f3",
-        "f4"
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8"
       ],
       "stays": [
-        "sy1"
+        "sy1",
+        "sy2",
+        "sy3",
+        "sy4",
+        "sy5",
+        "sy6",
+        "sy7",
+        "sy8",
+        "sy9",
+        "sy10",
+        "sy11",
+        "sy12",
+        "sy13"
+      ],
+      "budget": [
+        "bg9",
+        "bg10",
+        "bg11",
+        "bg14",
+        "bg15",
+        "bg16",
+        "bg18",
+        "bg17"
       ],
       "questions": [
         "q1",
         "q2",
         "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7"
+        "q4"
       ],
       "places": [
         "py1",
         "py2",
         "py3",
         "py4",
-        "py5"
+        "py5",
+        "py6",
+        "py7",
+        "py8",
+        "py9",
+        "py10",
+        "py11",
+        "py12",
+        "py13",
+        "py14",
+        "py15",
+        "py16",
+        "py17",
+        "py18"
       ],
       "items": [
         "a1",
         "a2",
-        "c0",
+        "a3",
+        "a4",
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
         "c1",
         "c2",
+        "c3",
         "x1",
-        "x2",
+        "d1",
+        "d2",
+        "d3",
+        "d4",
+        "d5",
+        "d6",
+        "e1",
+        "f1",
+        "f2",
+        "f3",
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7",
+        "g8",
+        "h1",
+        "h2",
         "z1",
         "z2"
       ]
@@ -81,7 +157,7 @@
       "date": "2026-12-05",
       "title": "Land in London",
       "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
+      "notes": "Saturday, so she is not at work. Do nothing today except get to a bed.",
       "items": [
         {
           "id": "a1",
@@ -90,197 +166,318 @@
           "title": "Land at Heathrow",
           "status": "booked",
           "location": "London Heathrow",
-          "notes": "Arriving 16:10 on a Saturday, which is the good news: your daughter is not at work. Expect 45-90 min through the border, then the Elizabeth line or the Heathrow Express into town. Buy nothing at the airport except water. If she is not collecting you, agree BEFORE you fly exactly where you are meeting, because Heathrow has four terminals and phone signal in the baggage hall is poor."
+          "notes": "Allow 45 to 90 minutes to get through the border and collect the bag. Then the Elizabeth line into central London, about 30 minutes, or the Heathrow Express if you are past caring. AGREE BEFORE YOU FLY exactly where you are meeting her: Heathrow has four terminals, they are miles apart, and the phone signal in the baggage hall is poor.",
+          "placeId": "py1"
         },
         {
           "id": "a2",
           "time": "18:30",
           "type": "stay",
-          "title": "First night in London",
+          "title": "To your daughter’s",
           "status": "planned",
-          "location": "Your daughter’s, or a hotel near her",
-          "notes": "ONE OF THE OPEN QUESTIONS: are you sleeping at her place or booking somewhere? It changes about 25 nights of this trip and it is the first thing to settle. See Decisions."
+          "location": "See Stays",
+          "notes": "Eat whatever she puts in front of you and go to bed early. You will wake at 3am regardless; that is normal and it passes in two days."
         }
       ]
     },
     {
       "id": "d20261206",
       "date": "2026-12-06",
-      "title": "London, before the cruise",
+      "title": "London, no plans",
       "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
+      "notes": "Sunday with her. A roast if she is up for it.",
       "items": []
     },
     {
       "id": "d20261207",
       "date": "2026-12-07",
-      "title": "London, before the cruise",
+      "title": "London, your own time",
       "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
-      "items": []
+      "notes": "She is back at work. Three quiet days before the ship: this is deliberate, not a gap to fill. The Imperial War Museum is the one to do if you do one thing.",
+      "items": [
+        {
+          "id": "a3",
+          "time": "10:00",
+          "type": "activity",
+          "title": "Imperial War Museum",
+          "status": "idea",
+          "location": "Lambeth Road, London SE1 6HZ",
+          "cost": 0,
+          "currency": "GBP",
+          "notes": "Free. The best war museum in the country and the one that will hold you longest: the First World War galleries, the Second World War and Holocaust galleries, and the atrium full of aircraft. Give it three hours. Nearest tube Lambeth North or Elephant & Castle.",
+          "placeId": "py4"
+        }
+      ]
     },
     {
       "id": "d20261208",
       "date": "2026-12-08",
-      "title": "London, before the cruise",
+      "title": "London, your own time",
       "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
-      "items": []
+      "notes": "Nothing booked. Churchill War Rooms if you want a second war day.",
+      "items": [
+        {
+          "id": "a4",
+          "time": "10:00",
+          "type": "activity",
+          "title": "Churchill War Rooms",
+          "status": "idea",
+          "location": "Clive Steps, King Charles St, London SW1A 2AQ",
+          "cost": 32,
+          "currency": "GBP",
+          "notes": "The underground bunker Churchill ran the war from, left as it was in 1945. About £32 and you must book a time slot online, it sells out. Two hours. Right by St James’s Park.",
+          "placeId": "py5"
+        }
+      ]
     },
     {
       "id": "d20261209",
       "date": "2026-12-09",
-      "title": "London, before the cruise",
+      "title": "London, and pack for Norway",
       "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
+      "notes": "Pack tonight, not tomorrow morning. Norway in December is dark, wet and about freezing: thermals, a proper waterproof, a warm hat, gloves, and boots with grip.",
       "items": []
     },
     {
       "id": "d20261210",
       "date": "2026-12-10",
-      "title": "London, before the cruise",
-      "base": "London",
-      "notes": "Six nights with your daughter before the ship. She may be working on the weekdays, which is either time to yourself in London or the window for Ireland. See Decisions.",
-      "items": []
+      "title": "Fly to Bergen",
+      "base": "Bergen",
+      "notes": "A day early on purpose. The ship sails tomorrow evening and you do not fly to a cruise on the day it leaves.",
+      "items": [
+        {
+          "id": "b1",
+          "time": "08:40",
+          "type": "flight",
+          "title": "Norwegian, Gatwick to Bergen",
+          "status": "idea",
+          "location": "London Gatwick to Bergen Flesland",
+          "endTime": "11:35",
+          "cost": 150,
+          "currency": "AUD",
+          "notes": "Norwegian is the only airline flying this nonstop, about 1h55, and it runs most days. The 08:40 arriving 11:35 is the good one. GATWICK, NOT HEATHROW: allow 90 minutes from central London on the Gatwick Express from Victoria, and leave her place by about 05:30. Book this as soon as the dates are certain; December fares only go up.",
+          "placeId": "py2"
+        },
+        {
+          "id": "b2",
+          "time": "13:00",
+          "type": "transfer",
+          "title": "Airport to the city",
+          "status": "idea",
+          "location": "Bergen Flesland to the centre",
+          "cost": 50,
+          "currency": "NOK",
+          "notes": "The Bybanen light rail runs from outside the terminal to the city centre in about 45 minutes and costs a fraction of a taxi. Buy the ticket from the machine on the platform."
+        },
+        {
+          "id": "b3",
+          "time": "15:00",
+          "type": "stay",
+          "title": "Check in, Bergen",
+          "status": "planned",
+          "location": "See Stays",
+          "notes": "Dark by about 15:30 this far north in December. Do not fight it. Get warm, eat early, sleep."
+        }
+      ]
     },
     {
       "id": "d20261211",
       "date": "2026-12-11",
-      "title": "Board the ship",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "A day in Bergen, then the ship",
+      "base": "Bergen",
+      "notes": "THE DAY YOU ASKED FOR. The ship does not sail until 20:30, so you have the whole of Bergen with a bag already in a hotel. Daylight is roughly 09:30 to 15:30, so front-load it.",
       "items": [
         {
-          "id": "c0",
-          "time": "06:00",
-          "type": "transfer",
-          "title": "Get to the ship",
+          "id": "b4",
+          "time": "09:30",
+          "type": "activity",
+          "title": "Bryggen, the old wharf",
           "status": "planned",
-          "location": "Cruise terminal, port not yet confirmed",
-          "notes": "BIGGEST UNKNOWN IN THE PLAN. A 09:30 departure means boarding closes well before that, usually two hours ahead. If the ship leaves from a UK port (Southampton, Dover, Tilbury, Newcastle) this is a train or a coach from London the same morning, and 09:30 is brutally early, so you would almost certainly go down the night before. If it leaves from Bergen, you need a flight out of London on the 10th and a hotel in Norway that night. Find the booking and tell Connor the port; nothing around these dates can be planned until it is known."
+          "location": "Bryggen, Bergen",
+          "cost": 0,
+          "currency": "NOK",
+          "notes": "The row of crooked wooden merchant houses on the harbour, UNESCO listed, and the reason people photograph Bergen. Wander the alleys behind the front row. Free, and 10 minutes from the fish market.",
+          "placeId": "py7"
         },
         {
-          "id": "c1",
-          "time": "09:30",
+          "id": "b5",
+          "time": "11:00",
+          "type": "food",
+          "title": "Fish market, then something hot",
+          "status": "planned",
+          "location": "Torget fish market, Bergen",
+          "cost": 300,
+          "currency": "NOK",
+          "notes": "The indoor market is open year round. Fish soup or a prawn sandwich. BE READY FOR NORWEGIAN PRICES: a pint is about A$16 and a modest lunch A$35. This is the single most expensive country on the trip and you are only here two days, so eat what you want and stop converting.",
+          "placeId": "py7"
+        },
+        {
+          "id": "b6",
+          "time": "12:30",
+          "type": "activity",
+          "title": "Fløibanen funicular up Mount Fløyen",
+          "status": "planned",
+          "location": "Fløibanen, Vetrlidsallmenningen 23A",
+          "cost": 180,
+          "currency": "NOK",
+          "notes": "Eight minutes up, and the view back over the city and the fjord is the one to send home. Go before the light goes. Cafe at the top if it is foul.",
+          "placeId": "py9"
+        },
+        {
+          "id": "b7",
+          "time": "15:00",
+          "type": "transfer",
+          "title": "Collect the bag, get to the terminal",
+          "status": "planned",
+          "location": "Hurtigruten terminal, Nøstegaten 30",
+          "notes": "About 20 minutes on foot from the centre, or a short taxi with the case. Hurtigruten asks you to be in the terminal no later than 30 minutes before departure, so be there by 19:30 at the very latest. Being there at 18:00 with a book is a better evening than cutting it fine.",
+          "placeId": "py8"
+        },
+        {
+          "id": "b8",
+          "time": "20:30",
           "type": "boat",
-          "title": "Cruise departs",
+          "title": "Hurtigruten sails for Kirkenes",
           "status": "booked",
-          "location": "See above",
-          "notes": "11 nights, back on the 22nd. Northern lights."
+          "location": "Bergen",
+          "notes": "CHECK YOUR PAPERWORK ON THIS ONE. You told Connor 09:30, but Hurtigruten has sailed from Bergen at 20:30 for years and the 14:45 you gave for the return is exactly right, which says the booking is the classic 12-day round voyage. If it really is 09:30 the whole of this day changes, so read the confirmation and tell him. If it is 20:30, today is a free day in Bergen you did not know you had.",
+          "placeId": "py8"
         }
       ]
     },
     {
       "id": "d20261212",
       "date": "2026-12-12",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "At sea, heading north",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261213",
       "date": "2026-12-13",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "At sea, heading north",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261214",
       "date": "2026-12-14",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "At sea, heading north",
+      "base": "Hurtigruten",
+      "notes": "Somewhere around here you cross the Arctic Circle. They make a thing of it.",
       "items": []
     },
     {
       "id": "d20261215",
       "date": "2026-12-15",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Tromsø and the lights country",
+      "base": "Hurtigruten",
+      "notes": "The middle of the voyage is the best of the northern lights window. Dress for standing still outside in the cold, which is much colder than walking in it.",
       "items": []
     },
     {
       "id": "d20261216",
       "date": "2026-12-16",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "North Cape and Kirkenes",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261217",
       "date": "2026-12-17",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Kirkenes, then turn south",
+      "base": "Hurtigruten",
+      "notes": "The turning point. From here you see by day the ports you passed in the dark.",
       "items": []
     },
     {
       "id": "d20261218",
       "date": "2026-12-18",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Southbound",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261219",
       "date": "2026-12-19",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Southbound",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261220",
       "date": "2026-12-20",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Southbound",
+      "base": "Hurtigruten",
+      "notes": "",
       "items": []
     },
     {
       "id": "d20261221",
       "date": "2026-12-21",
-      "title": "Northern lights cruise",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Southbound, last full day",
+      "base": "Hurtigruten",
+      "notes": "Pack tonight.",
       "items": []
     },
     {
       "id": "d20261222",
       "date": "2026-12-22",
-      "title": "Back off the ship",
-      "base": "At sea",
-      "notes": "Eleven nights. Ports and sea days go in here once the cruise line sends the itinerary. Ask Connor to add them: it is the difference between knowing what tomorrow is and not.",
+      "title": "Back in Bergen",
+      "base": "Bergen",
+      "notes": "Off the ship at 14:45 and STAYING IN BERGEN TONIGHT. You could chase an evening flight to London but it is two days before Christmas, the airports are at their worst, and if it goes wrong you are stranded on the 23rd. One calm night is worth the hotel.",
       "items": [
         {
-          "id": "c2",
+          "id": "c1",
           "time": "14:45",
           "type": "boat",
-          "title": "Cruise returns",
+          "title": "Hurtigruten docks in Bergen",
           "status": "booked",
-          "notes": "Back on dry land at 14:45. Whatever port this is, assume you do not reach London until the evening. Do not plan anything for tonight."
+          "notes": "Eleven nights done.",
+          "placeId": "py8"
+        },
+        {
+          "id": "c2",
+          "time": "16:00",
+          "type": "stay",
+          "title": "One night in Bergen",
+          "status": "planned",
+          "location": "See Stays",
+          "notes": "Same hotel as the 10th if they have it; you will know the way."
         }
       ]
     },
     {
       "id": "d20261223",
       "date": "2026-12-23",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "Bergen to London",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "notes": "Home to her place, with Christmas Eve clear.",
+      "items": [
+        {
+          "id": "c3",
+          "time": "12:00",
+          "type": "flight",
+          "title": "Norwegian, Bergen to Gatwick",
+          "status": "idea",
+          "location": "Bergen Flesland to London Gatwick",
+          "cost": 150,
+          "currency": "AUD",
+          "notes": "Book this at the same time as the outbound. Whatever you do, do not take the last flight of the day on the 23rd of December."
+        }
+      ]
     },
     {
       "id": "d20261224",
       "date": "2026-12-24",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "Christmas Eve",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "With her. Nothing planned.",
       "items": []
     },
     {
@@ -288,155 +485,384 @@
       "date": "2026-12-25",
       "title": "Christmas Day",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "The fixed point of the whole trip.",
       "items": [
         {
           "id": "x1",
-          "time": "00:00",
+          "time": "09:00",
           "type": "note",
-          "title": "Christmas Day with your daughter",
+          "title": "Christmas with your daughter",
           "status": "planned",
           "location": "London",
-          "notes": "The fixed point of the whole trip. Nothing else goes near it. Worth knowing: London public transport, the Tube, buses, and the mainline trains, ALL STOP on Christmas Day. Not reduced, stopped. If you are not already where you need to be by Christmas Eve, you are walking or paying a fortune for a taxi."
+          "notes": "ONE THING TO KNOW: London transport STOPS on Christmas Day. Not reduced, stopped. No tube, no buses, no trains. If you are not already where you need to be by Christmas Eve night you are walking or paying a fortune for a taxi, if you can find one."
         }
       ]
     },
     {
       "id": "d20261226",
       "date": "2026-12-26",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "Boxing Day",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "Quiet. Pack a small bag for Dublin.",
       "items": []
     },
     {
       "id": "d20261227",
       "date": "2026-12-27",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Fly to Dublin",
+      "base": "Dublin",
+      "notes": "THE IRELAND WINDOW. Two nights between Christmas and the football, which is the only gap on the whole trip that fits it. Take hand luggage only.",
+      "items": [
+        {
+          "id": "d1",
+          "time": "10:00",
+          "type": "flight",
+          "title": "London to Dublin",
+          "status": "idea",
+          "location": "Heathrow, Gatwick, Stansted or Luton to Dublin",
+          "cost": 120,
+          "currency": "AUD",
+          "notes": "About 1h25 and they go all day from every London airport. Aer Lingus and Ryanair both. Book when the dates are settled. Ireland is not in the UK, so you clear passport control, but Australians need nothing beyond the passport."
+        },
+        {
+          "id": "d2",
+          "time": "15:00",
+          "type": "stay",
+          "title": "Check in, Dublin",
+          "status": "planned",
+          "location": "See Stays",
+          "notes": "Stay near the centre, around Temple Bar or Grafton Street, so everything is walkable and you are not learning a bus network for two nights."
+        }
+      ]
     },
     {
       "id": "d20261228",
       "date": "2026-12-28",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Guinness, and then better Guinness",
+      "base": "Dublin",
+      "notes": "The one day you came for.",
+      "items": [
+        {
+          "id": "d3",
+          "time": "10:30",
+          "type": "activity",
+          "title": "Guinness Storehouse",
+          "status": "planned",
+          "location": "St James’s Gate, Dublin 8",
+          "endTime": "13:00",
+          "cost": 30,
+          "currency": "EUR",
+          "notes": "Seven floors about how it is made, ending at the Gravity Bar on the roof with a 360-degree view over Dublin and a pint included in the ticket. BOOK ONLINE AND IN ADVANCE, it is the most visited thing in Ireland and it sells out. About €30. Two hours is enough.",
+          "placeId": "py10"
+        },
+        {
+          "id": "d4",
+          "time": "14:00",
+          "type": "food",
+          "title": "The real pint: the Long Hall, Kehoe’s or the Palace Bar",
+          "status": "planned",
+          "location": "South Great George’s St, South Anne St, Fleet St",
+          "cost": 8,
+          "currency": "EUR",
+          "notes": "This is the actual point. The Storehouse is the tour; these are the pubs. Victorian interiors, no televisions, and a barman who pours it in two goes and lets it settle. Ask for a pint of Guinness and then leave it alone for two minutes. Also worth it: EPIC, the Irish emigration museum at the docks, which is genuinely good and half an hour away on foot."
+        },
+        {
+          "id": "d5",
+          "time": "17:00",
+          "type": "food",
+          "title": "Dinner, and a session if you find one",
+          "status": "planned",
+          "location": "Around Temple Bar, but not in it",
+          "cost": 35,
+          "currency": "EUR",
+          "notes": "Temple Bar itself is a tourist trap and charges double. Walk two streets out. Irish stew, or seafood chowder with brown bread. Live traditional music happens most nights around Christmas; ask the barman where, not the internet."
+        }
+      ]
     },
     {
       "id": "d20261229",
       "date": "2026-12-29",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "Dublin to London",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "notes": "Back today, not tomorrow. The football is tomorrow and you are not leaving it to a morning flight.",
+      "items": [
+        {
+          "id": "d6",
+          "time": "17:00",
+          "type": "flight",
+          "title": "Dublin to London",
+          "status": "idea",
+          "cost": 120,
+          "currency": "AUD",
+          "notes": "An afternoon or early evening flight. Keeps the whole of tomorrow clear."
+        }
+      ]
     },
     {
       "id": "d20261230",
       "date": "2026-12-30",
-      "title": "The football",
+      "title": "Arsenal v Fulham",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "Emirates Stadium. A London derby, and the ground is one of the best in the country.",
       "items": [
         {
-          "id": "x2",
-          "time": "00:00",
+          "id": "e1",
+          "time": "17:00",
           "type": "activity",
-          "title": "Football",
-          "status": "planned",
-          "location": "Ground not yet confirmed",
-          "notes": "You mentioned a match on the 30th. Tell Connor which one and where, because if it is not in London it decides where you sleep that night. Fixtures move for television, often at short notice, so whoever holds the ticket should check the date again in December."
+          "title": "Arsenal v Fulham, Emirates Stadium",
+          "status": "booked",
+          "location": "Emirates Stadium, Hornsey Rd, London N7 7AJ",
+          "cost": 80,
+          "currency": "GBP",
+          "notes": "CHECK THE KICK-OFF TIME AGAIN IN DECEMBER. Premier League fixtures get moved for television, sometimes by a day, and the broadcast picks for this round are usually confirmed about six weeks out. Holloway Road on the Piccadilly line is the nearest tube and it is mobbed afterwards; Arsenal or Finsbury Park are a slightly longer walk and much easier. Go early, the ground is worth seeing filling up. It is cold: more layers than you think.",
+          "placeId": "py6"
         }
       ]
     },
     {
       "id": "d20261231",
       "date": "2026-12-31",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "New Year’s Eve",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "Whatever she is doing. The fireworks on the Thames need a ticket months ahead, so watch them on television like most of London does.",
       "items": []
     },
     {
       "id": "d20270101",
       "date": "2027-01-01",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "New Year’s Day",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "Rest. Pack for Spain: you are walking 115 km in six days starting the day after tomorrow.",
       "items": []
     },
     {
       "id": "d20270102",
       "date": "2027-01-02",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Fly to Spain, and get to Sarria",
+      "base": "Sarria",
+      "notes": "A long travel day, and the only one on the Camino leg. Everything after this is walking.",
+      "items": [
+        {
+          "id": "f1",
+          "time": "07:40",
+          "type": "flight",
+          "title": "Ryanair, Stansted to Santiago de Compostela",
+          "status": "idea",
+          "location": "London Stansted to Santiago de Compostela",
+          "endTime": "10:50",
+          "cost": 150,
+          "currency": "AUD",
+          "notes": "Ryanair is the only nonstop and IT ONLY FLIES MONDAY, WEDNESDAY AND SATURDAY. That is why today is a Saturday and why you come home on Saturday the 9th. About 2h10. Stansted is an early start from London, so consider a hotel at the airport the night before. Hand luggage only if you can: you are carrying this for six days.",
+          "placeId": "py3"
+        },
+        {
+          "id": "f2",
+          "time": "12:30",
+          "type": "train",
+          "title": "Santiago to Sarria",
+          "status": "planned",
+          "location": "Santiago de Compostela to Sarria",
+          "endTime": "15:00",
+          "cost": 25,
+          "currency": "EUR",
+          "notes": "About 2.5 hours by train or bus. Yes, you travel to the far end and walk back; that is how the last 100 km works. Book the train on Renfe when the date is close."
+        },
+        {
+          "id": "f3",
+          "time": "16:00",
+          "type": "stay",
+          "title": "First night in Sarria",
+          "status": "planned",
+          "location": "See Stays",
+          "notes": "GET YOUR CREDENCIAL TONIGHT if you have not already: the pilgrim passport you collect stamps in. The parish church and most pilgrim hostels in Sarria issue them for a couple of euros. Without it there is no Compostela at the other end.",
+          "placeId": "py11"
+        }
+      ]
     },
     {
       "id": "d20270103",
       "date": "2027-01-03",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Sarria to Portomarín, 22 km",
+      "base": "Portomarín",
+      "notes": "Day one. Rolling farmland, oak woods and stone hamlets. Light from about 08:45 to 18:15, so leave by 09:00 and you have hours in hand.",
+      "items": [
+        {
+          "id": "g1",
+          "time": "09:00",
+          "type": "activity",
+          "title": "Walk Sarria to Portomarín",
+          "status": "planned",
+          "endTime": "15:30",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "22 km, five to six hours at a steady pace with stops. The 100 km marker is just outside Sarria and everybody photographs it. TWO STAMPS A DAY from here on, from bars, churches or hostels, because the last 100 km has the stricter rule. Portomarín is reached over a long bridge and up a staircase, which is a cruel finish, and the village was moved stone by stone when they dammed the river.",
+          "placeId": "py12"
+        }
+      ]
     },
     {
       "id": "d20270104",
       "date": "2027-01-04",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Portomarín to Palas de Rei, 25 km",
+      "base": "Palas de Rei",
+      "notes": "The longest day of the six. Start early.",
+      "items": [
+        {
+          "id": "g2",
+          "time": "08:45",
+          "type": "activity",
+          "title": "Walk Portomarín to Palas de Rei",
+          "status": "planned",
+          "endTime": "15:30",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "25 km with a long steady climb out of Portomarín in the first two hours. Get it done in the morning. There are bars at Gonzar and Ventas de Narón for coffee and a stamp.",
+          "placeId": "py13"
+        }
+      ]
     },
     {
       "id": "d20270105",
       "date": "2027-01-05",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Palas de Rei to Melide, 15 km",
+      "base": "Melide",
+      "notes": "A short day on purpose, after the long one.",
+      "items": [
+        {
+          "id": "g3",
+          "time": "09:30",
+          "type": "activity",
+          "title": "Walk Palas de Rei to Melide",
+          "status": "planned",
+          "endTime": "13:30",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "15 km, three to four hours. Melide is the octopus town: Pulpería Ezéquiel is the famous one and pulpo a feira, octopus with paprika, olive oil and coarse salt on a wooden plate, is what you eat there. Earned it.",
+          "placeId": "py14"
+        }
+      ]
     },
     {
       "id": "d20270106",
       "date": "2027-01-06",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Melide to Arzúa, 14 km",
+      "base": "Arzúa",
+      "notes": "The shortest day, and a Spanish public holiday.",
+      "items": [
+        {
+          "id": "g4",
+          "time": "09:30",
+          "type": "activity",
+          "title": "Walk Melide to Arzúa",
+          "status": "planned",
+          "endTime": "13:00",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "14 km through eucalyptus woods. TODAY IS DÍA DE REYES, Epiphany, and it is a bigger day in Spain than Christmas: shops shut, some bars shut, and there are parades the evening before. The walking is unaffected but buy anything you need the day before. Arzúa is the cheese town, a soft cow’s cheese called tetilla.",
+          "placeId": "py15"
+        }
+      ]
     },
     {
       "id": "d20270107",
       "date": "2027-01-07",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "Arzúa to O Pedrouzo, 20 km",
+      "base": "O Pedrouzo",
+      "notes": "Last full day before Santiago.",
+      "items": [
+        {
+          "id": "g5",
+          "time": "09:00",
+          "type": "activity",
+          "title": "Walk Arzúa to O Pedrouzo",
+          "status": "planned",
+          "endTime": "14:30",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "20 km, gentle. You start meeting people who are also finishing tomorrow.",
+          "placeId": "py16"
+        }
+      ]
     },
     {
       "id": "d20270108",
       "date": "2027-01-08",
-      "title": "Christmas, New Year and whatever you decide",
-      "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "title": "O Pedrouzo to Santiago, 20 km. You arrive",
+      "base": "Santiago de Compostela",
+      "notes": "The last day. Leave in the dark if you want to reach the cathedral by lunchtime.",
+      "items": [
+        {
+          "id": "g6",
+          "time": "08:00",
+          "type": "activity",
+          "title": "Walk O Pedrouzo into Santiago",
+          "status": "planned",
+          "endTime": "13:30",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "20 km. Past the airport, over Monte do Gozo where pilgrims first see the spires, then down into the old city and under the archway into Praça do Obradoiro with the cathedral in front of you. 115 km on foot. Take your time on the last hour.",
+          "placeId": "py17"
+        },
+        {
+          "id": "g7",
+          "time": "14:30",
+          "type": "activity",
+          "title": "Collect your Compostela at the Pilgrim’s Office",
+          "status": "planned",
+          "location": "Oficina del Peregrino, Rúa das Carretas 33",
+          "cost": 0,
+          "currency": "EUR",
+          "notes": "Bring the credencial with its two stamps a day. They check it, ask why you walked, and write your name on the certificate in Latin. Free. There is a queue; in January it will be short. THE PILGRIM MASS at the cathedral is usually at noon and again at 19:30, and the botafumeiro, the giant swinging incense burner, is not swung at every mass, so ask at the office which one to go to.",
+          "placeId": "py18"
+        },
+        {
+          "id": "g8",
+          "time": "19:00",
+          "type": "food",
+          "title": "Dinner on Rúa do Franco",
+          "status": "planned",
+          "location": "Rúa do Franco, behind the cathedral",
+          "cost": 35,
+          "currency": "EUR",
+          "notes": "The street of restaurants. Octopus, pimientos de Padrón, scallops, and Estrella Galicia, which is the local beer and very good. This is the meal at the end of the walk, so have the good one.",
+          "placeId": "py17"
+        }
+      ]
     },
     {
       "id": "d20270109",
       "date": "2027-01-09",
-      "title": "Christmas, New Year and whatever you decide",
+      "title": "Santiago to London",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
-      "items": []
+      "notes": "Fly back today. Stansted, then across London.",
+      "items": [
+        {
+          "id": "h1",
+          "time": "11:30",
+          "type": "flight",
+          "title": "Ryanair, Santiago to Stansted",
+          "status": "idea",
+          "cost": 150,
+          "currency": "AUD",
+          "notes": "Saturday is one of the three days it flies. CONFIRM THE RETURN DAY when you book: the outbound runs Mon, Wed and Sat and the return usually matches, but check before you commit to the 9th. Stansted to central London is the Stansted Express, about 50 minutes."
+        },
+        {
+          "id": "h2",
+          "time": "18:00",
+          "type": "stay",
+          "title": "Last night in London",
+          "status": "planned",
+          "location": "Her place, or a hotel near Heathrow",
+          "notes": "A HEATHROW HOTEL IS WORTH IT TONIGHT if she does not live west. Tomorrow is a 13:40 flight, you will be tired from a week of walking, and crossing London with a case on a Sunday morning with engineering works is a poor way to end five weeks."
+        }
+      ]
     },
     {
       "id": "d20270110",
       "date": "2027-01-10",
       "title": "Fly home",
       "base": "London",
-      "notes": "Nineteen nights, anchored by Christmas with your daughter and the football on the 30th. The free stretch is roughly eight nights from New Year, which is exactly one big thing: the Camino, or Ireland, not both.",
+      "notes": "Thirty-six nights. Home tomorrow.",
       "items": [
         {
           "id": "z1",
@@ -445,15 +871,17 @@
           "title": "To Heathrow",
           "status": "planned",
           "location": "London Heathrow",
-          "notes": "A 13:40 departure means being at the airport by about 10:40, so leaving central London around 09:30. A Sunday, so check for engineering works on the line the night before."
+          "notes": "Be at the airport by 10:40 for a 13:40 departure. A Sunday, so check the night before for engineering works on whichever line you are using.",
+          "placeId": "py1"
         },
         {
           "id": "z2",
           "time": "13:40",
           "type": "flight",
-          "title": "Fly Heathrow to Brisbane",
+          "title": "Heathrow to Brisbane",
           "status": "booked",
-          "notes": "Home. Roughly 24 hours with one stop."
+          "notes": "CLAIM YOUR VAT REFUND BEFORE YOU DROP THE BAG if you bought anything substantial in Spain or Ireland. The UK no longer does tax-free shopping for visitors, but the EU does, so Spanish and Irish purchases over about €100 qualify and the refund desk is landside.",
+          "placeId": "py1"
         }
       ]
     }
@@ -471,101 +899,417 @@
   "stays": [
     {
       "id": "sy1",
-      "name": "London base (to be decided)",
+      "name": "Your daughter’s place",
+      "town": "London",
+      "status": "booked",
+      "nights": 0,
+      "type": "Family",
+      "notes": "Which nights is Decisions question 2. Once you know, put the number in here and the budget sorts itself out."
+    },
+    {
+      "id": "sy2",
+      "name": "London hotel nights",
+      "town": "London",
+      "status": "planned",
+      "pricePerNightAud": 220,
+      "nights": 10,
+      "type": "Hotel, to be chosen",
+      "notes": "Placeholder for whatever is not at hers. Book in November."
+    },
+    {
+      "id": "sy3",
+      "name": "Bergen, night of 10 Dec",
+      "town": "Bergen",
+      "status": "planned",
+      "pricePerNightAud": 250,
+      "nights": 1,
+      "checkIn": "2026-12-10",
+      "checkOut": "2026-12-11",
+      "distance": "Walkable to Bryggen and the Hurtigruten terminal",
+      "type": "Hotel",
+      "notes": "The night before the ship. Somewhere central so the whole of the 11th is on foot."
+    },
+    {
+      "id": "sy4",
+      "name": "Bergen, night of 22 Dec",
+      "town": "Bergen",
+      "status": "planned",
+      "pricePerNightAud": 250,
+      "nights": 1,
+      "checkIn": "2026-12-22",
+      "checkOut": "2026-12-23",
+      "type": "Hotel",
+      "notes": "Off the ship at 14:45 and fly to London tomorrow. Same hotel as the 10th if they have it."
+    },
+    {
+      "id": "sy5",
+      "name": "Dublin, 27 to 29 Dec",
+      "town": "Dublin",
+      "status": "planned",
+      "pricePerNightAud": 200,
+      "nights": 2,
+      "checkIn": "2026-12-27",
+      "checkOut": "2026-12-29",
+      "type": "Hotel",
+      "notes": "Near Grafton Street or the south quays. Walkable to everything, including the Storehouse at a push."
+    },
+    {
+      "id": "sy6",
+      "name": "Sarria, night of 2 Jan",
+      "town": "Sarria",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-02",
+      "checkOut": "2027-01-03",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy7",
+      "name": "Portomarín, night of 3 Jan",
+      "town": "Portomarín",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-03",
+      "checkOut": "2027-01-04",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy8",
+      "name": "Palas de Rei, night of 4 Jan",
+      "town": "Palas de Rei",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-04",
+      "checkOut": "2027-01-05",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy9",
+      "name": "Melide, night of 5 Jan",
+      "town": "Melide",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-05",
+      "checkOut": "2027-01-06",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy10",
+      "name": "Arzúa, night of 6 Jan",
+      "town": "Arzúa",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-06",
+      "checkOut": "2027-01-07",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy11",
+      "name": "O Pedrouzo, night of 7 Jan",
+      "town": "O Pedrouzo",
+      "status": "planned",
+      "pricePerNightAud": 110,
+      "nights": 1,
+      "checkIn": "2027-01-07",
+      "checkOut": "2027-01-08",
+      "type": "Guesthouse"
+    },
+    {
+      "id": "sy12",
+      "name": "Santiago de Compostela, night of 8 Jan",
+      "town": "Santiago de Compostela",
+      "status": "idea",
+      "pricePerNightAud": 140,
+      "nights": 1,
+      "checkIn": "2027-01-08",
+      "checkOut": "2027-01-09",
+      "type": "Hotel",
+      "notes": "The night you arrive. Somewhere in the old town, within sight of the cathedral if you can."
+    },
+    {
+      "id": "sy13",
+      "name": "Stansted airport hotel, night of 1 Jan",
       "town": "London",
       "status": "idea",
-      "nights": 25,
-      "type": "Your daughter’s place, a hotel, or a mix",
-      "checkIn": "2026-12-05",
-      "checkOut": "2027-01-10",
-      "notes": "Placeholder until Decisions question 4 is answered. Twenty-five nights is the single biggest cost in this trip, so it is also the biggest saving."
+      "pricePerNightAud": 180,
+      "nights": 1,
+      "checkIn": "2027-01-01",
+      "checkOut": "2027-01-02",
+      "type": "Airport hotel",
+      "notes": "A 07:40 flight out of Stansted on New Year’s Day morning is not a thing to attempt from central London."
     }
   ],
   "food": [
     {
       "id": "f1",
       "town": "Dublin",
-      "dish": "Guinness at the Storehouse, and then somewhere better",
-      "where": "Guinness Storehouse, St James’s Gate; then the Long Hall, Kehoe’s or the Palace Bar",
-      "why": "The Storehouse is the tourist one and worth doing once for the view from the Gravity Bar at the top, where the pint is included in the ticket. But the best Guinness in Dublin is in an old pub with a slow pour and a barman who does not rush it. Do the Storehouse in the afternoon, then walk into town and have the real one.",
+      "dish": "Guinness at the Storehouse, then the real one in a pub",
+      "where": "Storehouse at St James’s Gate; then the Long Hall, Kehoe’s or the Palace Bar",
+      "why": "The Storehouse is the tour and the rooftop view, with a pint in the ticket. The actual best pint in Dublin is in a Victorian pub with no television, poured in two goes and left to settle. Do both, in that order.",
       "priceBand": "€€"
     },
     {
       "id": "f2",
-      "town": "London",
-      "dish": "A proper pub Sunday roast",
-      "where": "Any pub with a blackboard and no television",
-      "why": "Beef, Yorkshire pudding, gravy. The thing England does better than anywhere. Book it, because good ones fill up by Thursday.",
-      "priceBand": "££"
+      "town": "Dublin",
+      "dish": "Seafood chowder and brown bread, or a proper Irish stew",
+      "where": "Anywhere two streets away from Temple Bar",
+      "why": "Temple Bar charges double for worse. Walk out of it.",
+      "priceBand": "€€"
     },
     {
       "id": "f3",
-      "town": "Norway",
-      "dish": "Whatever is caught that morning",
-      "where": "The fish market in Bergen, or the ship",
-      "why": "Norway is expensive and the beer especially so, a pint runs A$16 and up, so this is where the budget goes if you let it. Eat on the ship and spend ashore on one good thing a day rather than three ordinary ones.",
-      "priceBand": "kr kr kr"
+      "town": "London",
+      "dish": "A pub Sunday roast",
+      "where": "Any pub with a blackboard and no television",
+      "why": "Beef, Yorkshire pudding, gravy. Book it; the good ones fill by Thursday.",
+      "priceBand": "££"
     },
     {
       "id": "f4",
-      "town": "Santiago de Compostela",
-      "dish": "Galician octopus, pimientos de Padrón, and Estrella Galicia",
-      "where": "Rua do Franco, the street of restaurants behind the cathedral",
-      "why": "Pulpo a feira, octopus with paprika and olive oil on a wooden plate, is the dish of the region and Santiago is where to eat it. The local beer is Estrella Galicia and it is very good. This is the meal at the end of the walk.",
+      "town": "Bergen",
+      "dish": "Fish soup at the Torget market",
+      "where": "Torget fish market, indoor hall, open year round",
+      "why": "The thing to eat in Bergen, and it is hot, which matters in December.",
+      "priceBand": "kr kr"
+    },
+    {
+      "id": "f5",
+      "town": "Melide",
+      "dish": "Pulpo a feira at Pulpería Ezéquiel",
+      "where": "Melide, on the Camino, day four",
+      "why": "Octopus with paprika, olive oil and coarse salt on a wooden plate. Melide is where pilgrims stop for it and Ezéquiel is the one they stop at. You will have walked 15 km to get there.",
       "priceBand": "€€"
+    },
+    {
+      "id": "f6",
+      "town": "Arzúa",
+      "dish": "Tetilla cheese",
+      "where": "Any shop in Arzúa",
+      "why": "The soft cow’s cheese the town is known for. Buy a piece for the next day’s walk.",
+      "priceBand": "€"
+    },
+    {
+      "id": "f7",
+      "town": "Santiago de Compostela",
+      "dish": "Scallops, Padrón peppers, and Estrella Galicia",
+      "where": "Rúa do Franco, the restaurant street behind the cathedral",
+      "why": "The meal at the end of the walk. The scallop shell is the symbol of the Camino, so eating one here is the joke everybody makes and it is still good. Estrella Galicia is the local beer and better than its reputation.",
+      "priceBand": "€€"
+    },
+    {
+      "id": "f8",
+      "town": "Anywhere in Spain",
+      "dish": "Menú del día",
+      "where": "Any bar with a board outside at lunchtime",
+      "why": "Three courses, bread and a glass of wine for about €12 to €15, served between about 13:30 and 15:30. It is how Spain eats lunch and it is the best value on this trip by a mile.",
+      "priceBand": "€"
     }
   ],
   "souvenirs": [],
-  "budget": [],
+  "budget": [
+    {
+      "id": "bg9",
+      "category": "Food",
+      "label": "Food and drink in the UK and Ireland, about 21 days",
+      "amount": 1900,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "About A$90 a day eating reasonably and having a few pints. Less on the days your daughter cooks. The named meals in Dublin and Santiago are already on the itinerary and are not in this number."
+    },
+    {
+      "id": "bg10",
+      "category": "Food",
+      "label": "Food and drink in Spain, 8 days",
+      "amount": 500,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "About A$65 a day, and Galicia is good value. The menu del dia is three courses, bread and a glass of wine for 12 to 15 euro at lunchtime, which is how to eat on a walking day."
+    },
+    {
+      "id": "bg11",
+      "category": "Food",
+      "label": "Eating ashore in Norway, 2 days",
+      "amount": 250,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "Meals on the ship are included, so this is only the two days in Bergen, where a pint is about A$16 and a modest lunch A$35."
+    },
+    {
+      "id": "bg14",
+      "category": "Transport",
+      "label": "Tubes, buses, airport trains, an Oyster card",
+      "amount": 350,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "The Gatwick and Stansted Express runs, getting about London for five weeks, and the Bybanen in Bergen. The Santiago to Sarria train is on the itinerary."
+    },
+    {
+      "id": "bg15",
+      "category": "Other",
+      "label": "Travel insurance, 37 days, age 63, with cruise cover",
+      "amount": 400,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "Shop around, but do not buy the cheapest without reading what it says about cruises. Cruise cover is nearly always a separate tick box."
+    },
+    {
+      "id": "bg16",
+      "category": "Other",
+      "label": "UK ETA, ETIAS and an eSIM",
+      "amount": 100,
+      "currency": "AUD",
+      "status": "estimate"
+    },
+    {
+      "id": "bg18",
+      "category": "Other",
+      "label": "Camino luggage transfer, 6 stages",
+      "amount": 80,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "About 8 euro a stage for a van to take the bag on to the next guesthouse. Optional, and see Decisions, but it is the difference between walking with 3 kg and 8 kg."
+    },
+    {
+      "id": "bg17",
+      "category": "Other",
+      "label": "Contingency",
+      "amount": 600,
+      "currency": "AUD",
+      "status": "estimate",
+      "notes": "Five weeks. Something always comes up: a taxi you did not plan, a jumper you did not pack, a round you insist on buying."
+    }
+  ],
   "checklist": [
     {
       "id": "e1",
       "group": "Paperwork",
       "text": "Apply for the UK ETA. You cannot board without it",
       "due": "2026-10-31",
-      "notes": "Since 25 February 2026 every Australian passport holder needs an Electronic Travel Authorisation to enter the UK, including just changing planes. It costs £20, you apply on the official UK ETA app or at gov.uk, and most decisions come back within minutes, though the Home Office asks you to allow up to three working days. It lasts two years or until the passport expires. THE AIRLINE CHECKS IT AT THE GATE IN BRISBANE. No ETA, no boarding, and no refund. Do this one first and do not use any website that is not gov.uk, because the copycat sites charge four times the price for the same thing."
+      "notes": "Since 25 February 2026 every Australian passport holder needs an Electronic Travel Authorisation to enter the UK. £20, on the official UK ETA app or at gov.uk, usually approved in minutes though they ask you to allow three working days. Lasts two years. THE AIRLINE CHECKS IT AT THE GATE IN BRISBANE: no ETA, no boarding, no refund. Use gov.uk and nothing else, because the copycat sites charge four times the price for the same thing."
     },
     {
       "id": "e2",
       "group": "Paperwork",
-      "text": "Check the passport has at least 6 months on it and was issued within the last 10 years",
+      "text": "Check the passport: 6 months left AND issued within the last 10 years",
       "due": "2026-09-30",
-      "notes": "Two separate rules and people trip on the second one. For the Schengen countries, which on this trip means Norway and, if you go, Spain, the passport must be valid for at least 3 months after you leave AND have been issued within the last 10 years. An Australian passport renewed early can carry extra months that push its issue date past ten years, and that passport gets refused even though it looks in date. Check the issue date, not just the expiry. Renewal takes about 6 weeks, longer near Christmas."
+      "notes": "Two separate rules and the second one catches people. Norway and Spain are both Schengen, which requires the passport to be valid at least 3 months after you leave AND to have been issued within the last 10 years. An Australian passport renewed early carries extra months that can push its issue date past ten years, and that passport gets refused while looking perfectly in date. Check the ISSUE date. Renewal takes about six weeks and longer near Christmas."
     },
     {
       "id": "e3",
       "group": "Paperwork",
-      "text": "Watch for ETIAS opening, then apply. Norway needs it, and so would Spain",
+      "text": "Watch for ETIAS opening, then apply. Norway and Spain both need it",
       "due": "2026-11-15",
-      "notes": "ETIAS is the European travel permit Australians will need for the Schengen countries. Norway is one, so the cruise is affected; Spain is another, so the Camino would be too. It is expected to start in the last months of 2026, with a grace period into 2027 while everyone adjusts, which means your December may fall either side of the line. It will cost about €20. THE APPLICATION SITE IS NOT OPEN YET. Any website taking ETIAS applications today is a scam, and there are a lot of them. Wait, and apply only through the official EU site when it opens. Connor will check the date in November."
+      "notes": "ETIAS is the European travel permit Australians will need for the Schengen countries. This trip enters Schengen twice, Norway on the 10th of December and Spain on the 2nd of January. Expected to start in the last months of 2026 with a grace period into 2027, so your dates may fall either side. About €20. THE SITE IS NOT OPEN YET AND EVERY WEBSITE CURRENTLY TAKING ETIAS APPLICATIONS IS A SCAM. Wait. Connor is checking the real date in November."
     },
     {
       "id": "e4",
       "group": "Paperwork",
-      "text": "Travel insurance for 37 days, aged 63, including the cruise",
+      "text": "Travel insurance: 37 days, age 63, must include the cruise",
       "due": "2026-10-31",
-      "notes": "Cruise cover is almost always a separate box you have to tick, and a policy without it will not pay for anything that happens on the ship or for missing the sailing. Declare any medical conditions honestly, because an undeclared one voids the lot. Also: Australia has reciprocal healthcare agreements with the UK, Ireland and Norway, so medically necessary treatment is covered there on your Medicare card. That is genuinely useful but it is NOT insurance: it does not cover getting you home, and it does not cover Spain."
+      "notes": "Cruise cover is nearly always a separate tick box and a policy without it pays for nothing that happens on the ship. Declare every medical condition honestly; an undeclared one voids the whole policy. Also worth knowing: Australia has reciprocal healthcare agreements with the UK, Ireland and Norway, so medically necessary treatment is covered there on your Medicare card. That is real but it is NOT insurance. It does not fly you home and it does not cover Spain."
     },
     {
       "id": "e5",
-      "group": "Before you go",
-      "text": "Put an eSIM on the iPhone before you leave",
-      "due": "2026-11-30",
-      "notes": "One eSIM covering the UK and Europe costs about A$20 for the month and saves you from roaming charges and from hunting for wi-fi. Install it at home while you have good internet and someone to help, then switch it on when you land. Keep your Australian number active for texts from the bank."
+      "group": "Book these",
+      "text": "Gatwick to Bergen on 10 Dec, and Bergen to Gatwick on 23 Dec",
+      "due": "2026-10-15",
+      "notes": "Norwegian is the only nonstop, about 1h55. The 08:40 out of Gatwick arriving 11:35 is the one. Going on the 10th rather than the 11th is deliberate: you never fly to a cruise on the day it sails. Coming back on the 23rd rather than the evening of the 22nd is the same logic in reverse, two days before Christmas."
     },
     {
       "id": "e6",
-      "group": "Before you go",
-      "text": "Tell the bank you are travelling, and take two cards",
-      "due": "2026-11-30",
-      "notes": "Two cards from two different banks, kept in two different places. A card that stops working in Norway on a Sunday is a ruined day if it is the only one you have. Ask your bank what it charges on foreign purchases: 3% is common and adds up over 37 days."
+      "group": "Book these",
+      "text": "Two nights in Bergen: 10 Dec and 22 Dec",
+      "due": "2026-10-15",
+      "notes": "Same hotel both times if you can. Bergen is expensive, about A$250 a night, and the centre is small enough that anything near Bryggen or the fish market is walkable to the Hurtigruten terminal."
     },
     {
       "id": "e7",
-      "group": "Before you go",
-      "text": "Ask the cruise line for the day-by-day itinerary and send it to Connor",
+      "group": "Book these",
+      "text": "Guinness Storehouse tickets for 28 Dec",
+      "due": "2026-11-30",
+      "notes": "Ireland’s most visited attraction and it sells out, especially in the week between Christmas and New Year. Book a morning slot online, about €30, which includes the pint at the top."
+    },
+    {
+      "id": "e8",
+      "group": "Book these",
+      "text": "Dublin flights and two nights, 27 to 29 Dec",
+      "due": "2026-11-15",
+      "notes": "About 1h25, they go all day from every London airport. Stay near Grafton Street or the south side of the river so everything is walkable."
+    },
+    {
+      "id": "e9",
+      "group": "Book these",
+      "text": "Stansted to Santiago on Sat 2 Jan, back Sat 9 Jan",
+      "due": "2026-11-15",
+      "notes": "Ryanair is the only nonstop and IT ONLY FLIES MONDAY, WEDNESDAY AND SATURDAY, which is what fixes the Camino dates. Confirm the return runs on the Saturday before you commit. Book the Stansted airport hotel for the night of the 1st at the same time."
+    },
+    {
+      "id": "e10",
+      "group": "Book these",
+      "text": "Seven nights on the Camino: Sarria, Portomarín, Palas de Rei, Melide, Arzúa, O Pedrouzo, Santiago",
+      "due": "2026-11-30",
+      "notes": "BOOK THESE AHEAD, do not walk in. Most pilgrim albergues close from Christmas to mid-January, so this is a hotel and guesthouse walk rather than a hostel one. That costs more, about A$120 a night, and at 63 with a private room and a hot shower every night it is the better trip anyway. Somewhere with a drying room is worth paying for in Galician January."
+    },
+    {
+      "id": "e11",
+      "group": "Book these",
+      "text": "Decide the London hotel nights and book them",
+      "due": "2026-11-15",
+      "notes": "You are at your daughter’s for some of it and in a hotel for the rest. Work out which nights with her BEFORE you book anything: five weeks is a long time to have a guest and she may be relieved to be asked. Whatever is left is the biggest single cost in the trip."
+    },
+    {
+      "id": "e12",
+      "group": "The Camino",
+      "text": "Break the boots in now. Not in December, now",
       "due": "2026-10-15",
-      "notes": "Which port each day, and what time the ship sails. Once that is in here you will always know what tomorrow is, which is the whole point of having this on your phone."
+      "notes": "Six days and 115 km. Walk 10 km in them, then 15, then 20, on hills, in the rain, with the pack you will carry. Blisters on day two of six is the one thing that can actually ruin this, and it is entirely preventable. If the boots hurt at all in Gympie they will be agony in Galicia."
+    },
+    {
+      "id": "e13",
+      "group": "The Camino",
+      "text": "Get a credencial, the pilgrim passport",
+      "due": "2027-01-02",
+      "notes": "You collect stamps in it and hand it in at Santiago to get the Compostela. Buy it in Sarria for a couple of euros at the parish church or a hostel, or order one from the Australian Friends of the Camino before you leave. ON THE LAST 100 KM THE RULE IS TWO STAMPS A DAY, not one: bars, cafes, churches and hostels all stamp. Miss the stamps and there is no certificate."
+    },
+    {
+      "id": "e14",
+      "group": "The Camino",
+      "text": "Pack for Galician rain, not Spanish sun",
+      "due": "2026-12-01",
+      "notes": "January in Galicia is 5 to 12 degrees and it is the wettest part of Spain. A proper waterproof jacket, a pack cover, two pairs of walking socks so one can dry, and a head torch because it is not light until nearly 09:00. Keep the pack under 8 kg; every kilo is 115 km of carrying it. Luggage transfer between stages costs about €8 a day and is a perfectly respectable thing to use."
+    },
+    {
+      "id": "e15",
+      "group": "Before you go",
+      "text": "Put an eSIM on the iPhone before you leave",
+      "due": "2026-11-30",
+      "notes": "One eSIM covering the UK and Europe is about A$25 for the month and saves both roaming charges and hunting for wi-fi. Install it at home where the internet is good and someone can help, then switch it on when you land. Keep the Australian number active for bank texts."
+    },
+    {
+      "id": "e16",
+      "group": "Before you go",
+      "text": "Two cards from two banks, in two different pockets",
+      "due": "2026-11-30",
+      "notes": "A card that stops working in Norway on a Sunday is a ruined day if it is the only one you have. Tell both banks the dates. Ask what they charge on foreign purchases, because 3% is common and over 37 days it adds up to real money; a fee-free travel card is worth getting."
+    },
+    {
+      "id": "e17",
+      "group": "Before you go",
+      "text": "Ask Hurtigruten for the port-by-port timetable and send it to Connor",
+      "due": "2026-10-15",
+      "notes": "Which port each day and what time the ship is alongside. Once that is in here you will always know what tomorrow is, which is the whole reason this is on your phone."
+    },
+    {
+      "id": "e18",
+      "group": "Before you go",
+      "text": "Ask Hurtigruten about the Northern Lights Promise",
+      "due": "2026-10-15",
+      "notes": "Hurtigruten has long run a guarantee on the 12-day round voyage in the winter months: if the aurora does not appear, you get another voyage free. Terms change, so ask them directly whether your booking has it and what counts. Worth knowing before you go rather than after."
     }
   ],
   "places": [
@@ -579,131 +1323,197 @@
     },
     {
       "id": "py2",
+      "name": "London Gatwick",
+      "kind": "airport",
+      "town": "London",
+      "lat": 51.1537,
+      "lng": -0.1821,
+      "notes": "For Bergen."
+    },
+    {
+      "id": "py3",
+      "name": "London Stansted",
+      "kind": "airport",
+      "town": "London",
+      "lat": 51.886,
+      "lng": 0.2389,
+      "notes": "For Santiago."
+    },
+    {
+      "id": "py4",
+      "name": "Imperial War Museum",
+      "kind": "other",
+      "town": "London",
+      "lat": 51.4959,
+      "lng": -0.1086
+    },
+    {
+      "id": "py5",
+      "name": "Churchill War Rooms",
+      "kind": "other",
+      "town": "London",
+      "lat": 51.502,
+      "lng": -0.1292
+    },
+    {
+      "id": "py6",
+      "name": "Emirates Stadium",
+      "kind": "other",
+      "town": "London",
+      "lat": 51.5549,
+      "lng": -0.1084,
+      "notes": "Arsenal. Holloway Road, Arsenal or Finsbury Park tube."
+    },
+    {
+      "id": "py7",
+      "name": "Bryggen, Bergen",
+      "kind": "other",
+      "town": "Bergen",
+      "lat": 60.3975,
+      "lng": 5.3243
+    },
+    {
+      "id": "py8",
+      "name": "Hurtigruten terminal, Bergen",
+      "kind": "station",
+      "town": "Bergen",
+      "lat": 60.3891,
+      "lng": 5.3116,
+      "notes": "Nøstegaten 30. In the terminal 30 min before sailing."
+    },
+    {
+      "id": "py9",
+      "name": "Fløibanen funicular",
+      "kind": "other",
+      "town": "Bergen",
+      "lat": 60.3963,
+      "lng": 5.33
+    },
+    {
+      "id": "py10",
       "name": "Guinness Storehouse",
       "kind": "other",
       "town": "Dublin",
       "lat": 53.3419,
-      "lng": -6.2867,
-      "notes": "St James’s Gate. The Gravity Bar at the top has the view and the included pint."
+      "lng": -6.2867
     },
     {
-      "id": "py3",
-      "name": "Santiago de Compostela Cathedral",
-      "kind": "other",
-      "town": "Santiago de Compostela",
-      "lat": 42.8806,
-      "lng": -8.5446,
-      "notes": "The end of the Camino. The Pilgrim’s Office, where the Compostela is issued, is a few minutes away on Rúa das Carretas."
-    },
-    {
-      "id": "py4",
+      "id": "py11",
       "name": "Sarria",
       "kind": "town",
       "town": "Sarria",
       "lat": 42.781,
       "lng": -7.414,
-      "notes": "Where the last 100 km starts. 111 km to Santiago, five or six days."
+      "notes": "Where the last 100 km starts."
     },
     {
-      "id": "py5",
-      "name": "Bergen",
+      "id": "py12",
+      "name": "Portomarín",
       "kind": "town",
-      "town": "Bergen",
-      "lat": 60.3913,
-      "lng": 5.3221,
-      "notes": "Bryggen, the old wharf, is a UNESCO site and about 15 minutes on foot from the cruise berths."
+      "town": "Portomarín",
+      "lat": 42.8072,
+      "lng": -7.6161
+    },
+    {
+      "id": "py13",
+      "name": "Palas de Rei",
+      "kind": "town",
+      "town": "Palas de Rei",
+      "lat": 42.873,
+      "lng": -7.869
+    },
+    {
+      "id": "py14",
+      "name": "Melide",
+      "kind": "town",
+      "town": "Melide",
+      "lat": 42.914,
+      "lng": -8.015
+    },
+    {
+      "id": "py15",
+      "name": "Arzúa",
+      "kind": "town",
+      "town": "Arzúa",
+      "lat": 42.929,
+      "lng": -8.161
+    },
+    {
+      "id": "py16",
+      "name": "O Pedrouzo",
+      "kind": "town",
+      "town": "O Pedrouzo",
+      "lat": 42.907,
+      "lng": -8.366
+    },
+    {
+      "id": "py17",
+      "name": "Santiago de Compostela Cathedral",
+      "kind": "other",
+      "town": "Santiago de Compostela",
+      "lat": 42.8806,
+      "lng": -8.5446
+    },
+    {
+      "id": "py18",
+      "name": "Pilgrim’s Office, Santiago",
+      "kind": "other",
+      "town": "Santiago de Compostela",
+      "lat": 42.8797,
+      "lng": -8.5468,
+      "notes": "Rúa das Carretas 33. Bring the credencial."
     }
   ],
   "questions": [
     {
       "id": "q1",
-      "question": "Where does the cruise leave from and come back to?",
-      "why": "Nothing around the 10th, 11th or 22nd of December can be planned until this is known. A UK port means a train from London and a night nearby beforehand. Bergen means a flight out on the 10th and a hotel in Norway.",
+      "question": "Does the Hurtigruten booking really say 09:30?",
+      "why": "You told Connor the ship leaves at 09:30 on the 11th. Hurtigruten has sailed from Bergen at 20:30 for years, and the 14:45 you gave for the return is exactly their Bergen arrival time, which says this is the classic 12-day round voyage. If it is 20:30, you have a free day in Bergen. If it really is 09:30, the whole of the 10th and 11th changes.",
       "options": [
-        "A UK port (Southampton, Dover, Tilbury, Newcastle)",
-        "Bergen, Norway",
-        "Somewhere else"
+        "20:30, as Hurtigruten normally sails",
+        "It really does say 09:30",
+        "Not sure, need to find the confirmation"
       ],
-      "recommendation": "Find the booking confirmation and read the first line. This is the one that unblocks everything else.",
+      "recommendation": "Read the confirmation email and tell Connor. Everything about the 10th and 11th of December hangs on it.",
       "answer": "",
       "resolved": false
     },
     {
       "id": "q2",
-      "question": "The Camino or Ireland? There is only room for one",
-      "why": "After the cruise you have 19 nights, but Christmas with your daughter and the football on the 30th are inside them. The free stretch is about eight nights from New Year. Walking the last 100 km of the Camino takes five to six days plus two travel days, which is all eight. Ireland properly done is four or five. They do not both fit in January. THERE IS A WAY TO HAVE BOTH: put Ireland in the first week instead, midweek while your daughter is at work. Dublin is a 1h15 flight from London and they go all day.",
+      "question": "Which nights are you at your daughter’s and which need a hotel?",
+      "why": "It is the biggest number in the budget by a distance. Each night at hers saves about A$220, and ten hotel nights against five is a A$1,100 difference. It also needs asking rather than assuming: five weeks is a long time to have a guest, even your own father.",
       "options": [
-        "Ireland in the first week, Camino in January (both, and the best fit)",
-        "Camino in January, Ireland another time",
-        "Ireland in January, no Camino",
-        "Neither, stay in England"
+        "Mostly at hers, a hotel for a few nights",
+        "Christmas and New Year at hers, hotel otherwise",
+        "Mostly hotel, at hers for Christmas"
       ],
-      "recommendation": "Ireland from about the 7th to the 10th of December while she is working, then the Camino from New Year. You get both and you are never rushing.",
+      "recommendation": "Ask her outright and take the answer at face value. Then book the hotel nights in November, because London in December is not a city to leave to the last minute.",
       "answer": "",
       "resolved": false
     },
     {
       "id": "q3",
-      "question": "If you walk the Camino, is the certificate the point?",
-      "why": "This decides where you start and it is not a small difference. The Compostela, the certificate they hand you in Santiago, requires the last 100 km on foot, which means starting at Sarria: 111 km, five or six days of walking, and you must collect two stamps a day. The last 50 km, starting around Palas de Rei, is three days and gets you to the same cathedral with no certificate.",
+      "question": "Luggage transfer on the Camino, yes or no?",
+      "why": "For about €8 a stage a van takes your bag to the next guesthouse and you walk with a daypack. Purists carry everything. At 63, over six days, in Galician rain, carrying 8 kg is a genuinely different walk to carrying 3 kg.",
       "options": [
-        "Sarria, 111 km, five or six days, and the Compostela at the end",
-        "Palas de Rei, about 50 km, three days, no certificate",
-        "Decide closer to the time"
+        "Use it every day, walk light",
+        "Carry everything, that is the point",
+        "Book it and decide each morning"
       ],
-      "recommendation": "If you are flying to the other side of the world and walking to Santiago anyway, walk from Sarria. The extra is two days and about 60 km at a gentle pace, and you finish holding the thing that says you did it.",
+      "recommendation": "Use it. Nobody at the Pilgrim’s Office asks, the Compostela is the same, and you will enjoy the six days more. About €50 for the week.",
       "answer": "",
       "resolved": false
     },
     {
       "id": "q4",
-      "question": "Where are you sleeping in London?",
-      "why": "About 25 of the 36 nights are London nights. Staying with your daughter and booking a hotel are very different trips and very different money, and you may want a mix: with her over Christmas, somewhere of your own for a few days so nobody is on top of anybody.",
+      "question": "Do you want a scenic train day, or are the trains just transport?",
+      "why": "You said you like the idea of a proper train journey. There are two already inside this trip: Santiago to Sarria through Galicia, and the option of coming back from Santiago to Madrid on the high-speed line instead of flying. Neither is a hardship. The famous scenic ones in Britain, like Glasgow to Mallaig, are dark by four in January.",
       "options": [
-        "With your daughter throughout",
-        "A hotel or apartment throughout",
-        "A mix: with her for Christmas, your own place otherwise"
+        "The trains already in the plan are enough",
+        "Add a day for one scenic line",
+        "Come home from Santiago via Madrid by train"
       ],
-      "recommendation": "Ask her before you book anything. Five weeks is a long time to have a guest, and she may be relieved to be asked.",
-      "answer": "",
-      "resolved": false
-    },
-    {
-      "id": "q5",
-      "question": "Which football match, and where?",
-      "why": "If it is not in London it decides where you sleep on the 30th and possibly the 29th. Fixtures also get moved for television, sometimes by a day or two and sometimes late.",
-      "options": [
-        "In London",
-        "Elsewhere in England",
-        "Not booked yet"
-      ],
-      "recommendation": "Whoever holds the ticket should re-check the date in early December, because a move to the 29th or the 31st changes the plan around it.",
-      "answer": "",
-      "resolved": false
-    },
-    {
-      "id": "q6",
-      "question": "Which train journey do you want?",
-      "why": "You said you like the idea of a proper train. Several are already sitting inside this trip at no extra cost: London to Santiago is nothing, but the Camino finishes in Galicia and the Spanish high-speed line back to Madrid is genuinely impressive. In the UK the classic is the West Highland Line from Glasgow to Mallaig, though in January it is dark by four. And the Eurostar out of St Pancras is a train journey that happens to also be transport.",
-      "options": [
-        "Keep it simple: whatever trains the plan already needs",
-        "Build a day around one scenic line",
-        "The Eurostar, if any of this touches mainland Europe"
-      ],
-      "recommendation": "Decide after the cruise and the Camino are settled. Trains are the easiest thing to add late.",
-      "answer": "",
-      "resolved": false
-    },
-    {
-      "id": "q7",
-      "question": "Do you actually want mainland Europe, or is this a UK, Ireland and Norway trip?",
-      "why": "You said maybe not Europe. Worth knowing that the cruise already takes you into Norway, and the Camino is in Spain, so both are Europe in the sense that matters for paperwork. If the answer is no beyond those, that is a perfectly good trip and it makes the planning much simpler.",
-      "options": [
-        "UK, Ireland and the cruise only",
-        "Add Spain for the Camino",
-        "Open to more if it is easy"
-      ],
-      "recommendation": "Do not add a fourth country. Five weeks sounds long until you are moving every three days.",
+      "recommendation": "Leave it. There is a lot in these five weeks already and the Camino is the part you will remember.",
       "answer": "",
       "resolved": false
     }

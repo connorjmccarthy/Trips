@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 110.4,
-    "updatedAt": "2026-09-19T08:47:58Z",
+    "updatedAt": "2026-10-05T00:00:42Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -73,6 +73,7 @@
         "ckb3",
         "ckb3b",
         "ckb3c",
+        "ckb-phish",
         "ckb8",
         "ckb7",
         "ckb4",
@@ -2957,7 +2958,7 @@
       "checkOut": "2027-02-15",
       "distance": "3 min walk from Hirayu Onsen bus terminal; 1 h by Nohi bus from Takayama",
       "url": "https://www.booking.com/hotel/jp/hirayunomori.html",
-      "notes": "PAID: A$131.79 on 17 Sep, on the statement as “TimeDesign Tokyo”, which is the booking agent rather than a Tokyo hotel. 【Half Board】premium Hida beef loin dinner + traditional Japanese breakfast, ¥14,550 in a Special Japanese-Western Single Room. A real single room at single occupancy, so no solo supplement, which was the main risk. Meals are at restaurant Donguri: dinner 18:00 (Hida beef sirloin), winter breakfast 07:30-08:30 (hoba-miso). Private baths are free for guests from 15:00 but first come, first served with no reservations, and there are only two. Men’s baths: 2 indoor, 7 open-air, sauna. No air conditioning in the rooms, and Hirayu can sit below freezing around the clock in February. Prepaid by credit card through Time Design, so CONFIRM THE TATTOO POLICY BEFORE PAYING and read the cancellation terms; prepaid agency bookings are often strict. Cheaper plans exist from ¥11,000 (room only or B&B) if you would rather eat elsewhere. The reason to stay: the private bath is ¥3,000 for day visitors but FREE for guests, and their window runs 15:00 to 10:00 the next morning, so you can use it after dark and before breakfast. The public forest baths are open to guests until 08:00 too. Reported as tattoo friendly; confirm in writing, though the free private bath covers you either way. Hotel Hirayunomori Annex is the cheaper sister property 3 min away. Their own site is Japanese-only, so use Booking.com."
+      "notes": "PHISHING WARNING: this booking has been targeted twice, by WhatsApp and by email, both quoting the correct hotel and the correct dates. It is paid in full, so there is nothing to confirm and nothing to check into online. Every message about it is fake; see the to-do. PAID: A$131.79 on 17 Sep, on the statement as “TimeDesign Tokyo”, which is the booking agent rather than a Tokyo hotel. 【Half Board】premium Hida beef loin dinner + traditional Japanese breakfast, ¥14,550 in a Special Japanese-Western Single Room. A real single room at single occupancy, so no solo supplement, which was the main risk. Meals are at restaurant Donguri: dinner 18:00 (Hida beef sirloin), winter breakfast 07:30-08:30 (hoba-miso). Private baths are free for guests from 15:00 but first come, first served with no reservations, and there are only two. Men’s baths: 2 indoor, 7 open-air, sauna. No air conditioning in the rooms, and Hirayu can sit below freezing around the clock in February. Prepaid by credit card through Time Design, so CONFIRM THE TATTOO POLICY BEFORE PAYING and read the cancellation terms; prepaid agency bookings are often strict. Cheaper plans exist from ¥11,000 (room only or B&B) if you would rather eat elsewhere. The reason to stay: the private bath is ¥3,000 for day visitors but FREE for guests, and their window runs 15:00 to 10:00 the next morning, so you can use it after dark and before breakfast. The public forest baths are open to guests until 08:00 too. Reported as tattoo friendly; confirm in writing, though the free private bath covers you either way. Hotel Hirayunomori Annex is the cheaper sister property 3 min away. Their own site is Japanese-only, so use Booking.com."
     },
     {
       "id": "s-b3",
@@ -3884,6 +3885,13 @@
       "due": "2027-01-28",
       "variant": "culture",
       "notes": "Both are 23:59 local. Nothing to do if the trip is going ahead; this is here so a late change does not cost you the rooms by accident."
+    },
+    {
+      "id": "ckb-phish",
+      "group": "Plan B",
+      "text": "Your Hirayu no Mori booking has leaked. Treat every message about it as fake",
+      "due": "2027-02-13",
+      "notes": "TWO PHISHING ATTEMPTS SO FAR, both quoting the real hotel and the real dates of 14 to 15 Feb 2027. One on WhatsApp from \"Ankura Homes\" pointing at gust-boxtua.com; one by email from \"Michelle Bergquist\" sent through Brevo, a bulk marketing platform, with a \"Proceed to Online Check-in\" button. They quoted two different reference numbers for the same booking, which proves at least one was invented. Someone holding this reservation has been breached, most likely the booking agent or the property. THE RULE FROM HERE: this room is paid in full and there is nothing to confirm, nothing to verify and nothing to check into online. A Japanese ryokan does not run a check-in portal; you hand your passport over at the desk. Never click a link in any message about this booking. If something genuinely needs sorting, go to the agent yourself through the original confirmation email, or phone the hotel. Expect a cleverer attempt closer to the date, probably claiming your card was declined and asking you to pay again."
     },
     {
       "id": "ckb8",

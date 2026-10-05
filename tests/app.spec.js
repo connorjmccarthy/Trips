@@ -132,7 +132,10 @@ test.describe('money and lists', () => {
     await page.getByRole('button', { name: 'Save', exact: true }).click();
     const row = page.locator('.check', { hasText: 'Test: buy eSIM' });
     await expect(row).toBeVisible();
-    await row.getByRole('checkbox').check();
+    // .check() would wait to verify the box is ticked, but ticking it re-renders
+    // the list and the "Open" filter removes the row, so the element it wants to
+    // read is already detached. The next assertion is the real behaviour anyway.
+    await row.getByRole('checkbox').click();
     await expect(page.locator('.check', { hasText: 'Test: buy eSIM' })).toHaveCount(0); // "Open" filter hides done items
     await page.getByRole('button', { name: 'Done', exact: true }).click();
     await expect(page.locator('.check.done', { hasText: 'Test: buy eSIM' })).toBeVisible();

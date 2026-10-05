@@ -456,7 +456,11 @@ test.describe('sharing the link', () => {
     }
     // What the group does need is still there.
     await page.goto('/#/checklist');
-    await expect(page.locator('#main')).toContainText('International Driving Permit');
+    await expect(page.locator('.check').first()).toBeVisible();
+    // The content check reads the stored plan rather than the rendered list,
+    // because the default Open filter hides ticked items and this assertion
+    // should not break the day somebody ticks the probe.
+    expect(await page.evaluate(() => localStorage.getItem('t:bali:trip'))).toContain('International Driving Permit');
   });
 
   test('no flight numbers survive anywhere in the group plan', async ({ page }) => {

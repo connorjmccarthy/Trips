@@ -100,20 +100,21 @@ days = [
             item('u21', '08:00', 'food', 'Breakfast and pack', location='Ubud hotel'),
             item('u22', '10:00', 'activity', 'A spa, the Yoga Barn, or nothing at all', location='Ubud', endTime='12:00', cost=300000, currency='IDR', status='idea',
                  notes='Ubud does a proper hour-long Balinese massage for Rp150,000 to Rp350,000, which is the correct way to spend the last morning of a holiday. Book the day before.'),
-            item('u23', '12:00', 'stay', 'Check out', location='Ubud hotel', endTime='12:30',
-                 notes='Ask them to hold your bag if the flight is in the evening.'),
-            item('u24', '16:00', 'transfer', 'Ubud to Denpasar airport', location='Ubud to DPS', endTime='18:00', cost=350000, currency='IDR',
-                 notes='Allow two hours, not the 75 minutes Google promises. Ubud to the airport in the late afternoon is the worst run on the island. Rp300,000 to Rp400,000 for a private car; the hotel can arrange it.'),
-            item('u25', '18:00', 'note', 'Flight home: NOT BOOKED', location='Denpasar airport',
-                 notes='There is no return flight recorded for this date. Whatever you book, put it on the Flights page so the timings on this day can be checked against it.'),
+            item('u23', '12:00', 'stay', 'Check out', location='Kappa Senses Ubud', endTime='12:30', notes='AND THEN SEVEN HOURS TO FILL, because check-out is noon and you do not leave for the airport until seven. Ask Kappa Senses about a late check-out or day-use of the room and the pool: they will usually do one or the other, and on your last day in Bali that is worth paying for rather than sitting in a lobby. Failing that, leave the bags with them and go into Ubud for the afternoon, which is forty minutes each way.'),
+            item('u24', '19:00', 'transfer', 'Kappa Senses to Denpasar airport', location='Kedewatan to DPS', endTime='21:00', cost=450000, currency='IDR', notes='Ninety minutes to two hours from Kedewatan, and the evening run is the slow one. Leaving at seven puts you at the airport about nine for a 23:40 departure, which is right. Book the car through the hotel rather than hoping for a Grab that far up the valley.'),
+            item('u25', '23:40', 'flight', 'JQ87 Denpasar to Brisbane, overnight', location='Ngurah Rai International, Terminal I', status='booked', notes='BOOKED: out 23:40, in at 07:20, about seven and a half hours with the two-hour difference. ONE THING TO CHECK: you gave the same flight number, JQ87, for the way out and the way home, and one number cannot do both directions. JQ87 is the outbound from Brisbane. Look at the return booking and confirm what the homeward flight is actually called, because that is the number on the departure board you will be hunting for at eleven at night. Be at the airport by nine: Denpasar is slow after dark and the international queue is long.'),
         ]),
 ]
 
 stays = [
-    dict(id='s-ubud', name='Ubud hotel (name to confirm)', town='Ubud', address='',
-         type='Hotel, four nights', status='planned', pricePerNightAud=0, nights=4, priceNote='not recorded yet',
-         checkIn='2026-11-11', checkOut='2026-11-15', distance='Ubud',
-         notes='You said in September that this is booked for the 11th to the 15th, but the property, the address and the price are not in the app. Fill this in: name, address, check-in time, price, and put the reservation number in the Private vault. Also worth asking whether they do an airport transfer, because Ubud to Denpasar in the late afternoon is a two-hour run and having it arranged beats haggling on the day.'),
+    dict(id='s-ubud', name='Kappa Senses Ubud', town='Ubud', status='booked',
+         address='Banjar Tanggayuda, Jl. Taman Sari, Kedewatan, Ubud, Gianyar 80571',
+         type='Jungle suites and pool villas above the Ayung valley', pricePerNightAud=330, nights=4,
+         checkIn='2026-11-11', checkOut='2026-11-15',
+         distance='Kedewatan, northwest of Ubud. 40 to 50 minutes into the centre of town in traffic, not a walk',
+         priceNote='Jungle suites from about US$210 a night, pool villas from about US$400; confirm which you booked',
+         url='https://kappasenses.com/',
+         notes='BOOKED. THE ONE THING TO PLAN AROUND: it is not in Ubud. It sits above the Ayung valley at Kedewatan and central Ubud is forty to fifty minutes away once the traffic builds. That is the trade for the setting, and for three days of doing very little it is a good one, but it means you do not wander into town for dinner on a whim. Decide each morning whether you are going in or staying put, and have the hotel arrange the car rather than hoping for a Grab that far up. Reservation number goes in the Private vault, not here.'),
 ]
 
 food = [
@@ -126,8 +127,8 @@ food = [
 ]
 
 checklist = [
-    dict(id='uk1', group='Before the trip', text='Add the Ubud hotel: name, address, price, and the reservation number into the Private vault', due='2026-10-01'),
-    dict(id='uk2', group='Before the trip', text='Book your flight home on or after 15 Nov. Nothing is recorded for it', due='2026-10-01',
+    dict(id='uk1', group='Before the trip', text='Ask Kappa Senses for a late check-out on 15 Nov, and the car to the airport at 19:00', due='2026-10-31', notes='Check-out is noon and the flight is 23:40, so without a late check-out or day-use you have seven hours and nowhere to be. Ask for both in one message. Reservation number into the Private vault while you are at it.'),
+    dict(id='uk2', group='Before the trip', text='Confirm the flight number on the way home: JQ87 cannot be both directions', due='2026-10-01',
          notes='The group flies out on the 11th on JQ87. You do not. Whatever you book, add it on the Flights page.'),
     dict(id='uk3', group='Before the trip', text='Book the Canggu to Ubud car for the afternoon of 11 Nov', due='2026-11-01',
          notes='Rp200,000 to Rp300,000. Book it rather than relying on Grab, which is restricted in parts of Ubud.'),

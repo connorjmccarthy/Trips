@@ -90,7 +90,9 @@
       "items": [
         "a1",
         "a2",
-        "b0",
+        "a2b",
+        "a2c",
+        "a2d",
         "b1",
         "b2",
         "b3",
@@ -139,31 +141,65 @@
     {
       "id": "d20261104",
       "date": "2026-11-04",
-      "title": "Travel day: everyone lands in Bali",
+      "title": "Everyone lands, and you get an afternoon out of it",
       "base": "Villa Bunia, Canggu",
-      "notes": "Two groups converging, three from the Sunshine Coast and two from Sydney, both landing at Denpasar late in the evening. Flights are not in this app, so check your own booking for times. The villa is about an hour from the airport at that time of night, so plan on getting in around midnight and treat Thursday as the first real day.",
+      "notes": "Wheels down at 13:15 rather than near midnight, which turns a write-off travel day into half a holiday: villa by four, in the pool, on the sand for sunset. The two coming from Sydney are on their own flight, so add their times here when you have them.",
       "items": [
         {
           "id": "a1",
-          "time": "22:45",
+          "time": "13:15",
           "type": "transfer",
           "title": "Land at Denpasar: immigration, arrival card and levy",
           "status": "planned",
           "location": "Ngurah Rai International, Terminal I",
-          "endTime": "23:45",
-          "notes": "The queue at that hour is the slow part. Have three QR codes saved as SCREENSHOTS, not sitting in your email, because the airport wifi is hopeless: your e-VOA, the All Indonesia arrival card, and the Bali tourist levy. All three are on the Checklists page, and all three want doing before you fly. Do not change money at the airport counters; the rate is poor. Use an ATM in Canggu or just pay by card.",
+          "endTime": "14:15",
+          "notes": "Wheels down 13:15, having left Brisbane at 08:50. Have three QR codes saved as SCREENSHOTS, not sitting in your email, because the airport wifi is hopeless: your e-VOA, the All Indonesia arrival card, and the Bali tourist levy. An hour is realistic with bags, and the afternoon queue is slower than the midnight one, so do not promise anybody a time.",
           "placeId": "q2"
         },
         {
           "id": "a2",
-          "time": "23:50",
+          "time": "14:30",
           "type": "transfer",
           "title": "Airport to Villa Bunia, Canggu",
           "status": "planned",
           "location": "DPS to Tibubeneng, Canggu",
-          "endTime": "00:45",
-          "notes": "About 45 to 60 minutes at that time of night; in daytime traffic it can be double. Five people plus luggage needs a van, not a car, so book one ahead through the villa rather than trying to sort it at 11pm. Roughly Rp350,000 to Rp450,000 for a private van, which is nothing split five ways. Grab and Gojek also work from the airport but you would need two cars.",
+          "endTime": "16:00",
+          "cost": 400000,
+          "currency": "IDR",
+          "notes": "NINETY MINUTES, NOT AN HOUR. Daytime is the bad direction: the airport to Canggu run in afternoon traffic regularly takes an hour and a half and can be worse. Five people plus luggage needs a van rather than a car, so book it through the villa ahead of time instead of haggling on the kerb with everyone tired.",
           "placeId": "q1"
+        },
+        {
+          "id": "a2b",
+          "time": "16:00",
+          "type": "stay",
+          "title": "Arrive at Villa Bunia and check in",
+          "status": "booked",
+          "location": "Tibubeneng, Kuta Utara, Badung",
+          "endTime": "16:30",
+          "notes": "Check-in is 14:00, so the place is ready and waiting. Dump the bags, get in the pool, and sort out who is in which room while everyone is still in a good mood."
+        },
+        {
+          "id": "a2c",
+          "time": "17:30",
+          "type": "beach",
+          "title": "Walk down to Berawa for sunset",
+          "status": "idea",
+          "location": "Pantai Berawa, 5 min from the villa",
+          "endTime": "18:45",
+          "notes": "THE BIT THE MIDNIGHT ARRIVAL WOULD HAVE COST YOU. Sunset in early November is about 18:20. Berawa is the quieter end of the Canggu sand and it is a five-minute walk. A beanbag, a Bintang, and the group has actually arrived somewhere instead of just going to bed."
+        },
+        {
+          "id": "a2d",
+          "time": "19:30",
+          "type": "food",
+          "title": "First dinner, nothing ambitious",
+          "status": "idea",
+          "location": "The Berawa strip",
+          "endTime": "21:00",
+          "cost": 150000,
+          "currency": "IDR",
+          "notes": "Walkable, cheap, no booking. You have all been up since five and tomorrow is the real start, so warung food on the strip is the right call. Save the good places for when everyone is awake."
         }
       ]
     },
@@ -172,19 +208,8 @@
       "date": "2026-11-05",
       "title": "Settle into Canggu: Berawa beach, scooters, gym",
       "base": "Villa Bunia, Canggu",
-      "notes": "Nothing before mid-morning after that arrival. The useful jobs today are the scooters, cash and a SIM; the rest is beach and coffee. Berawa is the quieter end of Canggu and the villa is a few minutes from the sand.",
+      "notes": "The first full day, and you are already settled in. The useful jobs are the scooters, cash and a SIM; the rest is beach and coffee. Berawa is the quieter end of Canggu and the villa is a few minutes from the sand.",
       "items": [
-        {
-          "id": "b0",
-          "time": "00:45",
-          "type": "stay",
-          "title": "Arrive at Villa Bunia and check in",
-          "status": "booked",
-          "location": "Tibubeneng, Kuta Utara, Badung",
-          "endTime": "01:15",
-          "notes": "Sort out who is in which room tonight rather than in the morning. Aircon on, and drink from the water dispenser rather than the tap.",
-          "placeId": "q1"
-        },
         {
           "id": "b1",
           "time": "09:30",
@@ -867,6 +892,7 @@
       "group": "Everyone, before you fly",
       "text": "If you plan to ride: get an International Driving Permit with the motorcycle \"A\" stamp from the RACQ or NRMA",
       "due": "2026-10-05",
+      "done": true,
       "notes": "About A$50, issued over the counter or by post in a few days, valid 12 months. You need the physical booklet, not a scan, and it is only valid alongside your normal licence. Without it you are riding unlicensed, which means a fine at a checkpoint and a refused insurance claim if you come off. This is the single most important thing on this list."
     },
     {
@@ -956,7 +982,7 @@
     {
       "id": "bk15",
       "group": "Group bookings",
-      "text": "Ask Villa Bunia about the midnight arrival, luggage storage on the 11th, and an airport van for five",
+      "text": "Ask Villa Bunia for an airport van for five at 14:15, and luggage storage on the 11th",
       "due": "2026-10-10"
     }
   ],

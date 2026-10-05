@@ -52,20 +52,24 @@ people = [
 # DAYS
 # =============================================================================
 days = [
-    day('2026-11-04', 'Travel day: everyone lands in Bali', 'Villa Bunia, Canggu',
-        'Two groups converging, three from the Sunshine Coast and two from Sydney, both landing at Denpasar late in the evening. Flights are not in this app, so check your own booking for times. The villa is about an hour from the airport at that time of night, so plan on getting in around midnight and treat Thursday as the first real day.',
+    day('2026-11-04', 'Everyone lands, and you get an afternoon out of it', 'Villa Bunia, Canggu',
+        'Wheels down at 13:15 rather than near midnight, which turns a write-off travel day into half a holiday: villa by four, in the pool, on the sand for sunset. The two coming from Sydney are on their own flight, so add their times here when you have them.',
         [
-            item('a1', '22:45', 'transfer', 'Land at Denpasar: immigration, arrival card and levy', location='Ngurah Rai International, Terminal I', endTime='23:45',
-                 notes='The queue at that hour is the slow part. Have three QR codes saved as SCREENSHOTS, not sitting in your email, because the airport wifi is hopeless: your e-VOA, the All Indonesia arrival card, and the Bali tourist levy. All three are on the Checklists page, and all three want doing before you fly. Do not change money at the airport counters; the rate is poor. Use an ATM in Canggu or just pay by card.'),
-            item('a2', '23:50', 'transfer', 'Airport to Villa Bunia, Canggu', location='DPS to Tibubeneng, Canggu', endTime='00:45',
-                 notes='About 45 to 60 minutes at that time of night; in daytime traffic it can be double. Five people plus luggage needs a van, not a car, so book one ahead through the villa rather than trying to sort it at 11pm. Roughly Rp350,000 to Rp450,000 for a private van, which is nothing split five ways. Grab and Gojek also work from the airport but you would need two cars.'),
+            item('a1', '13:15', 'transfer', 'Land at Denpasar: immigration, arrival card and levy', location='Ngurah Rai International, Terminal I', endTime='14:15',
+                 notes='Wheels down 13:15, having left Brisbane at 08:50. Have three QR codes saved as SCREENSHOTS, not sitting in your email, because the airport wifi is hopeless: your e-VOA, the All Indonesia arrival card, and the Bali tourist levy. An hour is realistic with bags, and the afternoon queue is slower than the midnight one, so do not promise anybody a time.'),
+            item('a2', '14:30', 'transfer', 'Airport to Villa Bunia, Canggu', location='DPS to Tibubeneng, Canggu', endTime='16:00', cost=400000, currency='IDR',
+                 notes='NINETY MINUTES, NOT AN HOUR. Daytime is the bad direction: the airport to Canggu run in afternoon traffic regularly takes an hour and a half and can be worse. Five people plus luggage needs a van rather than a car, so book it through the villa ahead of time instead of haggling on the kerb with everyone tired.'),
+            item('a2b', '16:00', 'stay', 'Arrive at Villa Bunia and check in', location='Tibubeneng, Kuta Utara, Badung', endTime='16:30', status='booked',
+                 notes='Check-in is 14:00, so the place is ready and waiting. Dump the bags, get in the pool, and sort out who is in which room while everyone is still in a good mood.'),
+            item('a2c', '17:30', 'beach', 'Walk down to Berawa for sunset', location='Pantai Berawa, 5 min from the villa', endTime='18:45', status='idea',
+                 notes='THE BIT THE MIDNIGHT ARRIVAL WOULD HAVE COST YOU. Sunset in early November is about 18:20. Berawa is the quieter end of the Canggu sand and it is a five-minute walk. A beanbag, a Bintang, and the group has actually arrived somewhere instead of just going to bed.'),
+            item('a2d', '19:30', 'food', 'First dinner, nothing ambitious', location='The Berawa strip', endTime='21:00', cost=150000, currency='IDR', status='idea',
+                 notes='Walkable, cheap, no booking. You have all been up since five and tomorrow is the real start, so warung food on the strip is the right call. Save the good places for when everyone is awake.'),
         ]),
 
     day('2026-11-05', 'Settle into Canggu: Berawa beach, scooters, gym', 'Villa Bunia, Canggu',
-        'Nothing before mid-morning after that arrival. The useful jobs today are the scooters, cash and a SIM; the rest is beach and coffee. Berawa is the quieter end of Canggu and the villa is a few minutes from the sand.',
+        'The first full day, and you are already settled in. The useful jobs are the scooters, cash and a SIM; the rest is beach and coffee. Berawa is the quieter end of Canggu and the villa is a few minutes from the sand.',
         [
-            item('b0', '00:45', 'stay', 'Arrive at Villa Bunia and check in', location='Tibubeneng, Kuta Utara, Badung', endTime='01:15', status='booked',
-                 notes='Sort out who is in which room tonight rather than in the morning. Aircon on, and drink from the water dispenser rather than the tap.'),
             item('b1', '09:30', 'food', 'Breakfast and coffee at Pantai Berawa', location='Berawa beach strip, 5 min from the villa',
                  notes='The beachfront cafes along Berawa do a proper Australian-style breakfast for a fraction of the price at home: eggs, smashed avo, smoothie bowls, good flat whites. Around Rp80,000 to Rp150,000 a head with coffee.'),
             item('b2', '10:45', 'beach', 'Pantai Berawa: first swim', location='Pantai Berawa', endTime='12:00',
@@ -225,7 +229,7 @@ food = [
 # =============================================================================
 checklist = [
     dict(id='bk5', group='Everyone, before you fly', text='Check your passport has 6+ months left beyond 11 Nov 2026 and two blank pages', due='2026-09-30'),
-    dict(id='bk6', group='Everyone, before you fly', text='If you plan to ride: get an International Driving Permit with the motorcycle "A" stamp from the RACQ or NRMA', due='2026-10-05',
+    dict(id='bk6', group='Everyone, before you fly', text='If you plan to ride: get an International Driving Permit with the motorcycle "A" stamp from the RACQ or NRMA', due='2026-10-05', done=True,
          notes='About A$50, issued over the counter or by post in a few days, valid 12 months. You need the physical booklet, not a scan, and it is only valid alongside your normal licence. Without it you are riding unlicensed, which means a fine at a checkpoint and a refused insurance claim if you come off. This is the single most important thing on this list.'),
     dict(id='bk7', group='Everyone, before you fly', text='Travel insurance, with motorcycle cover checked in the fine print', due='2026-10-10',
          notes='Do not assume you are covered on a scooter. Check the policy explicitly covers riding a motorcycle, what engine size it covers, and whether it requires a valid licence and IDP, because nearly all of them do. Medical evacuation from Bali runs into six figures.'),
@@ -250,7 +254,7 @@ checklist = [
          notes='The swim-with-raccoons slots sell out. Klook and Traveloka both list it.'),
     dict(id='bk14', group='Group bookings', text='Book a car and driver for the Jatiluwih, Sangeh and Tanah Lot day on Tue 10 Nov', due='2026-11-01',
          notes='Ask the villa first; they usually have someone. Agree the route and price in writing.'),
-    dict(id='bk15', group='Group bookings', text='Ask Villa Bunia about the midnight arrival, luggage storage on the 11th, and an airport van for five', due='2026-10-10'),
+    dict(id='bk15', group='Group bookings', text='Ask Villa Bunia for an airport van for five at 14:15, and luggage storage on the 11th', due='2026-10-10'),
 ]
 
 # =============================================================================

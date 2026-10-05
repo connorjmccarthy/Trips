@@ -9,7 +9,7 @@
       "EUR": 0.57,
       "NOK": 6.7
     },
-    "updatedAt": "2026-09-20T08:58:38Z",
+    "updatedAt": "2026-10-05T11:58:03Z",
     "version": 1,
     "mapRegion": "",
     "travelMode": "transit",
@@ -1495,6 +1495,7 @@
       "group": "Paperwork",
       "text": "Check the passport: 6 months left AND issued within the last 10 years",
       "due": "2026-09-30",
+      "done": true,
       "notes": "Two separate rules and the second one catches people. Norway and Spain are both Schengen, which requires the passport to be valid at least 3 months after you leave AND to have been issued within the last 10 years. An Australian passport renewed early carries extra months that can push its issue date past ten years, and that passport gets refused while looking perfectly in date. Check the ISSUE date. Renewal takes about six weeks and longer near Christmas."
     },
     {

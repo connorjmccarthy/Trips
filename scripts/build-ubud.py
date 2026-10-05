@@ -102,7 +102,7 @@ days = [
                  notes='Ubud does a proper hour-long Balinese massage for Rp150,000 to Rp350,000, which is the correct way to spend the last morning of a holiday. Book the day before.'),
             item('u23', '12:00', 'stay', 'Check out', location='Kappa Senses Ubud', endTime='12:30', notes='AND THEN SEVEN HOURS TO FILL, because check-out is noon and you do not leave for the airport until seven. Ask Kappa Senses about a late check-out or day-use of the room and the pool: they will usually do one or the other, and on your last day in Bali that is worth paying for rather than sitting in a lobby. Failing that, leave the bags with them and go into Ubud for the afternoon, which is forty minutes each way.'),
             item('u24', '19:00', 'transfer', 'Kappa Senses to Denpasar airport', location='Kedewatan to DPS', endTime='21:00', cost=450000, currency='IDR', notes='Ninety minutes to two hours from Kedewatan, and the evening run is the slow one. Leaving at seven puts you at the airport about nine for a 23:40 departure, which is right. Book the car through the hotel rather than hoping for a Grab that far up the valley.'),
-            item('u25', '23:40', 'flight', 'JQ87 Denpasar to Brisbane, overnight', location='Ngurah Rai International, Terminal I', status='booked', notes='BOOKED: out 23:40, in at 07:20, about seven and a half hours with the two-hour difference. ONE THING TO CHECK: you gave the same flight number, JQ87, for the way out and the way home, and one number cannot do both directions. JQ87 is the outbound from Brisbane. Look at the return booking and confirm what the homeward flight is actually called, because that is the number on the departure board you will be hunting for at eleven at night. Be at the airport by nine: Denpasar is slow after dark and the international queue is long.'),
+            item('u25', '23:40', 'flight', 'JQ87 Denpasar to Brisbane, overnight', location='Ngurah Rai International, Terminal I', status='booked', notes='BOOKED and confirmed: JQ86 brought you over on the 4th, JQ87 takes you home. Out 23:40, in at 07:20, about seven and a half hours with the two-hour difference. Be at the airport by nine: Denpasar is slow after dark and the international queue is long. You will have been checked out of Kappa Senses since noon, so make sure the late check-out or the bag storage is agreed before the day itself.'),
         ]),
 ]
 
@@ -128,8 +128,8 @@ food = [
 
 checklist = [
     dict(id='uk1', group='Before the trip', text='Ask Kappa Senses for a late check-out on 15 Nov, and the car to the airport at 19:00', due='2026-10-31', notes='Check-out is noon and the flight is 23:40, so without a late check-out or day-use you have seven hours and nowhere to be. Ask for both in one message. Reservation number into the Private vault while you are at it.'),
-    dict(id='uk2', group='Before the trip', text='Confirm the flight number on the way home: JQ87 cannot be both directions', due='2026-10-01',
-         notes='The group flies out on the 11th on JQ87. You do not. Whatever you book, add it on the Flights page.'),
+    dict(id='uk2', group='Before the trip', text='Flight home confirmed: JQ87, 15 Nov, 23:40', due='2026-10-01', done=True,
+         notes='JQ86 out on 4 Nov, JQ87 home on the 15th. Reservation details go in the Private vault, not here.'),
     dict(id='uk3', group='Before the trip', text='Book the Canggu to Ubud car for the afternoon of 11 Nov', due='2026-11-01',
          notes='Rp200,000 to Rp300,000. Book it rather than relying on Grab, which is restricted in parts of Ubud.'),
     dict(id='uk4', group='In Ubud', text='Book the Mount Batur sunrise trek for 13 Nov, at least a day ahead', due='2026-11-11',
@@ -160,9 +160,10 @@ PLACE_OF = {
 
 questions = [
     dict(id='uq1', question='What is the flight home, and when?',
-         why='The group flies out of Denpasar on the 11th. You are in Ubud until the 15th and there is no return booking recorded anywhere. Everything on the 15th, the check-out time, the airport run, whether you get a last morning at all, hangs on it. Jetstar and Qantas both fly Denpasar to Brisbane; there is no direct Denpasar to Sunshine Coast service every day, so check which days JQ87 runs before assuming the 15th works.',
-         options=['Already booked, just not in the app', 'Not booked yet', 'Might change the dates entirely'],
-         recommendation='Book it, and check the day of the week first. If the direct flight to the Sunshine Coast does not run on the 15th, Brisbane plus the drive up is usually cheaper anyway.'),
+         why='Settled. JQ86 brought you over on 4 November and JQ87 takes you home, out of Denpasar at 23:40 on the 15th and into Brisbane at 07:20 on the 16th. What it leaves behind is a timing problem rather than a booking one: Kappa Senses checks you out at noon and you do not leave for the airport until seven, so seven hours need somewhere to go.',
+         options=['Late check-out or day-use at Kappa Senses', 'Bags with the hotel and spend the afternoon in Ubud', 'Leave early and wait at the airport'],
+         recommendation='Ask Kappa Senses for a late check-out or day-use of the room and pool, in the same message as the airport car. On your last day in Bali that is worth paying for rather than sitting in a departure hall.',
+         answer='JQ87, 15 Nov, out 23:40, in 07:20 on the 16th. JQ86 on the way over.', resolved=True),
 ]
 
 STAYS_GUIDE = [

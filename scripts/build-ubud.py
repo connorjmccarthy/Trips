@@ -36,21 +36,20 @@ def day(date_, title, base, notes, items, **kw):
 
 
 days = [
-    day('2026-11-11', 'Canggu to Ubud', 'Ubud (hotel to confirm)',
+    day('2026-11-11', 'Canggu to Ubud', 'Kappa Senses, Kedewatan',
         'The group checks out of Villa Bunia at 11am and flies home tonight. You go the other way. Leave before 2pm if you can, because the Denpasar ring road is the bottleneck and it turns a one-hour drive into two.',
         [
-            item('u1', '12:30', 'transfer', 'Canggu to Ubud by private car', location='Tibubeneng to Ubud', endTime='14:00', cost=300000, currency='IDR',
+            item('u1', '12:30', 'transfer', 'Canggu to Ubud by private car', location='Tibubeneng, Canggu to Kedewatan, Ubud', endTime='14:00', cost=300000, currency='IDR',
                  notes='35km, and 1 to 2 hours entirely depending on traffic. A pre-booked private car is Rp200,000 to Rp300,000 one way, arranged through the villa, Klook, or whichever driver you have used during the week. Grab and Gojek quote less but both are restricted in parts of Ubud and drivers often will not take the job, so a booked car avoids an argument at the other end with your bags on the pavement. Do not attempt it on a hired scooter with luggage.'),
-            item('u2', '14:00', 'stay', 'Check in, Ubud hotel', location='Ubud (hotel name to confirm)', endTime='14:30',
+            item('u2', '14:00', 'stay', 'Check in at Kappa Senses', location='Kappa Senses Ubud, Banjar Tanggayuda, Kedewatan', endTime='14:30',
                  notes='Booked from the 11th to the 15th, but the name, address and confirmation are not in the app yet. Add them on the Stays page and put the reservation number in the Private vault. Standard Bali check-in is 2pm or 3pm.'),
-            item('u3', '16:00', 'activity', 'Walk into town and get your bearings', location='Jl. Raya Ubud', endTime='18:00', status='idea',
-                 notes='Ubud is small enough to walk. The palace, the market and Jl. Goutama are all within ten minutes of each other. After a week of Canggu the quiet takes some adjusting to.'),
-            item('u4', '19:00', 'food', 'First dinner in Ubud', location='Jl. Goutama', cost=150000, currency='IDR',
-                 notes='Jl. Goutama is the lane with the best concentration of small restaurants, Rp60,000 to Rp120,000 a plate. Ubud eats earlier and quieter than Canggu and most kitchens are winding down by 9:30pm.'),
+            item('u3', '16:00', 'activity', 'Walk into town and get your bearings', location='Jl. Raya Ubud', endTime='17:45', status='idea', notes='An hour and three quarters is enough to find the Palace, the market and the main lanes, and to work out how long the car takes from Kedewatan. Keep it short tonight: there is a dance at half seven.'),
+            item('u4', '18:00', 'food', 'Early first dinner in Ubud', location='Jl. Goutama, the lane south of Jl. Raya Ubud', endTime='19:15', cost=150000, currency='IDR', notes='Eat early tonight because the dance starts at 19:30 and the Palace is two minutes from this lane. Jl. Goutama is a row of small warungs and no-booking places, which is exactly what you want when you are on a clock.'),
+            item('u4b', '19:30', 'activity', 'Legong dance at the Palace', location='Ubud Palace, Jl. Raya Ubud', endTime='21:00', cost=100000, currency='IDR', status='idea', notes='MOVED HERE FROM THE 12TH, because that night is now dinner at KAJA and you cannot do both. Traditional dance is performed most nights around Ubud, usually 19:30, about Rp100,000, and tickets are sold at the gate or by the men with laminated signs on Jl. Raya Ubud during the day. Touristy, and genuinely good; the gamelan is worth hearing live once. Tonight is the right night for it: you are already in town, you have nothing else booked, and tomorrow starts at half six.')
         ]),
 
-    day('2026-11-12', 'The ridge walk, the market and the monkeys', 'Ubud (hotel to confirm)',
-        'A full Ubud day on foot. Do the ridge walk at dawn while it is cool and empty, then the town, then the monkey forest in the afternoon. Rain most likely mid to late afternoon.',
+    day('2026-11-12', 'The ridge walk, the market and the monkeys', 'Kappa Senses, Kedewatan',
+        'A full Ubud day on foot, and you stay in town for the evening. Ridge walk at dawn while it is cool and empty, then the town, then the monkey forest, then dinner at KAJA five minutes from the forest gate. Rain most likely mid to late afternoon. Nothing today needs the car except getting in and getting home.',
         [
             item('u5', '06:30', 'activity', 'Campuhan Ridge Walk', location='Campuhan, Ubud', endTime='08:00', cost=0, currency='IDR',
                  notes='Free, about 2km each way along a paved spine between two river valleys with tall grass on both sides. Do it at dawn: by 9am it is hot and busy, and there is no shade at all. Starts near the Ibah hotel by the Campuhan bridge.'),
@@ -61,11 +60,10 @@ days = [
                  notes='The famous one. Go by 11:30 or it is gone; it is a lunch dish and they sell out.'),
             item('u9', '14:00', 'activity', 'Sacred Monkey Forest Sanctuary', location='Jl. Monkey Forest, Ubud', endTime='16:00', cost=100000, currency='IDR',
                  notes='About Rp100,000 entry. Long-tailed macaques in a genuine temple forest, and considerably more organised than Sangeh. Same rules: nothing loose, no food in your hands, no eye contact.'),
-            item('u10', '19:00', 'food', 'Dinner and a legong dance performance', location='Ubud Palace or Pura Dalem', cost=150000, currency='IDR', status='idea',
-                 notes='Traditional dance is performed most nights around Ubud, usually 7:30pm, about Rp100,000. Touristy but genuinely good, and the gamelan is worth hearing live once.'),
+            item('u10', '18:30', 'food', 'Dinner at KAJA by Numa', location='Jl. Raya Pengosekan, Ubud Mas, Gianyar 80571', endTime='21:00', cost=600000, currency='IDR', notes='Mediterranean, wood-fired robata, cave-inspired room; opened June 2026 so it is still new and busy. Open 17:00 to midnight daily, so 18:30 is comfortably inside. BOOK IT IF YOU HAVE NOT: they take reservations on Instagram, @kajabynuma, or on +62 858 7604 7835, and a new place in Ubud on a Thursday night is not somewhere to chance a walk-in. The cost here is a guess; a robata main and a couple of drinks will be more than a warung and less than Canggu. DO NOT GO BACK TO THE HOTEL FIRST. Pengosekan is five minutes from the Monkey Forest south gate and Kappa Senses is forty-five minutes the other way, so going back between four and half six costs you an hour and a half of driving for a thirty-minute stop. Stay in town, have a drink somewhere, walk over.'),
         ]),
 
-    day('2026-11-13', 'Mount Batur at sunrise, hot springs after', 'Ubud (hotel to confirm)',
+    day('2026-11-13', 'Mount Batur at sunrise, hot springs after', 'Kappa Senses, Kedewatan',
         'The one thing around Ubud worth setting a 2am alarm for. If you would rather not, swap it with the temple and waterfall day below, which starts at a civilised hour.',
         [
             item('u11', '02:00', 'transfer', 'Pickup for the Mount Batur trek', location='Ubud', endTime='03:30', cost=0, currency='IDR',
@@ -79,7 +77,7 @@ days = [
             item('u15', '18:30', 'food', 'Easy dinner', location='Ubud', cost=130000, currency='IDR'),
         ]),
 
-    day('2026-11-14', 'Water temple, rice terraces and a waterfall', 'Ubud (hotel to confirm)',
+    day('2026-11-14', 'Water temple, rice terraces and a waterfall', 'Kappa Senses, Kedewatan',
         'A driver day around the villages north of Ubud. All of it is within an hour of town and it works in any order, so let the driver route around the rain.',
         [
             item('u16', '08:30', 'transfer', 'Driver for the day', location='Ubud', cost=700000, currency='IDR', status='idea',
@@ -97,7 +95,7 @@ days = [
     day('2026-11-15', 'Last morning, then home', 'Overnight flight (not booked)',
         'The gap in this plan: there is no flight home on this date. Add it on the Flights page once you know what it is, and the timings on this day will make sense.',
         [
-            item('u21', '08:00', 'food', 'Breakfast and pack', location='Ubud hotel'),
+            item('u21', '08:00', 'food', 'Breakfast and pack', location='Kappa Senses Ubud'),
             item('u22', '10:00', 'activity', 'A spa, the Yoga Barn, or nothing at all', location='Ubud', endTime='12:00', cost=300000, currency='IDR', status='idea',
                  notes='Ubud does a proper hour-long Balinese massage for Rp150,000 to Rp350,000, which is the correct way to spend the last morning of a holiday. Book the day before.'),
             item('u23', '12:00', 'stay', 'Check out', location='Kappa Senses Ubud', endTime='12:30', notes='AND THEN SEVEN HOURS TO FILL, because check-out is noon and you do not leave for the airport until seven. Ask Kappa Senses about a late check-out or day-use of the room and the pool: they will usually do one or the other, and on your last day in Bali that is worth paying for rather than sitting in a lobby. Failing that, leave the bags with them and go into Ubud for the afternoon, which is forty minutes each way.'),
@@ -118,6 +116,10 @@ stays = [
 ]
 
 food = [
+    dict(id='uf0', town='Ubud', dish='KAJA by Numa: Mediterranean and wood-fired robata',
+         where='Jl. Raya Pengosekan, Ubud Mas. Open 17:00 to midnight. Booked for 18:30 on the 12th',
+         why='The one proper dinner of this leg. Opened June 2026: a cave-inspired room, a robata grill doing Australian wagyu and tomahawk, scallop ceviche with coconut-yuzu, slow-braised oxtail, and a short list of good pizza if you want something simpler. Five minutes from the Monkey Forest, so it falls naturally at the end of the walking day.',
+         priceBand='Rp Rp Rp', url='https://www.instagram.com/kajabynuma/'),
     dict(id='uf1', town='Ubud', dish='Babi guling at Ibu Oka', where='Near Ubud Palace, lunch only',
          why='The famous one. Go by 11:30 or it is gone.', priceBand='¥'),
     dict(id='uf2', town='Ubud', dish='Dinner on Jl. Goutama', where='The lane south of Jl. Raya Ubud',

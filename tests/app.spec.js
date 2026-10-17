@@ -846,3 +846,47 @@ test.describe('the Osaka hotel decision', () => {
     await expect(page.locator('#main')).toContainText(picked.split(',')[0]);
   });
 });
+
+test.describe('cash for Indonesia', () => {
+  test('both Indonesian plans name a cash figure, and agree on where to get it', async ({ page }) => {
+    // The question "how much cash do I bring" gets answered in three places:
+    // the checklist, the arrival-day note and the paying guide. They have to
+    // say the same thing, and none of them may send him to a Mandiri machine.
+    await boot(page, '#/overview');
+    const r = await page.evaluate(async () => {
+      const grab = async (f) => await (await fetch(f)).json();
+      const [bali, ubud] = [await grab('/data/bali.json'), await grab('/data/ubud.json')];
+      const strings = (t) => JSON.stringify(t);
+      const mandiri = strings(bali)
+        .split(/(?<=\.)\s+/)
+        .filter((s) => /Mandiri/.test(s));
+      return {
+        baliTodo: (bali.checklist || []).filter((c) => /^Cash: about Rp 2,000,000/.test(c.text)).length,
+        ubudTodo: (ubud.checklist || []).filter((c) => /^Cash for Ubud: about Rp 2,300,000/.test(c.text)).length,
+        baliArrivalHasNumber: /Rp 2,000,000 for the week/.test(strings(bali)),
+        baliGuideHasNumber: /roughly Rp 2,000,000 a head in cash/.test(strings(bali)),
+        ubudGuideNamesTheRoom: /put them on the room/.test(strings(ubud)),
+        // every Mandiri mention is a warning, never a recommendation
+        mandiriMentions: mandiri.length,
+        mandiriAllWarnings: mandiri.every((s) => /avoid|skip/i.test(s)),
+      };
+    });
+    expect(r.baliTodo).toBe(1);
+    expect(r.ubudTodo).toBe(1);
+    expect(r.baliArrivalHasNumber).toBe(true);
+    expect(r.baliGuideHasNumber).toBe(true);
+    expect(r.ubudGuideNamesTheRoom).toBe(true);
+    expect(r.mandiriMentions).toBeGreaterThan(0);
+    expect(r.mandiriAllWarnings).toBe(true);
+  });
+
+  test('the cash to-do is visible on the Bali checklist', async ({ page }) => {
+    const errors = await boot(page, '#/checklist', { trip: 'bali' });
+    const row = page.locator('.check-text', { hasText: 'Cash: about Rp 2,000,000' });
+    await expect(row).toBeVisible();
+    // and the note under it carries the breakdown, not just the headline
+    await expect(row).toContainText('BCA or BNI');
+    await expect(row).toContainText('AVOID MANDIRI');
+    expect(errors).toEqual([]);
+  });
+});

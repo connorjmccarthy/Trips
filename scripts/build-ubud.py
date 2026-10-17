@@ -129,6 +129,8 @@ food = [
 ]
 
 checklist = [
+    dict(id='uk-cash', group='Before the trip', text='Cash for Ubud: about Rp 2,300,000, and ask if Kappa Senses will bill the cars', due='2026-11-10',
+         notes='FOUR NIGHTS, AND THE DRIVERS ARE MOST OF IT. Canggu to Ubud is Rp 300,000, the temple and waterfall day is Rp 700,000 and the airport run is Rp 450,000, so Rp 1,450,000 of the Rp 2,300,000 is just cars. ASK KAPPA SENSES WHETHER THEY WILL ARRANGE AND BILL ALL THREE TO THE ROOM: if they do, that drops your cash need to about Rp 850,000 and you pay it on the card at check-out. The rest is cash whatever happens: Monkey Forest Rp 100,000, Tirta Empul Rp 75,000 plus the sarong, Tegallalang Rp 50,000 and the parking touts, the waterfall Rp 50,000, the legong Rp 100,000, babi guling and street food Rp 250,000, and something for the Batur guide at the top of a volcano at sunrise. KAJA takes card. Top up at a BCA or BNI ATM in central Ubud before the 14th, because the temple day is all small cash and there is no machine at Tirta Empul.'),
     dict(id='uk1', group='Before the trip', text='Ask Kappa Senses for a late check-out on 15 Nov, and the car to the airport at 19:00', due='2026-10-31', notes='Check-out is noon and the flight is 23:40, so without a late check-out or day-use you have seven hours and nowhere to be. Ask for both in one message. Reservation number into the Private vault while you are at it.'),
     dict(id='uk2', group='Before the trip', text='Flight home confirmed: JQ87, 15 Nov, 23:40', due='2026-10-01', done=True,
          notes='JQ86 out on 4 Nov, JQ87 home on the 15th. Reservation details go in the Private vault, not here.'),
@@ -174,7 +176,7 @@ STAYS_GUIDE = [
     dict(title='Getting there and getting out',
          body='Canggu to Ubud is 35km and takes 1 to 2 hours depending entirely on traffic. A pre-booked private car is Rp200,000 to Rp300,000 one way and is the right answer with luggage. Leave before 9am or after 2pm; the Denpasar ring road is the bottleneck. Going the other way at the end, allow a full two hours to the airport, because the late afternoon run is the worst on the island.'),
     dict(title='Getting around Ubud',
-         body='The centre is walkable and that is the point. Grab and Gojek are restricted in parts of Ubud because the local drivers association has carved out territory, so you will sometimes be told to walk to a main road for a pickup. For anything outside town, a driver for the day is the answer rather than paying per trip.'),
+         body='The centre is walkable and that is the point. Grab and Gojek are restricted in parts of Ubud because the local drivers association has carved out territory, so you will sometimes be told to walk to a main road for a pickup. For anything outside town, a driver for the day is the answer rather than paying per trip. Drivers are cash, and across these four nights they are the bulk of what you spend in cash, so ask Kappa Senses whether they will arrange the cars and put them on the room instead.'),
 ]
 
 for d in days:

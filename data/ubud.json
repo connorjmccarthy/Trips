@@ -22,6 +22,7 @@
     "about": "Your own four days in Ubud after the group flies home on the 11th. Private: it is marked unshared, so nobody holding the Bali link sees it. Two things are still missing, the hotel details and a flight home.",
     "seedIds": {
       "checklist": [
+        "uk-cash",
         "uk1",
         "uk2",
         "uk3",
@@ -457,7 +458,7 @@
     },
     {
       "title": "Getting around Ubud",
-      "body": "The centre is walkable and that is the point. Grab and Gojek are restricted in parts of Ubud because the local drivers association has carved out territory, so you will sometimes be told to walk to a main road for a pickup. For anything outside town, a driver for the day is the answer rather than paying per trip."
+      "body": "The centre is walkable and that is the point. Grab and Gojek are restricted in parts of Ubud because the local drivers association has carved out territory, so you will sometimes be told to walk to a main road for a pickup. For anything outside town, a driver for the day is the answer rather than paying per trip. Drivers are cash, and across these four nights they are the bulk of what you spend in cash, so ask Kappa Senses whether they will arrange the cars and put them on the room instead."
     }
   ],
   "points": {},
@@ -516,6 +517,13 @@
   ],
   "budget": [],
   "checklist": [
+    {
+      "id": "uk-cash",
+      "group": "Before the trip",
+      "text": "Cash for Ubud: about Rp 2,300,000, and ask if Kappa Senses will bill the cars",
+      "due": "2026-11-10",
+      "notes": "FOUR NIGHTS, AND THE DRIVERS ARE MOST OF IT. Canggu to Ubud is Rp 300,000, the temple and waterfall day is Rp 700,000 and the airport run is Rp 450,000, so Rp 1,450,000 of the Rp 2,300,000 is just cars. ASK KAPPA SENSES WHETHER THEY WILL ARRANGE AND BILL ALL THREE TO THE ROOM: if they do, that drops your cash need to about Rp 850,000 and you pay it on the card at check-out. The rest is cash whatever happens: Monkey Forest Rp 100,000, Tirta Empul Rp 75,000 plus the sarong, Tegallalang Rp 50,000 and the parking touts, the waterfall Rp 50,000, the legong Rp 100,000, babi guling and street food Rp 250,000, and something for the Batur guide at the top of a volcano at sunrise. KAJA takes card. Top up at a BCA or BNI ATM in central Ubud before the 14th, because the temple day is all small cash and there is no machine at Tirta Empul."
+    },
     {
       "id": "uk1",
       "group": "Before the trip",

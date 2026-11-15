@@ -531,6 +531,17 @@ button.chip:hover { border-color: var(--accent); color: var(--accent); }
 .variant-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); font-weight: 700; margin-bottom: 6px; }
 .seg-block { display: flex; width: 100%; }
 .seg-block button { flex: 1; }
+
+/* Trip switcher in the sidebar. A grid rather than a .seg row, because the
+   number of trips grows and a flex row with overflow:hidden clipped the fifth
+   one out of existence. Wraps to as many rows as it needs. */
+.trip-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 6px; }
+.trip-pick button {
+  min-width: 0; padding: 8px 6px; border: 1px solid var(--border-strong); border-radius: 10px;
+  background: var(--bg-elev); font-weight: 600; font-size: 13px; color: var(--text-2);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.trip-pick button.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .variant-tag { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--info-soft); color: var(--info); font-weight: 600; }
 
 /* Day map on the Plan page */

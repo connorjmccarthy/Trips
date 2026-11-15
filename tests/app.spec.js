@@ -890,3 +890,74 @@ test.describe('cash for Indonesia', () => {
     expect(errors).toEqual([]);
   });
 });
+
+test.describe('Montana, and a fifth trip in the switcher', () => {
+  test('every trip in the registry is reachable from the sidebar, not clipped', async ({ page, isMobile }) => {
+    // The switcher used to be a single flex row with overflow:hidden, so the
+    // fifth trip was rendered, clipped, and unreachable. This catches that for
+    // any number of trips rather than for five specifically.
+    await boot(page, '#/overview', { trip: 'montana' });
+    if (isMobile) await page.locator('#menu-btn').click();
+    const registry = await page.evaluate(async () => (await (await fetch('/data/trips.json')).json()).trips.map((t) => t.id));
+    const group = page.locator('[aria-label="Trip"]');
+    await expect(group).toBeVisible();
+    const buttons = group.locator('button');
+    await expect(buttons).toHaveCount(registry.length);
+    // every one must be inside its container, not cut off by an overflow rule
+    const clipped = await group.evaluate((g) => {
+      const box = g.getBoundingClientRect();
+      return [...g.querySelectorAll('button')]
+        .filter((b) => { const r = b.getBoundingClientRect(); return r.right > box.right + 1 || r.bottom > box.bottom + 1 || r.width < 8; })
+        .map((b) => b.textContent.trim());
+    });
+    expect(clipped, 'these trip buttons are clipped out of the switcher').toEqual([]);
+  });
+
+  test('switching to Montana loads the Montana plan', async ({ page, isMobile }) => {
+    await boot(page, '#/overview', { trip: 'japan' });
+    if (isMobile) await page.locator('#menu-btn').click();
+    await page.locator('[aria-label="Trip"] button', { hasText: 'Montana' }).click();
+    await expect(page.locator('#brand-title')).toHaveText('Montana 2028');
+    await expect(page.locator('#main')).toContainText('Bozeman');
+  });
+
+  test('every Montana view renders without errors and without overflow', async ({ page }) => {
+    const errors = await boot(page, '#/overview', { trip: 'montana' });
+    for (const v of VIEWS) {
+      await page.goto(`/#/${v}`);
+      await page.waitForTimeout(150);
+      await expect(page.locator('#main')).not.toBeEmpty();
+      const [w, vw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
+      expect(w, `${v} overflows horizontally`).toBeLessThanOrEqual(vw + 1);
+    }
+    expect(errors).toEqual([]);
+  });
+
+  test('activities are priced once, on the itinerary, not twice', async ({ page }) => {
+    // The first cut of this plan priced Bridger, Big Sky and the park fee both
+    // on the itinerary items and again as manual budget lines, which overstated
+    // the trip by about A$990.
+    await boot(page, '#/budget', { trip: 'montana' });
+    const r = await page.evaluate(async () => {
+      const t = await (await fetch('/data/montana.json')).json();
+      const manualActivities = (t.budget || []).filter((b) => b.category === 'Activities' && b.status !== 'idea');
+      const itemCosts = t.days.flatMap((d) => d.items).filter((i) => i.cost).length;
+      return { manualActivities: manualActivities.map((b) => b.label), itemCosts };
+    });
+    expect(r.manualActivities).toEqual([]);
+    expect(r.itemCosts).toBeGreaterThan(4);
+  });
+
+  test('the plan is honest that nothing is booked and the dates are provisional', async ({ page }) => {
+    await boot(page, '#/overview', { trip: 'montana' });
+    const r = await page.evaluate(async () => {
+      const t = await (await fetch('/data/montana.json')).json();
+      return {
+        booked: [...(t.stays || []), ...(t.flights?.confirmed || [])].filter((x) => x.status === 'booked').length,
+        provisional: /PROVISIONAL/i.test(t.meta.about),
+      };
+    });
+    expect(r.booked).toBe(0);
+    expect(r.provisional).toBe(true);
+  });
+});

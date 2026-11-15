@@ -1,0 +1,461 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Build data/montana.json: the Montana leg of a January 2028 US trip.
+
+Solo. A few days skiing, the rest not. Budget A$4,000 to A$8,000 on the ground,
+excluding flights. Montana is one leg; the other is Oregon or Washington and
+gets its own page once that is decided.
+
+DATES ARE PROVISIONAL. Sat 8 to Sun 16 January 2028, eight nights, chosen
+because it sits after the New Year crowds and mostly before the Martin Luther
+King Jr long weekend (Sat 15 to Mon 17 Jan 2028), which is the one January week
+when Big Sky is genuinely busy and dear. Change START and END and re-date the
+days; nothing else in this file depends on the dates.
+
+The shape: Bozeman as the only base you need, with two nights out at Gardiner
+for Yellowstone. Three lift days, two wildlife days, one town day, one hot
+spring day, and a spare for weather.
+
+    python3 scripts/build-montana.py
+"""
+import datetime
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _carry import carry_over   # noqa: E402
+
+UPDATED = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+START, END = '2028-01-08', '2028-01-16'
+
+# Units of foreign currency per AUD, the same convention as the other trips.
+# A guess for January 2028: 1 AUD bought about 0.65 USD in late 2026. Change it
+# on the Budget page when you are closer and every price here moves with it.
+RATES = {'USD': 0.65}
+
+
+def item(id, time, type, title, **kw):
+    d = dict(id=id, time=time, type=type, title=title, status=kw.pop('status', 'planned'))
+    d.update(kw)
+    return d
+
+
+def day(date_, title, base, notes, items):
+    return dict(id='d' + date_.replace('-', ''), date=date_, title=title, base=base, notes=notes, items=items)
+
+
+# =============================================================================
+# DAYS
+# =============================================================================
+days = [
+  day('2028-01-08', 'Land in Bozeman, and do nothing else', 'Bozeman',
+      'Saturday. You have crossed the Pacific and gained a day back, so the clock says afternoon and your body says the middle of the night. Collect the car, drive fifteen minutes, eat a steak, sleep.', [
+    item('a1', '14:00', 'flight', 'Land at Bozeman Yellowstone International', location='BZN, Belgrade, Montana', endTime='15:00',
+         notes='BZN is a ski airport, which is why this leg is easy to reach: in winter it takes direct flights from Los Angeles, San Francisco, Seattle, Denver, Dallas, Chicago and Atlanta, so from Brisbane this is realistically one stop after the Pacific crossing. The terminal is small and the bag hall is quick. IT WILL BE DARK BY FIVE, so if the flight slips you are collecting a car and driving an unfamiliar road on the wrong side in the dark on no sleep. That is the argument for an early arrival rather than a cheap late one.'),
+    item('a2', '15:15', 'transfer', 'Collect the hire car', location='BZN car rental counters', endTime='16:00',
+         notes='AWD OR 4WD, NOT A SEDAN, and check it has proper winter or all-weather tyres rather than all-seasons. This is not optional in January and it is the single thing most Australians get wrong here. Walk around it and photograph the panels before you leave, because road grit and ice chip paint and you do not want that argument on return. Find the headlight switch, the demister and the hazard lights before you pull out, not on the interstate.'),
+    item('a3', '16:15', 'transfer', 'Drive into Bozeman', location='BZN to downtown Bozeman', endTime='16:45',
+         notes='Fifteen minutes on I-90, all of it flat and straight. Right side of the road, speed in miles, and the exit signs come up fast. If it is snowing, the plows have been through but the on-ramps ice first.'),
+    item('a4', '18:00', 'food', 'First dinner, and keep it simple', location='Downtown Bozeman',
+         notes='You are in cattle country and you are a carnivore, so this is the easiest food week you will ever have. Walk Main Street, pick somewhere warm, eat beef. Do not plan anything ambitious tonight. Jet lag going east is the kinder direction but you will still wake at 4am.'),
+    item('a5', '19:30', 'activity', 'Supermarket run', location='Town & Country or Rosauers, Bozeman', endTime='20:00', status='idea',
+         notes='Water, breakfast things, snacks for the car and the hill. Lift-side food in Montana is expensive and mediocre. A loaf, some cheese and a bag of jerky in the car covers three lunches.')]),
+
+  day('2028-01-09', 'Bridger Bowl, day one', 'Bozeman',
+      'Sunday. Twenty minutes from your bed to the lift, which is the entire reason Bozeman beats Big Sky as a base. Ease in: you have not skied since the Japan trip got cancelled into a culture trip.', [
+    item('b1', '07:30', 'food', 'Breakfast before the hill', location='Bozeman',
+         notes='Eat properly. The Western Cafe does the unreconstructed American diner breakfast, eggs and hash and a cinnamon roll the size of your hand, and it opens early. Wild Crumb is the better bakery if you want coffee and pastry instead.'),
+    item('b2', '08:45', 'transfer', 'Drive to Bridger Bowl', location='15795 Bridger Canyon Rd, Bozeman', endTime='09:15',
+         notes='Twenty-five minutes up Bridger Canyon. The road is plowed and ordinary but it is a canyon road in winter, so leave margin. There is also a Skyline bus from town, free, which is worth knowing for the day you would rather not drive. PARKING FILLS ON A POWDER DAY, so if it has snowed overnight leave by eight.'),
+    item('b3', '09:30', 'activity', 'Ski Bridger Bowl', location='Bridger Bowl, Bozeman', endTime='15:30',
+         cost=230, currency='USD',
+         notes='THE VALUE PICK OF THE AMERICAN WEST. A non-profit community hill with 2,000 acres, 2,700 feet of vertical and a genuinely serious top half, for a fraction of what a destination resort charges. The number that matters: the ANY DAY PACK is US$230 for three non-consecutive adult days, which is about US$77 a day and roughly a third of a January walk-up day at Big Sky. Buy it online before you fly; it is non-refundable and non-transferable and expires at the end of the season. You also need a Bridger Bowl RFID card, which is free the first time. The famous bit is the Ridge, which is hike-to, needs an avalanche transceiver that they check at the gate, and is not where you go on day one off a long-haul flight. The lift-served terrain under it is plenty.'),
+    item('b4', '10:00', 'activity', 'Hire skis and boots for the week', location='Bridger Bowl rental shop, or a Bozeman shop the night before', endTime='10:30',
+         cost=220, currency='USD',
+         notes='About US$50 to US$60 a day for a decent performance package, so roughly US$220 across your four ski days, which is what this line prices. Hiring in town the evening before is cheaper and means you are not queuing in ski boots at 9am, and Bozeman has several good shops. Give them your boot size in centimetres, not Australian sizing, and take your own socks. YOU DO NOT NEED TO BRING SKIS OR A JACKET FROM HOME: renting both is cheap and you are flying a very long way.'),
+    item('b5', '16:00', 'food', 'Beer at Jimmy B\'s, then back to town', location='Bridger Bowl base', endTime='17:00', status='idea',
+         notes='The base lodge bar. Low ceilings, locals, nothing designed by a brand consultant. One drink here is a better end to a ski day than anything in town.')]),
+
+  day('2028-01-10', 'Bozeman itself, and a long soak', 'Bozeman',
+      'Monday, and a deliberate day off the snow. Bozeman is a real town rather than a resort village, which is the point: a university, bookshops, a world-class museum and a Main Street that was not built for tourists.', [
+    item('c1', '09:30', 'activity', 'Museum of the Rockies', location='600 W Kagy Blvd, Bozeman', endTime='12:30',
+         cost=18, currency='USD',
+         notes='DO NOT SKIP THIS BECAUSE IT SOUNDS LIKE A REGIONAL MUSEUM. It holds the largest collection of dinosaur fossils in the United States, because this is the Hell Creek country where they come out of the ground, and it is where Jack Horner did the work that changed how palaeontologists think about how dinosaurs grew and behaved. There is a genuine Tyrannosaurus here, not a cast. Three hours is right. The planetarium is a reasonable add-on if the weather has turned.'),
+    item('c2', '13:00', 'food', 'Lunch on Main Street', location='Downtown Bozeman',
+         notes='Montana Ale Works, in the old Northern Pacific railroad building, is the reliable one: bison burgers, a long beer list, pool tables at the back. Not fancy and not trying to be.'),
+    item('c3', '14:30', 'activity', 'Walk Main Street', location='Main St, Bozeman', endTime='16:30',
+         notes='Country Bookshelf for books, Schnee\'s for the boots everybody here wears, Owenhouse Hardware which has been on the same corner since 1879, and the Western outfitters if you want a hat you will wear twice. This is also your chance to buy any cold-weather gap you have discovered, and Bozeman is a good town for that: Schnee\'s, Sportsman\'s Warehouse and REI are all here and all cheaper than Australia.'),
+    item('c4', '17:30', 'activity', 'Bozeman Hot Springs', location='81123 Gallatin Rd, Bozeman', endTime='19:30',
+         cost=15, currency='USD',
+         notes='Nine pools from about 36 to 41 degrees, several of them outdoors, so you sit in hot water in the dark while it snows on your head. Twenty minutes from town. Around US$15 and no booking needed. NO TATTOO RULES ANYWHERE IN AMERICA, which after planning the Japan trip around that question is a relief. It gets busy from about six and there is live music some evenings. Take thongs for the walk between pools, because the concrete is cold and wet.'),
+    item('c5', '20:00', 'food', 'Dinner', location='Bozeman',
+         notes='Open Range for the proper steak night: Montana beef, cooked on a wood grill, a short menu. Book it, because Bozeman restaurants are small and fill up even in January.')]),
+
+  day('2028-01-11', 'Down Paradise Valley to Yellowstone', 'Gardiner',
+      'Tuesday. An hour and a half south through Paradise Valley with the Absaroka range on your left the whole way, which is one of the great drives in America and almost empty in January. Two nights at the park gate.', [
+    item('d1', '09:00', 'transfer', 'Bozeman to Gardiner', location='Bozeman to Gardiner via Livingston and US-89', endTime='11:00',
+         notes='About 130km and ninety minutes in good conditions. THE FIRST STRETCH IS THE DANGEROUS ONE: the Bozeman Pass on I-90 to Livingston gets wind, ice and closures, and the Livingston wind is locally famous for pushing high vehicles around. Then you turn south onto US-89 and the valley opens. Fill the tank in Livingston or Gardiner, because fuel inside the park is only at Mammoth.'),
+    item('d2', '11:15', 'activity', 'Stop in Livingston', location='Livingston, Montana', endTime='12:00', status='idea',
+         notes='An old railroad town that became a writers\' and painters\' town, and still looks like the set of a Western because it essentially is one. Worth forty minutes and a coffee if the weather is clear.'),
+    item('d3', '13:00', 'activity', 'Through the Roosevelt Arch and up to Mammoth', location='North Entrance, Gardiner', endTime='16:00',
+         cost=100, currency='USD',
+         notes='The 1903 stone arch at the North Entrance, inscribed "For the Benefit and Enjoyment of the People", is the original way into the park and the only gate open to cars all winter. THE FEE IS THE THING TO READ BEFORE YOU GO: since 1 January 2026 non-US residents pay a US$100 per-person surcharge at the gate at Yellowstone and ten other big parks, and non-residents can no longer buy the cheaper park-specific annual pass. The America the Beautiful annual pass costs non-residents US$250 rather than the US$80 Americans pay. So if this trip takes in one more surcharge park, and the Pacific Northwest leg easily might, the US$250 pass is cheaper than paying US$100 twice. There is a to-do about this. At Mammoth: the travertine terraces, which steam dramatically in the cold, and elk standing about on the lawns of the old fort buildings as though they pay rent.'),
+    item('d4', '16:30', 'transfer', 'Back down to Gardiner and check in', location='Gardiner, Montana', endTime='17:15',
+         notes='Five miles, ten minutes. Gardiner is a one-street town of a few hundred people that exists for the park gate, and in January most of it is shut. That is fine. You are here to be eight minutes from the Lamar Valley road at dawn.'),
+    item('d5', '18:30', 'food', 'Dinner in Gardiner', location='Gardiner',
+         notes='Thin pickings in January and that is part of the deal. The Iron Horse Bar and Grill and the Yellowstone Grill are the usual answers, and the Wonderland Cafe does a decent dinner. CHECK WINTER HOURS THE DAY BEFORE, because several places close entirely or run three days a week off-season. Have a backup in the car: a town of 800 people in January can simply be shut.'),
+    item('d6', '20:00', 'activity', 'Look up', location='Gardiner', endTime='20:30', status='idea',
+         notes='No light pollution, no humidity and a sixteen-hour night. On a clear evening the Milky Way is obvious to the naked eye. Five minutes outside is enough; it is probably minus fifteen.')]),
+
+  day('2028-01-12', 'Lamar Valley, dawn to dusk', 'Gardiner',
+      'Wednesday, and the reason to come to Montana in January rather than July. The Lamar Valley is the one place in the world where you can reliably watch wild wolves, and winter is when it works: they are on the move, the elk are low, and everything shows up black against snow.', [
+    item('e1', '06:30', 'transfer', 'Out the gate before first light', location='Gardiner to Lamar Valley', endTime='08:00',
+         notes='DAWN IS THE WHOLE POINT. Sunrise in mid-January is about 08:00 and the animals are active in the hour either side of it. Mammoth to Lamar is about 50km of plowed two-lane road, slow in the dark and often icy, so allow an hour and a half. Take a thermos; nothing is open. Watch for bison standing in the road, which is not a joke: they do not move and they are the size of a car.'),
+    item('e2', '08:00', 'activity', 'Wildlife watching in the Lamar Valley', location='Lamar Valley, Yellowstone', endTime='15:00',
+         notes='THIS IS FREE AND SELF-DRIVE, which is why it is the best value on the whole trip. The road from Mammoth through Tower to Cooke City is plowed all winter and open to ordinary cars, and it runs the length of the valley. How it actually works: you drive slowly between pull-outs and you look for the other cars. The wolf watchers are there every morning with spotting scopes the size of artillery, they know which pack is where, and they are almost universally happy to let a polite stranger look through the eyepiece. That is how most people see their first wolf. BRING OR HIRE BINOCULARS, at least 10x42; wolves are usually a kilometre away and a phone camera will show you nothing. Also here: bison herds ploughing snow with their heads, bighorn sheep on the cliffs near Tower, coyotes hunting voles, bald eagles, and if you are very lucky a moose in the willows. Dress for standing still in the wind at minus twenty, which is a different proposition to skiing.'),
+    item('e3', '12:30', 'food', 'Lunch in the car', location='Lamar Valley',
+         notes='There is nothing out here. Nothing. Pack it in Gardiner the night before and keep it inside your coat, because a sandwich left on the seat freezes solid. Cooke City at the far end has a cafe or two but it is another 40km and the road dead-ends there in winter.'),
+    item('e4', '15:30', 'activity', 'Boiling River or the terraces on the way back', location='Mammoth area', endTime='16:30', status='idea',
+         notes='Check first: the Boiling River swimming area, where a hot spring meets the Gardner River, has been closed since the 2022 flood and reopening has been repeatedly deferred, so do not drive down expecting it. The upper terrace loop at Mammoth is the reliable alternative and is at its best in low afternoon light.'),
+    item('e5', '18:00', 'food', 'Last dinner in Gardiner', location='Gardiner',
+         notes='Same constraints as last night. If both your options were shut, this is why you packed the backup.')]),
+
+  day('2028-01-13', 'Chico, and the long soak you have earned', 'Bozeman',
+      'Thursday. Back up Paradise Valley with one stop that is worth building the day around.', [
+    item('f1', '10:00', 'transfer', 'Gardiner to Chico Hot Springs', location='Pray, Montana, via US-89 north', endTime='10:45',
+         notes='Fifty minutes back up the valley, then a few kilometres east on a side road to Pray, which is not really a town.'),
+    item('f2', '11:00', 'activity', 'Chico Hot Springs', location='163 Chico Rd, Pray, Montana', endTime='15:00',
+         cost=25, currency='USD',
+         notes='An 1900 wooden lodge with two open-air mineral pools, one about 36 degrees and one about 40, fed by the spring and chlorine-free. You sit in it with snow on the rails and the Absaroka range straight ahead. Day use is cheap, in the region of US$20 to US$30; CONFIRM THE CURRENT PRICE AND WINTER HOURS BY PHONE, because the figures online are badly out of date. The Saloon is the other half of the experience: dive bar, live music at weekends, locals and ranch hands and the occasional film star who has a place in the valley.'),
+    item('f3', '13:00', 'food', 'Lunch at the poolside grill or the Saloon', location='Chico Hot Springs',
+         notes='Casual food, burgers and the like. Save your appetite if you are doing the dining room tonight.'),
+    item('f4', '15:30', 'transfer', 'Chico to Bozeman', location='US-89 and I-90', endTime='16:45',
+         notes='About eighty minutes. Livingston wind again on the pass.'),
+    item('f5', '18:30', 'food', 'The Historic Dining Room at Chico, if you stay for it', location='Chico Hot Springs', status='idea',
+         notes='THE DECISION ON THIS DAY. Chico\'s Historic Dining Room is one of the best restaurants in Montana, old-school and serious: beef Wellington, trout, and a flaming orange dessert they have done for decades. But it is a proper dinner an hour from Bozeman, so either you eat early and drive back on a dark valley road, or you book a room at Chico and make this an overnight instead of a day trip. Both are good. Decide when you book, because the dining room needs a reservation and the rooms are limited.')]),
+
+  day('2028-01-14', 'Big Sky, the one big mountain day', 'Bozeman',
+      'Friday. An hour south of Bozeman is 5,850 acres and 4,350 feet of vertical, which is the most lift-served vertical in America. One day here is the right amount: you get the mountain, you do not pay for a week of it.', [
+    item('g1', '07:30', 'transfer', 'Bozeman to Big Sky', location='US-191 through the Gallatin Canyon', endTime='08:45',
+         notes='Seventy-five minutes down the Gallatin Canyon, following the river the whole way, and this is the drive they filmed A River Runs Through It on. IT IS ALSO THE MOST DEMANDING DRIVE OF YOUR WEEK: two lanes, no shoulder, rock on one side and river on the other, and it ices in the shade. Leave early, go slowly, and do not be the Australian who finds this out at 80km/h.'),
+    item('g2', '09:00', 'activity', 'Ski Big Sky', location='Big Sky Resort, Montana', endTime='15:30',
+         cost=200, currency='USD',
+         notes='Lone Peak at 3,403m, and the Lone Peak Tram goes to the actual summit, from which the terrain is genuinely expert and includes the Big Couloir, which needs a partner and a transceiver and a sign-out. YOU DO NOT NEED TO SKI THAT TO JUSTIFY THE DAY. The mountain underneath it is enormous and mostly intermediate, and on a Friday in January you will ski it with nobody on it. THE PRICE IS THE CATCH: single-day January tickets have run anywhere from about US$98 to US$222 depending on the date, with a holiday Saturday quoted at US$289 at the window. BUY ONLINE AND IN ADVANCE, where there is usually a 10% saving, and avoid the Martin Luther King Jr weekend of 15 to 17 January entirely. If this is the only resort day you buy at full price, it is worth it; if the price for your date comes back near US$220, a third Bridger day is better skiing per dollar.'),
+    item('g3', '15:45', 'food', 'Something at the base, then drive back in the light', location='Big Sky Mountain Village', endTime='16:45',
+         notes='Beehive Basin Brewery or the Riverhouse BBQ down in Big Sky Town Center are both better than the mountain village food. DRIVE THE CANYON BEFORE DARK IF YOU CAN. Sunset is about 5pm and that road is much worse at night.')]),
+
+  day('2028-01-15', 'Spare day: Bridger again, or whatever the week has revealed', 'Bozeman',
+      'Saturday, and deliberately unplanned. By now you know whether you want another ski day, whether the weather stole something, or whether you just want a slow morning. Your Bridger three-pack has a day left on it.', [
+    item('h1', '09:00', 'activity', 'Bridger Bowl, day three', location='Bridger Bowl, Bozeman', endTime='15:30', status='idea',
+         notes='The third day of the Any Day Pack, already paid for. A Saturday is the busiest Bridger gets and it is still nothing by Australian or European standards. If it has snowed in the week, this is the day you know the mountain well enough to go looking.'),
+    item('h2', '09:00', 'activity', 'Alternative: Hyalite Canyon', location='Hyalite Canyon, south of Bozeman', endTime='15:00', status='idea',
+         notes='Twenty minutes from town and one of the densest concentrations of ice climbing in North America, which is why the Bozeman Ice Festival happens here. You are not climbing, but the road is plowed to the reservoir, the frozen waterfalls are a short walk in, and watching people climb them is its own thing. Snowshoes or micro-spikes help. CHECK THE ROAD: it is plowed but closes in heavy snow.'),
+    item('h3', '09:00', 'activity', 'Alternative: a day on skis of the other kind', location='Crosscut Mountain Sports Center, Bridger Canyon', endTime='13:00', status='idea',
+         notes='Cross-country and skate skiing on 50km of groomed trail next door to Bridger Bowl, plus biathlon if you want to shoot a rifle lying down in the snow, which is a genuinely Montanan thing to do with an afternoon. Trail pass and gear hire are both modest.'),
+    item('h4', '18:30', 'food', 'Last dinner in Bozeman', location='Bozeman',
+         notes='Blackbird Kitchen if you want the room everybody recommends and you booked ahead, Open Range again if the steak was the right answer the first time. Then pack, because the drive to the airport is short but the bag is going to be heavier than it arrived.')]),
+
+  day('2028-01-16', 'Out to the second leg', 'Travelling',
+      'Sunday. Montana is done. Next page is Oregon or Washington, once that is decided.', [
+    item('i1', '09:00', 'transfer', 'Return the car at BZN', location='BZN car rental return', endTime='09:45',
+         notes='FILL IT FIRST, in Belgrade or Four Corners, because airport fuel pricing is a tax on the disorganised. Give yourself longer than you think if it snowed overnight: you may be clearing the car and driving slowly, and the rental return wants it brushed off.'),
+    item('i2', '10:30', 'flight', 'Fly out of Bozeman', location='BZN', status='idea',
+         notes='Seattle and Portland are both short hops with direct winter service, which is what makes the Pacific Northwest the natural second leg: about two hours to Seattle. Nothing booked, because the second leg is not decided. KEEP THIS DAY FLEXIBLE: January weather closes this airport occasionally, and a same-day international connection out of Seattle or Portland is not where you want to be standing when it does.')]),
+]
+
+# =============================================================================
+# STAYS
+# =============================================================================
+stays = [
+  dict(id='m-s1', name='Bozeman, somewhere downtown or just off it (first block)', town='Bozeman',
+       type='Hotel or apartment, 3 nights', status='idea',
+       pricePerNightAud=215, nights=3, checkIn='2028-01-08', checkOut='2028-01-11',
+       distance='Walk to Main Street; 15 min to BZN; 25 min to Bridger Bowl; 75 min to Big Sky',
+       notes='BOOK WALKABLE, NOT CHEAP-AND-OUT-OF-TOWN. The point of Bozeman as a base is that you can leave the car and walk to dinner, which matters when dinner involves beer and the roads are ice. Downtown and the blocks immediately north and west of Main are the area. Reckon on US$130 to US$180 a night for a decent mid-range room in January, which is low season here outside the holidays and the festival weeks. The Lark and the Kimpton Armory are the characterful downtown options at the top of that range, the chain hotels out by the interstate are cheaper and worth it only if you are driving everywhere anyway. BOOK IT AS ONE BOOKING COVERING BOTH BLOCKS if they will store your bag on the two Yellowstone nights, which most will, because that saves repacking and a second check-in. Otherwise book two separate stays and ask about luggage storage.'),
+  dict(id='m-s1b', name='Bozeman, the same room again (second block)', town='Bozeman',
+       type='Hotel or apartment, 3 nights, after the two Yellowstone nights', status='idea',
+       pricePerNightAud=215, nights=3, checkIn='2028-01-13', checkOut='2028-01-16',
+       distance='Same place as the first block; ask them to hold the bag on 11 and 12 Jan',
+       notes='Deliberately a separate record because it is a separate set of nights with a gap in the middle, which is how the Takayama booking worked on the Japan trip and how it should be priced. Ask the same place to hold your bag over the two Gardiner nights so you drive down with an overnight bag instead of everything. If the Chico overnight happens on 13 January this drops to two nights.'),
+  dict(id='m-s2', name='Gardiner, at the park gate', town='Gardiner',
+       type='Motel or lodge, 2 nights', status='idea',
+       pricePerNightAud=200, nights=2, checkIn='2028-01-11', checkOut='2028-01-13',
+       distance='5 miles to the North Entrance; about 8 min to the Mammoth junction',
+       notes='WHY STAY HERE AND NOT COMMUTE: the Lamar Valley wants you on the road before 7am, and that is a ninety-minute drive from Bozeman in the dark on top of the hour you are already driving inside the park. Staying at the gate turns an impossible day into an easy one. Expect US$110 to US$160 a night in January, which is the cheapest week of the year here. Check what is actually open: Gardiner is a seasonal town and some lodgings close entirely in winter, so filter for January availability rather than assuming. Ask specifically whether there is a plug-in block heater or a covered space, and whether breakfast starts early enough to be useful at 6am, which it usually does not.'),
+  dict(id='m-s3', name='Mammoth Hot Springs Hotel, inside the park', town='Mammoth, Yellowstone', status='idea',
+       type='Park lodge, 1 night, only if you do the snowcoach', pricePerNightAud=290, nights=1,
+       distance='In the park, at the Mammoth junction',
+       url='https://www.yellowstonenationalparklodges.com/',
+       notes='ONLY RELEVANT IF YOU DECIDE TO DO THE SNOWCOACH TO OLD FAITHFUL, and it is not optional if you do: Xanterra requires an overnight at Mammoth before boarding the snowcoach the next morning, and you cannot book the airport shuttle and the snowcoach on the same day. So the Old Faithful trip is really a two-night, roughly US$700 decision rather than a day trip, which is why the default plan skips it in favour of the free Lamar Valley driving. One of the two park hotels open in winter, and the only one you can drive to. Books up a long way ahead for winter despite the price. See the Decisions page.'),
+  dict(id='m-s4', name='Chico Hot Springs Resort', town='Pray, Paradise Valley', status='idea',
+       type='Historic lodge, 1 night, only if you turn the Chico day into an overnight', pricePerNightAud=230, nights=1,
+       distance='50 min south of Livingston; 80 min from Bozeman',
+       url='https://www.chicohotsprings.com/',
+       notes='The alternative shape for Thursday 13 January: instead of soaking at Chico and driving back to Bozeman, stay the night, eat in the Historic Dining Room properly and sit in the pools after dark with no drive to worry about. Their Winter Getaway package bundles the room, a three-course dinner for two in the dining room and unlimited pool access, which is aimed at couples but prices out reasonably for one. The main lodge rooms are old and basic and that is the charm; the newer buildings are more comfortable and less interesting. If you do this, the Bozeman booking drops to five nights.'),
+]
+
+STAYS_GUIDE = [
+  dict(title='Why Bozeman and not Big Sky',
+       body='Big Sky is a resort village an hour from anywhere, built for people who fly in and ski for a week. Bozeman is a town of 55,000 with a university, an airport fifteen minutes away, three mountains within an hour, the Yellowstone road on its doorstep and restaurants that exist for locals rather than for visitors. For a trip that is only partly about skiing, basing in Bozeman and driving out is both cheaper and more interesting, and it means a bad weather day has somewhere to go. The one cost is the Gallatin Canyon drive on your Big Sky day.'),
+  dict(title='January is the cheap, cold, empty month',
+       body='Montana ski towns price by the calendar, and January after the first week is the trough: the Christmas and New Year crowds have gone, the spring break crowds have not arrived, and the only busy window is the Martin Luther King Jr long weekend, which in 2028 is Saturday 15 to Monday 17 January. It is also the coldest month. Bozeman averages a high around minus 1 and a low around minus 10, the record low is minus 40, and the sun sets around 5pm with about nine hours of daylight. Expect roughly 30cm of snow in town across the month, falling in small amounts often rather than in dumps, and much more in the mountains.'),
+  dict(title='Driving here in winter, which is the real skill',
+       body='AWD or 4WD with winter-rated tyres, non-negotiable. Beyond that: black ice forms on bridges and in shade when the road elsewhere looks fine; the interstate closes occasionally and when it does it is closed, not slow; wildlife on the road at dusk is the commonest way visitors crash, and a mule deer through a windscreen at 100km/h is a very bad day. Keep the tank above half, keep a blanket, water and a shovel in the car, and download offline maps because phone signal disappears in the canyons and across most of Yellowstone. The Montana road report is at 511mt.net and is worth checking every morning of this leg.'),
+  dict(title='Yellowstone in winter is a different park',
+       body='Only one road is open to cars: the North Entrance at Gardiner through Mammoth and Tower and the Lamar Valley to the Northeast Entrance at Cooke City. Everything else, Old Faithful and the Grand Canyon of the Yellowstone and the whole southern loop, is reachable only by commercially guided snowcoach or snowmobile from mid-December to mid-March. That sounds like a loss and mostly is not: the open road is the wildlife road, it is free, and in January you will share the Lamar Valley with a few dozen people rather than a few thousand. Services are almost all shut; Mammoth has a visitor centre, a general store, a medical clinic and self-service fuel, and that is the lot.'),
+]
+
+# =============================================================================
+# FOOD
+# =============================================================================
+food = [
+  dict(id='mf1', town='Bozeman', dish='A Montana steak, properly', where='Open Range, Main Street',
+       why='Montana beef on a wood grill, short menu, no theatre. This is the state\'s one unarguable food, and you are a carnivore in the right place. Book ahead; the room is small.', priceBand='$$$'),
+  dict(id='mf2', town='Bozeman', dish='Bison burger', where='Montana Ale Works, in the old railroad building',
+       why='Leaner and sweeter than beef, and the thing to try once. Ale Works is the dependable Main Street room: long bar, pool tables, local beer on 40-odd taps.', priceBand='$$'),
+  dict(id='mf3', town='Bozeman', dish='The American diner breakfast', where='The Western Cafe, Main Street',
+       why='Eggs, hash browns, bacon, and a cinnamon roll that is a structural engineering decision. Opens early, which matters on a ski morning. Cash-friendly, unreconstructed, full of people in work boots.', priceBand='$'),
+  dict(id='mf4', town='Pray', dish='Beef Wellington and the flaming orange', where='The Historic Dining Room, Chico Hot Springs',
+       why='One of the best dinners in Montana, in an 1900 lodge an hour from anywhere. The orange dessert, flambeed at the table, has been on the menu for decades. Needs a reservation and arguably needs you to stay the night.', priceBand='$$$'),
+  dict(id='mf5', town='Big Sky', dish='Smoked brisket', where='Riverhouse BBQ, Big Sky Town Center',
+       why='Better than anything in the mountain village and half the price. The right end to a Big Sky day, and it is on your way back to the canyon road.', priceBand='$$'),
+  dict(id='mf6', town='Bozeman', dish='Huckleberry anything', where='Any bakery, cafe or ice cream counter',
+       why='The Montana flavour. A wild mountain berry that cannot be farmed commercially, so it only shows up where it grows: in pie, in jam, in ice cream, in milkshakes and regrettably in beer. Wilcoxson\'s is the Montana ice cream brand to look for.', priceBand='$'),
+  dict(id='mf7', town='Gardiner', dish='Whatever is open', where='Iron Horse Bar and Grill, Yellowstone Grill or the Wonderland Cafe',
+       why='Not a recommendation so much as a warning. A park-gate town of a few hundred people in January runs reduced hours and some places shut for the season. Ring ahead, and carry food in the car.', priceBand='$$'),
+  dict(id='mf8', town='Bozeman', dish='Elk or trout, if you want the other Montana', where='Blackbird Kitchen or any of the better downtown rooms',
+       why='Game and river fish are the local protein beyond beef. Elk is darker and leaner than venison; the trout here is the fish the whole Gallatin valley is famous for.', priceBand='$$$'),
+]
+
+FOOD_GUIDE = [
+  dict(title='This is the easiest food week you will have',
+       body='Montana eats beef, game and river fish, serves them in large portions, and does not much care for vegetables. For a carnivore who is not big on greens, the whole state is set up for you. The flip side is that good coffee and good bread are concentrated in Bozeman and thin on the ground elsewhere, so if you want either, get them before you drive south.'),
+  dict(title='How much and how to pay',
+       body='Reckon on US$20 to US$30 for a casual lunch, US$45 to US$80 for a proper dinner with a drink, and US$6 for coffee. TIPPING IS NOT OPTIONAL AND IT IS NOT 10%: the American norm is 18 to 20% at a sit-down restaurant and a dollar or two a drink at a bar, and the staff are paid on the assumption you will. Card works everywhere, including the smallest place in Gardiner. Montana has NO STATE SALES TAX, which is unusual in America and means the menu price is close to the price you pay, unlike almost everywhere else you will go on this trip.'),
+  dict(title='Book, even in January',
+       body='Bozeman restaurants are small, the town has grown faster than its restaurant supply, and the good rooms fill on a Tuesday in the off season. Book Open Range, Blackbird and the Chico dining room as soon as you have dates. Everything else you can walk into.'),
+]
+
+# =============================================================================
+# BUDGET
+# =============================================================================
+budget = [
+  dict(id='mb1', category='Flights', label='Brisbane to Bozeman and on to the second leg (open-jaw, estimate)', amount=2600, currency='AUD', status='estimate',
+       notes='One stop each way realistically: Brisbane to Los Angeles, San Francisco or Dallas, then a domestic hop into BZN, which takes a lot of direct winter service from all of them. Price this as an open-jaw or multi-city with the Pacific Northwest leg, landing Bozeman and departing Seattle or Portland, because a return to the same city wastes a day and a fare. January after the first week is one of the cheaper weeks to cross the Pacific. Qantas points are worth checking here the way they were for Japan. WHEN YOU ACTUALLY BOOK: delete this estimate line, or mark the chosen option on the Flights page instead of keeping both, because otherwise the Budget page counts the fare twice. That exact mistake overstated the Japan budget by A$902 until it was caught.'),
+  dict(id='mb2', category='Accommodation', label='Bozeman, 6 nights', amount=1290, currency='AUD', status='estimate',
+       notes='US$130 to US$180 a night for a walkable mid-range room in low season.'),
+  dict(id='mb3', category='Accommodation', label='Gardiner, 2 nights at the park gate', amount=400, currency='AUD', status='estimate'),
+  dict(id='mb4', category='Transport', label='AWD hire car, 8 days', amount=860, currency='AUD', status='estimate',
+       notes='US$60 to US$90 a day for an AWD or 4WD in January, before the extras. BOOK EARLY: Bozeman is a ski airport and the AWD fleet is finite in winter, so the late bookers get a sedan they should not be driving or a bill they did not expect.'),
+  dict(id='mb5', category='Transport', label='Fuel', amount=185, currency='AUD', status='estimate',
+       notes='About 1,100km of driving across the week, mostly the Yellowstone and Big Sky runs. American fuel is roughly half the Australian price.'),
+  dict(id='mb12', category='Food', label='Food and drink, 9 days', amount=1100, currency='AUD', status='estimate',
+       notes='About US$75 a day including one proper steak dinner, one Chico dinner and tipping at American rates. Self-catering breakfast and packed lunches on the driving days pull this down.'),
+  dict(id='mb13', category='Other', label='Travel insurance, 3 weeks, with the second leg', amount=160, currency='AUD', status='estimate',
+       notes='AMERICAN HEALTHCARE IS THE REASON THIS LINE EXISTS. An ambulance ride and a night in a Bozeman hospital after a ski binding fails will cost more than this entire trip. Check it covers downhill skiing on-piste as standard, which most Australian policies do not without an add-on.'),
+  dict(id='mb14', category='Other', label='ESTA visa waiver', amount=62, currency='AUD', status='estimate',
+       notes='Required on an Australian passport, applied for online before you fly. The fee has gone up materially in the last couple of years, so check the current amount on the official esta.cbp.dhs.gov site and nowhere else, because the lookalike sites that charge a markup are the single commonest travel scam for US-bound Australians.'),
+  dict(id='mb15', category='Activities', label='OPTIONAL: snowcoach to Old Faithful, both ways', amount=558, currency='AUD', status='idea',
+       notes='US$179.45 in and US$182.90 out with Xanterra, plus the Mammoth night it forces. Priced here as an idea rather than a plan; see the Decisions page.'),
+]
+
+# =============================================================================
+# CHECKLIST
+# =============================================================================
+checklist = [
+  # ---- The money and admin decisions, earliest first
+  dict(id='mk1', group='Decide first', text='Settle the second leg, Oregon or Washington, because it fixes the flights', due='2027-06-30',
+       notes='Everything else keys off this. It decides which city you fly home from, whether the open-jaw works, and whether the US$250 national park pass beats paying US$100 at the Yellowstone gate. It also decides the trip length. Oregon means Bend, Mount Bachelor and the high desert, which is sunnier and snowier in town than people expect; Washington means Leavenworth, Mount Rainier and the Cascades, which is wetter on the west side and closer to a big airport. Both work. Neither needs deciding this year, but nothing can be booked until it is.'),
+  dict(id='mk2', group='Decide first', text='Decide on the snowcoach to Old Faithful, because it is a two-night commitment and books out early', due='2027-02-28',
+       notes='NOT A DAY TRIP. Xanterra requires a night at Mammoth Hot Springs Hotel before you board, and you cannot book the airport shuttle and the snowcoach on the same day, so this is a Mammoth night plus about US$362 of coach fare plus whatever you do at the other end. All in, roughly US$700 for one geyser basin. THE CASE AGAINST: the Lamar Valley driving is free, self-guided, open to your own car and is the better wildlife. THE CASE FOR: Old Faithful in winter, with steam freezing on the trees and almost nobody there, is a genuinely rare thing to see and you are unlikely to be back. Winter park lodging opens about a year ahead and sells out, so decide early rather than well.'),
+  dict(id='mk3', group='Decide first', text='Work out whether the US$250 America the Beautiful pass beats paying at the gate', due='2027-07-31',
+       notes='THE RULE CHANGED ON YOU. Since 1 January 2026, non-US residents pay a US$100 per-person surcharge at the gate at Yellowstone and ten other major parks, and non-residents can no longer buy the cheaper single-park annual passes. The America the Beautiful annual pass costs non-residents US$250 against the US$80 an American pays. THE MATHS: one surcharge park on this trip, pay the US$100 at the gate. Two or more, buy the US$250 pass and stop thinking about it. Yellowstone is one. Whether your second leg adds another depends on where you go: Mount Rainier and Olympic in Washington and Crater Lake in Oregon are all national parks, so check each against the current surcharge list, which has grown once already and may grow again. There is pending legislation to extend surcharges further, so re-check this the month you book rather than trusting this note.'),
+
+  # ---- Book
+  dict(id='mk4', group='Book', text='AWD or 4WD hire car at BZN, with winter tyres confirmed in writing', due='2027-09-30',
+       notes='BOOK THIS EARLIER THAN FEELS NECESSARY. Bozeman is a ski airport with a finite AWD fleet in January, and the people who book late get offered a sedan, which you should refuse, or a surcharge. Confirm in writing that the vehicle has winter or all-weather rated tyres rather than all-seasons, because the agencies are vague about it and it is the difference between a safe week and an expensive one. Check whether your travel insurance or credit card covers the excess before you buy theirs at the counter. An Australian licence is accepted in Montana as a visitor; an International Driving Permit is not required but costs little and removes an argument.'),
+  dict(id='mk5', group='Book', text='Bozeman accommodation, 6 nights in two blocks, with bag storage for the Gardiner nights', due='2027-10-31',
+       notes='Ask for one booking across both blocks with the bag held on 11 and 12 January, which most places will do and which saves a repack and a second check-in. Walkable to Main Street matters more than the price difference, because the roads are ice and dinner involves beer.'),
+  dict(id='mk6', group='Book', text='Gardiner, 2 nights, filtered for places actually open in January', due='2027-10-31',
+       notes='Gardiner is seasonal and some lodgings shut for winter entirely, so search your real dates rather than assuming availability. Ask whether breakfast is early enough to be useful before a 6:30 departure, because it usually is not, and plan to make your own.'),
+  dict(id='mk7', group='Book', text='Bridger Bowl Any Day Pack, 3 days, US$230, bought online before you fly', due='2027-12-01',
+       notes='US$230 for three non-consecutive adult days, which is about US$77 a day against a Big Sky day that can hit US$222. Non-refundable, non-transferable, expires at the close of the season. You also need a Bridger Bowl RFID card, free the first time. This is the single best value decision on the whole leg.'),
+  dict(id='mk8', group='Book', text='Big Sky single day, online, and check the price for your exact date', due='2027-12-01',
+       notes='Big Sky prices by the date and the spread is enormous: US$98 to US$222 for an adult day, and a holiday Saturday quoted at US$289 at the window against US$260 online. Buy online for the roughly 10% saving. AVOID 15 TO 17 JANUARY 2028, the Martin Luther King Jr long weekend. If your date prices near the top of that range, spend it on a third Bridger day and a Chico night instead; the skiing per dollar is better.'),
+  dict(id='mk9', group='Book', text='Dinner reservations: Open Range, Blackbird, and the Chico dining room', due='2027-12-15',
+       notes='Bozeman has grown faster than its restaurant supply and the good rooms fill even midweek in January. Chico\'s Historic Dining Room needs booking and is worth building a day around.'),
+  dict(id='mk10', group='Book', text='Travel insurance covering the whole US trip, with on-piste skiing included', due='2027-11-30',
+       notes='AMERICAN HEALTHCARE IS THE ENTIRE POINT OF THIS LINE. One ambulance and one night in hospital after a ski injury costs more than this trip. Most Australian policies exclude downhill skiing unless you add it, so read that clause specifically rather than assuming. Buy it when you pay for the first non-refundable thing so the cancellation cover starts then. Medicare does not cover the United States and there is no reciprocal agreement.'),
+
+  # ---- Before you go
+  dict(id='mk11', group='Before you go', text='ESTA on the official site only, and nowhere else', due='2027-12-01',
+       notes='Required on an Australian passport. Apply at esta.cbp.dhs.gov and ONLY there. The fee has risen materially and the lookalike sites that charge a large markup for filling in the same form are the commonest travel scam aimed at US-bound Australians. Apply at least 72 hours out, though it usually comes back in minutes, and note it is tied to your passport, so a renewal invalidates it.'),
+  dict(id='mk12', group='Before you go', text='Check the passport has six months beyond the trip, and two blank pages', due='2027-11-01'),
+  dict(id='mk13', group='Before you go', text='US eSIM, and tell the bank you are travelling', due='2027-12-20',
+       notes='Coverage is good in Bozeman and along the interstate and effectively absent in the Gallatin Canyon, up Bridger Canyon in places, and across most of Yellowstone including the whole Lamar Valley. DOWNLOAD OFFLINE MAPS for Montana and the park before you leave town. By now you should have the fee-free travel card from the Japan trip, which is the card to use here.'),
+  dict(id='mk14', group='Before you go', text='Save 511mt.net and the Yellowstone road status page to your phone', due='2028-01-01',
+       notes='The Montana road report and the park road status. Check both every morning of this leg. Interstate closures in January are not rare and when a road is closed here it is closed, not slow.'),
+  dict(id='mk15', group='Before you go', text='Binoculars, at least 10x42, bought or borrowed', due='2027-12-20',
+       notes='THE ONE PIECE OF KIT THAT CHANGES THE LAMAR VALLEY DAY. Wolves are typically a kilometre out and a phone camera will show you a grey smudge. 10x42 is the standard wildlife compromise between magnification and holding it steady in the cold. The wolf watchers on the pull-outs have spotting scopes and are famously generous with them, so you will get a look either way, but having your own means you can find your own animals rather than queue for someone else\'s.'),
+
+  # ---- Pack
+  dict(id='mk16', group='Pack', text='Cold kit, and you already own it from Japan', due='2028-01-02',
+       notes='Thermals, insulated coat, waterproof boots with grip, proper gloves, beanie, wool socks. YOU BOUGHT ALL OF THIS FOR HIRAYU AND SHIRAKAWA-GO IN FEBRUARY 2027, so this is a checking exercise rather than a shopping one. The one thing Japan did not demand: standing still outdoors at minus twenty for hours in the Lamar Valley is colder than any amount of walking in Takayama, so add a second mid-layer, liner gloves under the main pair, and chemical hand warmers. If you find a gap, buy it in Bozeman rather than Australia: Schnee\'s, Sportsman\'s Warehouse and REI are all on your doorstep and all cheaper than home.'),
+  dict(id='mk17', group='Pack', text='Leave the skis and the ski jacket at home', due='2028-01-02',
+       notes='Hiring both is cheap, the airline charge and the hassle of skis across the Pacific are not, and you are only skiing four days of a three-week trip. Bring your own goggles, gloves and ski socks, because rental versions of those are grim. Boot size in centimetres, not Australian.'),
+  dict(id='mk18', group='Pack', text='Thongs for the hot springs, and a swimsuit you do not mind freezing in', due='2028-01-02',
+       notes='Bozeman Hot Springs and Chico are both outdoor pools with cold wet concrete between them. No tattoo rules anywhere in America, which after the Japan planning is a pleasant change.'),
+
+  # ---- In Montana
+  dict(id='mk19', group='In Montana', text='Lamar Valley: out of Gardiner by 6:30, not 8:00', due='2028-01-12',
+       notes='Sunrise is about 08:00 in mid-January and the animals move in the hour either side. Mammoth to Lamar is 50km of slow icy road, so 6:30 out of the door puts you in the valley at first light. This is the single highest-value hour of the whole leg and the one most easily lost to a lie-in.'),
+  dict(id='mk20', group='In Montana', text='Keep food and water inside your coat, not on the seat', due='2028-01-12',
+       notes='Minus twenty freezes a sandwich and a water bottle solid in an hour in a parked car. There is nothing open between Mammoth and Cooke City.'),
+  dict(id='mk21', group='In Montana', text='Ring Chico before you drive down, for the current day-use price and hours', due='2028-01-12',
+       notes='Every price online for Chico day use is years out of date; one widely cited figure is from 2013. Ring them. While you are on the phone, ask whether the dining room has a table, because that decides whether Thursday is a day trip or an overnight.'),
+  dict(id='mk22', group='In Montana', text='Drive the Gallatin Canyon in daylight, both ways', due='2028-01-14',
+       notes='Two lanes, no shoulder, rock on one side and the river on the other, and it ices in the shade. Sunset is about 5pm. Leaving Big Sky at 4pm rather than 6pm is a free safety upgrade on the most demanding road of your week.'),
+  dict(id='mk23', group='Coming home', text='Fill the car before the airport, and allow extra if it snowed', due='2028-01-16',
+       notes='Airport fuel is a tax on the disorganised. If it snowed overnight you are brushing the car off and driving slowly, and the rental return wants it clear. BZN closes occasionally in January, so do not book a same-day international connection out of Seattle or Portland that you cannot afford to miss.'),
+]
+
+# =============================================================================
+# FLIGHTS
+# =============================================================================
+# Nothing booked and no flight numbers, deliberately: schedules for January 2028
+# are not published yet and a number written down now would be wrong by the time
+# you book it. What is stable is the ROUTING LOGIC, which is what this page is for.
+FLIGHTS = dict(
+  confirmed=[],
+  lounges=[],
+  legs=[
+    dict(id='leg-out', name='Brisbane to Bozeman, Sat 8 Jan 2028',
+         notes='BOOK THIS AS A MULTI-CITY, NOT A RETURN. You land in Montana and leave from the Pacific Northwest, so an open-jaw (into BZN, out of Seattle or Portland) costs about the same as a return and saves you a wasted day backtracking. Most booking engines will price it under "multi-city". '
+               'THE SHAPE: one Pacific crossing to a US hub, then one domestic hop. Bozeman is a ski airport, so in January it takes direct service from Los Angeles, San Francisco, Seattle, Denver, Dallas, Chicago and several more, which means almost any hub you cross the Pacific into can get you there in one more flight. '
+               'WHAT TO CHECK WHEN YOU BOOK: the Brisbane departures to the US west coast change season to season, so compare Los Angeles, San Francisco and Dallas on the day rather than assuming. Also price it out of Sydney, because the Sydney transpacific schedule is much deeper and the Brisbane to Sydney feeder on points cost you A$43 for the Japan trip. '
+               'POINTS: worth the same look you gave Japan, where a Business Classic Reward got you Sydney to Tokyo. Transpacific business on points is the single highest-value redemption Qantas offers, and January is low season for award availability. Set an AwardFares alert as soon as the schedule loads, about 11 months out, which is roughly February 2027.',
+         options=[
+           dict(id='opt-lax', rank=0, status='idea', label='Via Los Angeles', route='BNE → LAX → BZN',
+                date='2028-01-08', cashAud=1350, priceNote='estimate, one way, economy',
+                notes='The most frequent Brisbane transpacific route and the most options onward: LAX to Bozeman runs direct in ski season on more than one carrier. The downside is LAX itself, where the international-to-domestic transfer means clearing immigration, collecting the bag, re-checking it and changing terminal. ALLOW FOUR HOURS MINIMUM, more if the bag is checked through to Bozeman, and be aware that a tight LAX connection is the commonest way Australians miss a domestic leg.'),
+           dict(id='opt-sfo', rank=1, status='idea', label='Via San Francisco', route='BNE → SFO → BZN',
+                date='2028-01-08', cashAud=1400, priceNote='estimate, one way, economy',
+                notes='A smaller and markedly less painful transfer than LAX, and San Francisco to Bozeman flies direct in winter. Fewer Brisbane departures, so less schedule flexibility if something goes wrong. San Francisco fog in January is a real but modest delay risk.'),
+           dict(id='opt-dfw', rank=2, status='idea', label='Via Dallas Fort Worth', route='BNE → DFW → BZN',
+                date='2028-01-08', cashAud=1450, priceNote='estimate, one way, economy',
+                notes='The long way round geographically but a genuinely easy airport, with a quick transfer and direct Bozeman service in ski season. The Pacific crossing is longer. Worth pricing because it is often cheaper than the west coast hubs and the connection is less likely to bite you.'),
+         ]),
+    dict(id='leg-home', name='Second leg home to Brisbane, late Jan 2028',
+         notes='UNDECIDED UNTIL THE SECOND LEG IS. If the second leg is Washington you fly home from Seattle, which has the deeper transpacific schedule of the two and sometimes a direct run to Brisbane or Sydney. If it is Oregon you fly home from Portland, which almost certainly means a domestic hop to Los Angeles or San Francisco first. '
+               'That difference is small but it is one of the few practical arguments between Oregon and Washington, and it belongs in the decision. Either way, Bozeman to Seattle or Portland is a short hop and should be booked as part of the same multi-city ticket rather than separately, so a delay is the airline\'s problem rather than yours.',
+         options=[
+           dict(id='opt-sea-home', rank=0, status='idea', label='Out of Seattle (if Washington)', route='SEA → BNE',
+                cashAud=1300, priceNote='estimate, one way, economy',
+                notes='Seattle has the better long-haul schedule of the two and Bozeman to Seattle is about two hours with several flights a day.'),
+           dict(id='opt-pdx-home', rank=1, status='idea', label='Out of Portland (if Oregon)', route='PDX → BNE',
+                cashAud=1400, priceNote='estimate, one way, economy',
+                notes='Portland will usually need a domestic connection to Los Angeles or San Francisco before the Pacific crossing, so budget an extra half day and a little more money.'),
+         ]),
+  ],
+)
+
+# =============================================================================
+# DECISIONS
+# =============================================================================
+questions = [
+  dict(id='mq1', question='Oregon or Washington for the second leg?',
+       why='This is the one that unlocks everything else: the flights, the length, the home airport and the national park pass maths. The honest comparison for January. OREGON means Bend as a base: 300 days of sunshine a year, high desert, Mount Bachelor for skiing, sunnier and drier than the coast, and the option of the Oregon coast for winter storm watching, which is a genuinely spectacular and very Oregonian thing to do in January. No sales tax either. WASHINGTON means Leavenworth, a Bavarian-themed town in the Cascades that gets about 225cm of snow a year and is at its best in January, plus Mount Rainier, the Olympic Peninsula rainforest, and Seattle as a much bigger and better-connected airport. THE TRADE: west of the Cascades in either state, January is grey and wet rather than snowy, around 5 to 8 degrees with rain most days. East of the Cascades, in Bend or Leavenworth, it is cold, white and often sunny. So the real choice is not Oregon against Washington, it is whether you base east of the mountains, which you should, and then which eastern town you prefer.'),
+  dict(id='mq2', question='Snowcoach to Old Faithful, or just the free Lamar Valley driving?',
+       why='Roughly US$700 and two nights against nothing and total freedom. The snowcoach needs a Mammoth overnight first, by Xanterra\'s rule, and cannot be booked the same day as the airport shuttle. For a solo traveller on a mid budget, the Lamar Valley self-drive is the better wildlife, the better value and the more flexible day, and it is the thing January Yellowstone is actually famous for. The counter-argument is that Old Faithful in winter, steam freezing onto the lodgepole pines, almost nobody there, is a sight you will probably never have another chance at. Winter park lodging opens about a year out and sells out, so this wants deciding in early 2027.'),
+  dict(id='mq3', question='Three days at Bridger, or two at Bridger and one at Big Sky?',
+       why='Big Sky has the most lift-served vertical in America, 4,350 feet, and a tram to a 3,400m summit. Bridger has 2,000 acres of excellent, cheap, uncrowded skiing twenty minutes from your bed. The three-day Bridger pack is US$230 all in. One Big Sky day on top could be US$98 or US$222 depending on the date, and the drive is 75 minutes down an icy canyon each way. If your Big Sky date prices under about US$150, do it, because the mountain is genuinely world class. If it comes back near US$220, three Bridger days and a night at Chico is the better week.'),
+  dict(id='mq4', question='How long in total, and what dates?',
+       why='The Montana leg is built as eight nights, 8 to 16 January 2028, which is after the New Year crowds and mostly before the Martin Luther King Jr weekend of 15 to 17 January. That is a comfortable length for this shape: three ski days, two Yellowstone days, a town day, a hot springs day and a spare for weather. Add the second leg and the Pacific crossings and the whole trip is realistically 18 to 24 days. Everything in this plan is dated provisionally, so the dates can move without the plan changing. What is worth protecting: being in the Lamar Valley on a weekday morning, and not being at Big Sky on 15 or 16 January.'),
+  dict(id='mq5', question='Thursday at Chico: day trip or overnight?',
+       why='Chico Hot Springs is fifty minutes north of Gardiner, which makes it a natural stop on the drive back to Bozeman. The pools are the draw and the Historic Dining Room is one of the best dinners in Montana. The problem is geography: the dining room is an hour from Bozeman down a dark valley road. Either eat early and drive, or book a room at Chico, drop the Bozeman booking to five nights, and sit in the pools after dark with nothing to drive. The second is better and costs about A$230.'),
+]
+
+# =============================================================================
+# PLACES
+# =============================================================================
+places = [
+  dict(id='mp1', name='Bozeman', kind='town', town='Bozeman', lat=45.6796, lng=-111.0471, notes='The base. Main Street and the blocks around it.'),
+  dict(id='mp2', name='Bozeman Yellowstone International Airport', kind='airport', town='Belgrade', lat=45.7776, lng=-111.1530),
+  dict(id='mp3', name='Bridger Bowl', kind='activity', town='Bozeman', lat=45.8183, lng=-110.9036, notes='25 min up Bridger Canyon. The value pick.'),
+  dict(id='mp4', name='Big Sky Resort', kind='activity', town='Big Sky', lat=45.2861, lng=-111.4011, notes='75 min down the Gallatin Canyon.'),
+  dict(id='mp5', name='Museum of the Rockies', kind='activity', town='Bozeman', lat=45.6607, lng=-111.0510, notes='Largest dinosaur fossil collection in the United States.'),
+  dict(id='mp6', name='Bozeman Hot Springs', kind='activity', town='Bozeman', lat=45.6128, lng=-111.1686),
+  dict(id='mp7', name='Livingston', kind='town', town='Livingston', lat=45.6622, lng=-110.5610, notes='Railroad town at the top of Paradise Valley. Famous for its wind.'),
+  dict(id='mp8', name='Chico Hot Springs', kind='activity', town='Pray', lat=45.3406, lng=-110.7051, notes='1900 lodge, two open-air mineral pools, the Historic Dining Room.'),
+  dict(id='mp9', name='Gardiner and the Roosevelt Arch', kind='town', town='Gardiner', lat=45.0298, lng=-110.7085, notes='The North Entrance. The only gate open to cars in winter.'),
+  dict(id='mp10', name='Mammoth Hot Springs', kind='activity', town='Mammoth, Yellowstone', lat=44.9766, lng=-110.7036, notes='Travertine terraces, elk on the lawns, the only winter fuel in the park.'),
+  dict(id='mp11', name='Lamar Valley', kind='activity', town='Yellowstone', lat=44.8983, lng=-110.2231, notes='The wolf valley. Plowed and open to cars all winter.'),
+  dict(id='mp12', name='Hyalite Canyon', kind='activity', town='Bozeman', lat=45.4850, lng=-110.9700, notes='Ice climbing. Road plowed to the reservoir.'),
+]
+
+PLACE_OF = {
+  'a1': 'mp2', 'a2': 'mp2', 'a3': 'mp1',
+  'b2': 'mp3', 'b3': 'mp3', 'b5': 'mp3',
+  'c1': 'mp5', 'c3': 'mp1', 'c4': 'mp6',
+  'd1': 'mp9', 'd2': 'mp7', 'd3': 'mp10', 'd4': 'mp9',
+  'e1': 'mp11', 'e2': 'mp11', 'e4': 'mp10',
+  'f1': 'mp8', 'f2': 'mp8', 'f3': 'mp8', 'f5': 'mp8', 'f4': 'mp1',
+  'g1': 'mp4', 'g2': 'mp4', 'g3': 'mp4',
+  'h1': 'mp3', 'h2': 'mp12',
+  'i1': 'mp2', 'i2': 'mp2',
+}
+
+# =============================================================================
+# ASSEMBLE
+# =============================================================================
+for d in days:
+    for it in d['items']:
+        if it['id'] in PLACE_OF:
+            it['placeId'] = PLACE_OF[it['id']]
+
+# Guards: cheap checks that catch the mistakes this file is prone to.
+_nights = sum(s['nights'] for s in stays if s.get('status') in ('booked', 'planned'))
+_ids = [x['id'] for x in days] + [i['id'] for d in days for i in d['items']] + \
+       [x['id'] for x in stays + food + budget + checklist + questions + places] + \
+       [l['id'] for l in FLIGHTS['legs']] + [o['id'] for l in FLIGHTS['legs'] for o in l['options']]
+assert len(_ids) == len(set(_ids)), 'duplicate id in montana.json'
+assert days[0]['date'] == START and days[-1]['date'] == END, 'days do not span START to END'
+_manual_activity = [b for b in budget if b['category'] == 'Activities' and b.get('status') != 'idea']
+assert not _manual_activity, (
+    'every activity on this trip is priced on its itinerary item, so a manual Activities budget '
+    'line counts it twice: %s' % ', '.join(b['label'] for b in _manual_activity))
+_manual_flights = [b for b in budget if b['category'] == 'Flights']
+_chosen = [l for l in FLIGHTS['legs'] if l.get('chosenOptionId')]
+assert not (_manual_flights and _chosen), \
+    'both a manual Flights budget line and a chosen leg option: the Budget page would count the fare twice'
+for _d in days:
+    _times = [i['time'] for i in _d['items'] if i.get('time')]
+    assert _times == sorted(_times), 'items out of time order on %s' % _d['date']
+
+trip = dict(
+    meta=dict(
+        title='Montana 2028', start=START, end=END, homeCurrency='AUD',
+        rates=RATES, updatedAt=UPDATED, version=1,
+        mapRegion='Montana, USA', travelMode='driving',
+        categories=['Flights', 'Accommodation', 'Transport', 'Food', 'Activities', 'Other'],
+        features={'flights': True, 'budget': True, 'points': False},
+        about='Solo, eight nights in Montana in January 2028, as one leg of a longer US trip. Bozeman as the base: three lift days split between Bridger Bowl and Big Sky, two nights at the Yellowstone gate for the Lamar Valley wolves, a hot springs day in Paradise Valley and a spare for weather. DATES ARE PROVISIONAL and nothing is booked. The second leg, Oregon or Washington, is still to be decided and gets its own page.',
+    ),
+    days=days,
+    people=[],
+    foodGuide=FOOD_GUIDE, staysGuide=STAYS_GUIDE,
+    flights=FLIGHTS,
+    points={}, stays=stays, food=food, budget=budget,
+    checklist=checklist, places=places, questions=questions,
+)
+
+trip = carry_over(trip, 'data/montana.json')
+
+with open('data/montana.json', 'w') as f:
+    json.dump(trip, f, indent=2, ensure_ascii=False)
+    f.write('\n')
+
+print('wrote data/montana.json %d days, %d items, %d stays, %d food, %d budget, %d todos, %d decisions, %d places (%d nights booked/planned)' % (
+    len(days), sum(len(d['items']) for d in days), len(stays), len(food), len(budget),
+    len(checklist), len(questions), len(places), _nights))

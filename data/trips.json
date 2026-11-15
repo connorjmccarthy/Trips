@@ -49,6 +49,18 @@
       "start": "2027-02-08",
       "end": "2027-02-17",
       "shared": false
+    },
+    {
+      "id": "montana",
+      "name": "Montana 2028",
+      "short": "Montana",
+      "ico": "🦬",
+      "mark": "🦬",
+      "file": "data/montana.json",
+      "vault": "data/vault-montana.enc",
+      "start": "2028-01-08",
+      "end": "2028-01-16",
+      "shared": false
     }
   ]
 }

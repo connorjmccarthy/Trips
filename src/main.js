@@ -78,10 +78,14 @@ function renderTripSwitch() {
   const list = store.visibleTrips();
   if (list.length < 2) { host.hidden = true; return; }
   host.hidden = false;
-  const seg = el('div', { class: 'seg seg-block', role: 'group', 'aria-label': 'Trip' });
+  // A wrapping grid, not a segmented control: the trip list grows over time and
+  // a single flex row with overflow:hidden silently clipped the fifth trip,
+  // which made it unreachable from the sidebar.
+  const seg = el('div', { class: 'trip-pick', role: 'group', 'aria-label': 'Trip' });
   for (const t of list) {
     seg.append(el('button', {
       type: 'button', class: t.id === store.tripId ? 'active' : '', dataset: { trip: t.id },
+      title: t.name || t.short,
       onClick: () => store.switchTrip(t.id),
     }, `${t.ico ? t.ico + ' ' : ''}${t.short || t.name}`));
   }

@@ -962,40 +962,59 @@ test.describe('Montana, and a fifth trip in the switcher', () => {
   });
 });
 
-test.describe('the Yokohama engraving decision', () => {
-  test('it is open, names the Tuesday, and the shop is shut on the day it would clash with', async ({ page }) => {
-    await boot(page, '#/decisions');
+test.describe('the Yokohama engraving, and the 9 Feb routing it rests on', () => {
+  test('the decision is settled and the day is actually built that way', async ({ page }) => {
+    await boot(page, '#/itinerary');
     const r = await page.evaluate(async () => {
       const t = await (await fetch('/data/trip.json')).json();
       const q = (t.questions || []).find((x) => /Yokohama/i.test(x.question));
-      const todo = (t.checklist || []).find((c) => /engraver/i.test(c.text));
+      const day = t.days.find((d) => d.date === '2027-02-09');
+      const text = day.items.map((i) => `${i.title} ${i.location || ''} ${i.notes || ''}`).join(' | ');
+      const times = day.items.map((i) => i.time).filter(Boolean);
       return {
-        found: !!q,
-        open: q ? !q.resolved : false,
-        options: q ? q.options.length : 0,
-        recommendsTuesday: q ? /Tuesday 9 Feb/.test(q.recommendation) : false,
-        // the 9th must be a Tuesday and the 10th a Wednesday, which is when he is shut
-        saysClosedWednesday: q ? /CLOSED WEDNESDAYS/.test(q.why) : false,
-        todoDue: todo ? todo.due : null,
-        pin: (t.places || []).some((p) => /Kanteibyo/.test(p.name)),
+        resolved: q ? !!q.resolved : false,
+        answered: q ? /Tuesday/i.test(q.answer || '') : false,
+        // the two facts the whole detour depends on
+        nexToYokohama: /Narita Express.*Yokohama/.test(text),
+        nozomiFromShinYokohama: day.items.some((i) => /Nozomi Shin-Yokohama/.test(i.title)),
+        engraving: day.items.some((i) => /engraving at Kanteibyo/i.test(i.title) && i.cost > 0),
+        // and the things it cost him are genuinely gone from the day
+        dropped: ['Nintendo OSAKA', 'Grenier', 'Ekiben', 'Nakazakicho and Tenma']
+          .filter((x) => day.items.some((i) => i.title.includes(x))),
+        // the evening that had to survive
+        keepsHarukoma: day.items.some((i) => /Harukoma/.test(i.title)),
+        keepsGyoza: day.items.some((i) => /Rock Lee/.test(i.title)),
+        ordered: times.join() === [...times].sort().join(),
+        todoDue: (t.checklist.find((c) => /engraver/i.test(c.text)) || {}).due,
+        pins: (t.places || []).filter((x) => /Kanteibyo|Shin-Yokohama/.test(x.name)).length,
       };
     });
-    expect(r.found).toBe(true);
-    expect(r.open).toBe(true);
-    expect(r.options).toBe(3);
-    expect(r.recommendsTuesday).toBe(true);
-    expect(r.saysClosedWednesday).toBe(true);
+    expect(r.resolved).toBe(true);
+    expect(r.answered).toBe(true);
+    expect(r.nexToYokohama).toBe(true);
+    expect(r.nozomiFromShinYokohama).toBe(true);
+    expect(r.engraving).toBe(true);
+    expect(r.dropped, 'these were traded away for Yokohama and should not still be on the 9th').toEqual([]);
+    expect(r.keepsHarukoma).toBe(true);
+    expect(r.keepsGyoza).toBe(true);
+    expect(r.ordered).toBe(true);
     expect(r.todoDue).toBe('2027-01-20');
-    expect(r.pin).toBe(true);
-    // and the dates it rests on are really those weekdays
-    expect(new Date('2027-02-09T00:00:00Z').getUTCDay()).toBe(2);  // Tuesday
-    expect(new Date('2027-02-10T00:00:00Z').getUTCDay()).toBe(3);  // Wednesday, shut
+    expect(r.pins).toBe(2);
+    // the day it rests on really is a Tuesday, and the engraver's day off really is the next day
+    expect(new Date('2027-02-09T00:00:00Z').getUTCDay()).toBe(2);
+    expect(new Date('2027-02-10T00:00:00Z').getUTCDay()).toBe(3);
   });
 
-  test('the Decisions page shows it as the open one', async ({ page }) => {
-    await boot(page, '#/decisions');
-    const card = page.locator('.card', { hasText: 'Yokohama Chinatown on the way in' });
-    await expect(card).toBeVisible();
-    await expect(card).toContainText('Shin-Yokohama');
+  test('the Plan page shows the Yokohama day when you open the 9th', async ({ page }) => {
+    await boot(page, '#/itinerary');
+    // the Plan page is a day-tab view and opens on the 8th, so select the 9th
+    // the tab's text nodes run together ("Tue9Osaka"), so match the accessible name
+    await page.getByRole('tab', { name: /^Tue 9\b/ }).click();
+    const main = page.locator('#main');
+    await expect(main).toContainText('Narita Express');
+    await expect(main).toContainText('Yokohama');
+    await expect(main).toContainText('Kanteibyo');
+    // the day notes name the Nintendo store as the thing traded away, so the
+    // check that it is gone as an ITEM lives in the data test above, not here.
   });
 });

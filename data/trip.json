@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 110.4,
-    "updatedAt": "2026-11-16T06:58:24Z",
+    "updatedAt": "2026-11-16T07:06:40Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -107,6 +107,8 @@
         "fd17",
         "fd18",
         "fd16",
+        "fd25",
+        "fd26",
         "fd12",
         "fd13",
         "fd14",
@@ -186,6 +188,7 @@
         "p6",
         "p7",
         "p7b",
+        "p7c",
         "p8",
         "p9",
         "p10",
@@ -233,13 +236,14 @@
         "a7",
         "b1",
         "b2",
-        "b3",
+        "b2b",
+        "b2c",
+        "b3y",
+        "b3c",
+        "b3d",
         "b4",
         "b5",
         "b6",
-        "b6c",
-        "b6d",
-        "b7",
         "b7b",
         "b8",
         "c1",
@@ -462,9 +466,9 @@
     {
       "id": "d0209",
       "date": "2027-02-09",
-      "title": "Land, straight down to Osaka",
+      "title": "Land, Yokohama for the engraving, then down to Osaka",
       "base": "Osaka",
-      "notes": "Long travel day on purpose: it puts you in Osaka the night before the calmest weekday to do Universal Studios.",
+      "notes": "Yokohama is on the way, not a detour: the Narita Express runs through to it and every Nozomi stops at Shin-Yokohama, so you get off one stop late and back on one stop early. That buys you the camera engraving at Kanteibyo and a Chinatown lunch for about three hours, and the evening you actually care about, Harukoma and the gyoza, survives untouched. WHAT IT COSTS: the Nintendo OSAKA store at Daimaru Umeda, the Grenier pastry stop and the Nakazakicho lanes, because tonight was the only Umeda evening in the trip. The Nintendo loss is smaller than it looks, since you are inside Super Nintendo World all day tomorrow and its One-Up Factory sells most of the same things. IF THE ENGRAVER IS NOT THERE: eat in Chinatown anyway and carry on, or skip Yokohama entirely by staying on the N’EX to Tokyo, which puts you back on the original plan with the Umeda evening intact. Decide at Narita, not at Yokohama.",
       "items": [
         {
           "id": "b1",
@@ -473,55 +477,103 @@
           "title": "Land Narita T2, immigration and customs",
           "status": "planned",
           "location": "Narita T2",
-          "notes": "Have the Visit Japan Web QR code ready (immigration + customs in one). Budget about an hour. Pick up your bag, switch on the eSIM, and withdraw ¥30,000-40,000 at the 7-Eleven ATM in the terminal (Nozawa is largely cash-only and has one foreign-card ATM, at the post office). Suica: Welcome Suica Mobile in Apple Wallet if you have an iPhone; on Android buy a physical Welcome Suica at the JR counter.",
+          "notes": "Have the Visit Japan Web QR code ready (immigration and customs in one). Budget about an hour. Pick up your bag, switch on the eSIM, and withdraw ¥40,000-50,000 at the 7-Eleven ATM in the terminal. YOU NEED REAL CASH ON THIS TRIP: the Koyasan temple is ¥17,600 payable in cash on arrival unless the card was charged in January, and Takayama, Shirakawa-go and Hirayu are all easier with notes than without. Suica: Welcome Suica Mobile in Apple Wallet if you have an iPhone; on Android buy a physical Welcome Suica at the JR counter. THE DECISION POINT IS HERE: if you could not reach the engraver in January, or you have landed late, take the Tokyo N’EX instead and run the original Umeda evening.",
           "placeId": "p6"
         },
         {
           "id": "b2",
           "time": "09:45",
           "type": "train",
-          "title": "Narita Express → Tokyo Station",
+          "title": "Narita Express → Yokohama (NOT Tokyo)",
           "status": "planned",
           "location": "NRT T2 station, B1",
-          "endTime": "10:45",
-          "cost": 3070,
+          "endTime": "11:20",
+          "cost": 4370,
           "currency": "JPY",
-          "notes": "~55 min. Buy at the JR East ticket office or machine (the N’EX round-trip ticket for foreign passports, ¥5,200, is worth it because you come back this way on the 15th).",
+          "notes": "About 1h35. CHECK THE CAR NUMBER BEFORE YOU BOARD. The N’EX divides at Tokyo: half the train carries on to Shinagawa, Yokohama and Ofuna, and the other half goes to Shinjuku and Ikebukuro. Sit in the wrong half and you end up in Shinjuku with a suitcase and no engraving. The Yokohama portion is signed on the platform and on the car-side displays, and the staff will point you at it if you say \"Yokohama\". Not every departure runs through to Yokohama, roughly one an hour does, so check the board rather than taking the first N’EX you see. MONEY: the ¥5,200 N’EX round-trip ticket for foreign passports covers Yokohama inside the same zone, so going to Yokohama instead of Tokyo costs nothing extra on the fare, and it is still worth buying because you come back this way to Narita on the 16th.",
           "placeId": "p6"
         },
         {
-          "id": "b3",
-          "time": "11:00",
-          "type": "food",
-          "title": "Ekiben (station bento) from Ekibenya Matsuri",
+          "id": "b2b",
+          "time": "11:25",
+          "type": "transfer",
+          "title": "Suitcase into a coin locker at Yokohama Station",
           "status": "planned",
-          "location": "Tokyo Station, central passage",
-          "cost": 1500,
+          "location": "Yokohama Station",
+          "endTime": "11:40",
+          "cost": 700,
           "currency": "JPY",
-          "notes": "The most Japanese lunch there is. Grab one for the Shinkansen. Not a trendy place, just a shop with 200 regional bento.",
-          "placeId": "p7"
+          "notes": "DO NOT TAKE THE SUITCASE TO CHINATOWN. Yokohama Station has coin lockers on several levels and the large ones do fill, so if the first bank is full try another floor rather than giving up; there is also a staffed luggage room in the station if every locker has gone. You come back through here on the way to Shin-Yokohama, so this is on your route and costs you nothing in walking. Keep the camera with you, obviously."
+        },
+        {
+          "id": "b2c",
+          "time": "11:40",
+          "type": "train",
+          "title": "Minatomirai Line to Motomachi-Chukagai",
+          "status": "planned",
+          "location": "Yokohama Station, Minatomirai Line platforms",
+          "endTime": "11:55",
+          "cost": 220,
+          "currency": "JPY",
+          "notes": "About 10 minutes, five stops, tap through on the Suica. Take exit 2 for Chinatown and the east gate. The JR alternative is the Negishi line to Ishikawacho, much the same walk from the south side, so use whichever platform you find first with jet lag."
+        },
+        {
+          "id": "b3y",
+          "time": "12:05",
+          "type": "activity",
+          "title": "The camera engraving at Kanteibyo",
+          "status": "planned",
+          "location": "Yokohama Bazaar building 1F, 166 Yamashita-cho, directly across from Kanteibyo on Kanteibyo-dori",
+          "endTime": "12:40",
+          "cost": 10000,
+          "currency": "JPY",
+          "notes": "Ding Zuyin, hand engraver, working from the ground floor of the Yokohama Bazaar building directly opposite the temple. FIFTEEN TO TWENTY MINUTES, DONE IN FRONT OF YOU, no drop-off and no collection. He engraves cameras, phones and knives. Reported prices run from ¥6,000 to ¥10,000, which is why this line budgets the top of it. Closed Wednesdays, which is why this is the Tuesday and not tomorrow. The half hour here is deliberately longer than the job, so a queue or a chat does not wreck the day. KNOW WHAT YOU WANT ENGRAVED BEFORE YOU LAND: it is permanent, it is on a camera you will own for years, and you will be about thirty hours into this journey with no sleep behind you. Have the design or the characters written down on your phone rather than deciding on the spot."
+        },
+        {
+          "id": "b3c",
+          "time": "12:40",
+          "type": "food",
+          "title": "Lunch in Yokohama Chinatown",
+          "status": "planned",
+          "location": "Chukagai, around Kanteibyo-dori and the main gates",
+          "endTime": "13:30",
+          "cost": 2500,
+          "currency": "JPY",
+          "notes": "The biggest Chinatown in Japan and a far better lunch than the station bento you would otherwise have eaten on the Shinkansen. Carnivore territory: shumai, which is the Yokohama thing and Kiyoken is the institution; nikuman, the fist-sized steamed pork buns sold from street windows, which is the eat-while-walking option if you would rather not sit down; char siu; Peking duck. Heichinrou, open since 1884, is the grand old room if you want to sit properly, though it is slower than you have time for today. EAT SOMETHING, even if you are past hunger. You have a two-hour train and then an evening of tuna and gyoza, and arriving at Harukoma genuinely empty after thirty hours awake is how you end up asleep at eight."
+        },
+        {
+          "id": "b3d",
+          "time": "13:30",
+          "type": "transfer",
+          "title": "Back to Yokohama Station, collect the bag, on to Shin-Yokohama",
+          "status": "planned",
+          "location": "Motomachi-Chukagai → Yokohama → Shin-Yokohama",
+          "endTime": "14:20",
+          "cost": 390,
+          "currency": "JPY",
+          "notes": "Minatomirai Line back to Yokohama, about 10 minutes, collect the suitcase, then JR Yokohama Line or the Blue Line subway out to Shin-Yokohama, about 12 minutes. Fifty minutes allowed for roughly thirty-five minutes of travelling, because this is the one leg today with a train you have actually reserved waiting at the end of it. If you are running late, the Nozomi runs every few minutes and a smart-EX reservation can be moved free of charge before departure, so change it on your phone rather than sprinting."
         },
         {
           "id": "b4",
-          "time": "11:30",
+          "time": "14:35",
           "type": "train",
-          "title": "Nozomi Shinkansen Tokyo → Shin-Osaka",
+          "title": "Nozomi Shin-Yokohama → Shin-Osaka",
           "status": "planned",
-          "location": "Tokyo Station, platforms 14-19",
-          "endTime": "14:00",
-          "cost": 14720,
+          "location": "Shin-Yokohama, Tokaido Shinkansen platforms",
+          "endTime": "16:45",
+          "cost": 14160,
           "currency": "JPY",
-          "notes": "~2h30, every 10 min. Reserve a seat (opens one month ahead on smart-EX). A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat.",
+          "notes": "About 2h10, and every Nozomi stops here, which is the whole reason the Yokohama detour is nearly free. Reserve on smart-EX when booking opens one month ahead, and reserve FROM SHIN-YOKOHAMA rather than Tokyo. A normal suitcase under 160 cm total is fine; only bags over 160 cm need the oversized-baggage seat. Sleep on this one. You have earned it and the evening needs you awake.",
           "placeId": "p7"
         },
         {
           "id": "b5",
-          "time": "14:15",
+          "time": "16:45",
           "type": "transfer",
           "title": "Shin-Osaka → hotel",
           "status": "planned",
           "location": "Midosuji line south, Shin-Osaka → Namba, direct, about 13 min",
-          "endTime": "14:45",
+          "endTime": "17:15",
           "cost": 290,
           "currency": "JPY",
           "notes": "No changes, which matters when you have been awake for a day and a half. Namba is an enormous station, about 700 m end to end, and the hotel is at the JR Namba / OCAT end, so follow signs for JR Namba, not Nankai. Allow ten minutes underground on top of the thirteen on the train.",
@@ -529,59 +581,25 @@
         },
         {
           "id": "b6",
-          "time": "14:45",
+          "time": "17:15",
           "type": "stay",
           "title": "Check in at Hotel Monterey Grasmere, then shower and change",
           "status": "planned",
           "location": "Hotel Monterey Grasmere Osaka, 1-2-3 Minatomachi, Naniwa-ku",
-          "endTime": "15:40",
-          "notes": "BOOKED. Check-in is 15:00, so you arrive about fifteen minutes early and they will take the suitcase if the room is not ready. Then actually use the hour: shower, change, repack the daypack for tomorrow. It is the single best thing you can do for a body that has been on a plane for ten hours and has to be at Universal at 7am. The rate is room only and booked as a single, so if you want a high floor you have to ask: ring or email them in January. Confirm at the same time that the desk handles Yamato takkyubin for the Thursday courier. Leave for Umeda by 15:40.",
+          "endTime": "17:50",
+          "notes": "BOOKED. Check-in is 15:00 so the room is long ready, which is one quiet advantage of arriving later than the original plan. Use the thirty-five minutes properly: shower, change, repack the daypack for tomorrow. It is the single best thing you can do for a body that has been on a plane for ten hours and has to be at Universal at 7am. The rate is room only and booked as a single, so if you want a high floor you have to ask: ring or email them in January. Confirm at the same time that the desk handles Yamato takkyubin for the Thursday courier. Out the door by 17:50.",
           "placeId": "p27"
         },
         {
-          "id": "b6c",
-          "time": "16:00",
-          "type": "activity",
-          "title": "Nintendo OSAKA store (optional, 45 min)",
-          "status": "idea",
-          "location": "Daimaru Umeda 13F; Midosuji line Namba → Umeda is 8 min, then 5 min underground",
-          "endTime": "16:40",
-          "notes": "The official Nintendo store, exclusive merchandise, quieter than the USJ shops on Wednesday. Open 10:00-20:00, so there is slack if the trains run late.",
-          "placeId": "p25"
-        },
-        {
-          "id": "b6d",
-          "time": "16:45",
-          "type": "food",
-          "title": "Grenier (Umeda): strawberry millefeuille or creme brulee",
-          "status": "planned",
-          "location": "Hankyu Grand Building 1F, Kakudacho; 5 min walk from Daimaru Umeda",
-          "endTime": "17:00",
-          "cost": 900,
-          "currency": "JPY",
-          "notes": "French patisserie known for a very crisp, buttery millefeuille and rich custard. Takeaway counter with a few seats; 10:00-20:00. A five-minute detour on the way from Daimaru to the Nakazakicho lanes.",
-          "placeId": "p25"
-        },
-        {
-          "id": "b7",
-          "time": "17:00",
-          "type": "activity",
-          "title": "Walk Nakazakicho and Tenma",
-          "status": "planned",
-          "location": "Nakazakicho (old wooden lanes) → Tenjinbashisuji shopping arcade → Tenma",
-          "notes": "Low-key neighbourhoods a short train ride from Umeda. Tenjinbashisuji is 2.6 km of covered arcade where locals shop.",
-          "placeId": "p11"
-        },
-        {
           "id": "b7b",
-          "time": "17:45",
+          "time": "18:00",
           "type": "food",
           "title": "Tuna at Harukoma (a few pieces at the counter)",
           "status": "planned",
           "location": "Harukoma, 5-5-2 Tenjinbashi, inside the Tenjinbashisuji arcade near 6-chome",
           "cost": 1800,
           "currency": "JPY",
-          "notes": "Osaka’s famous local sushi counter: slabs of fish cut thick, ¥100-500 a piece, mostly Osakans at the counter. Order akami, chutoro and otoro (lean, medium, fatty tuna) and stop there; gyoza is next. Expect a 20-40 min queue, it moves fast. Open 11:00-21:30. Point at the case if the menu defeats you.",
+          "notes": "Osaka’s famous local sushi counter: slabs of fish cut thick, ¥100-500 a piece, mostly Osakans at the counter. Order akami, chutoro and otoro (lean, medium, fatty tuna) and stop there; gyoza is next. Expect a 20-40 min queue, it moves fast. Open 11:00-21:30. Point at the case if the menu defeats you. From the hotel it is the Sakaisuji line from Nippombashi to Minamimorimachi, about 8 minutes, then a walk up the arcade.",
           "placeId": "p10"
         },
         {
@@ -3209,11 +3227,27 @@
       "priceBand": "¥¥"
     },
     {
+      "id": "fd25",
+      "town": "Yokohama",
+      "dish": "Shumai, and the nikuman from a street window",
+      "where": "Chukagai, around Kanteibyo-dori; Kiyoken is the Yokohama shumai institution",
+      "why": "Lunch on the 9th, while the engraving is being done. Shumai is Yokohama’s own thing rather than a generic Chinese dish, and the fist-sized steamed pork buns sold straight out of shop windows are the eat-on-your-feet version if you would rather keep moving. Carnivore heaven and about ¥2,500 for a proper feed.",
+      "priceBand": "¥¥"
+    },
+    {
+      "id": "fd26",
+      "town": "Yokohama",
+      "dish": "Char siu and Peking duck in a proper room",
+      "where": "Heichinrou, Chukagai, open since 1884",
+      "why": "If you want to sit down rather than graze. The oldest Chinese restaurant in Japan and a grand old dining room. Honest caveat for the 9th: it is slower than your schedule really allows, so this is the one for a future Tokyo trip unless the engraving goes quickly.",
+      "priceBand": "¥¥¥"
+    },
+    {
       "id": "fd12",
       "town": "On the way",
       "dish": "Ekiben (station bento)",
       "where": "Ekibenya Matsuri, Tokyo Station",
-      "why": "Regional lunch boxes to eat on the Shinkansen. Pick one from Nagano or Niigata.",
+      "why": "Regional lunch boxes to eat on the Shinkansen. No longer in the plan on the way in, because the 9th now eats in Yokohama Chinatown instead, but it is the answer on any Shinkansen leg where you have not sorted lunch.",
       "priceBand": "¥"
     },
     {
@@ -3736,7 +3770,7 @@
     {
       "id": "ck29",
       "group": "Before you go",
-      "text": "ONLY IF you take the Yokohama engraving: confirm the engraver will be there on Tue 9 Feb",
+      "text": "Confirm the Yokohama engraver will be there on Tue 9 Feb, and decide what you want engraved",
       "due": "2027-01-20",
       "notes": "Ding Zuyin, ground floor of the Yokohama Bazaar building at 166 Yamashita-cho, across from Kanteibyo. There is no website and no booking system, and it is one man at a kiosk, so the whole plan rests on him being there. Reports say he works every day except Wednesday and that he can be reached by phone and email outside business hours. ASK THREE THINGS: that he will be working on Tuesday 9 February, what he charges now (reports range from ¥6,000 to ¥10,000), and roughly how long the engraving takes so you know whether 30 minutes in Chinatown is enough. DECIDE WHAT YOU WANT ENGRAVED BEFORE YOU FLY, because you will be making a permanent choice about 30 hours into a journey on no sleep. See the Decisions page. If you cannot reach him, treat the stop as optional on the day: stay on the N’EX to Tokyo and nothing is lost."
     },
@@ -4081,7 +4115,16 @@
       "town": "Yokohama",
       "lat": 35.4429,
       "lng": 139.6453,
-      "notes": "The engraver is on the ground floor of the Yokohama Bazaar building directly across from the temple. Reached by staying on the N’EX past Tokyo; rejoin the Shinkansen at Shin-Yokohama. Undecided, see Decisions."
+      "notes": "The engraver works from the ground floor of the Yokohama Bazaar building directly across from the temple. Reached by staying on the N’EX past Tokyo to Yokohama, then the Minatomirai Line to Motomachi-Chukagai."
+    },
+    {
+      "id": "p7c",
+      "name": "Shin-Yokohama Station",
+      "kind": "station",
+      "town": "Yokohama",
+      "lat": 35.5065,
+      "lng": 139.617,
+      "notes": "Where you rejoin the Tokaido Shinkansen on the 9th. Every Nozomi stops here, which is what makes the Chinatown stop nearly free."
     },
     {
       "id": "p8",
@@ -4585,7 +4628,8 @@
         "Tuesday 16 Feb on the way home (not recommended: no slack before QF80)"
       ],
       "recommendation": "Tuesday 9 Feb. The evening you actually care about, Harukoma and the gyoza, survives in full, and Chinatown lunch is better than a station bento. Ring or email ahead in January and treat it as optional on the day, so a late landing costs you nothing.",
-      "resolved": false
+      "answer": "Taking the Tuesday. The 9th is now built around it: N’EX through to Yokohama, locker at Yokohama Station, Kanteibyo at noon, Chinatown lunch, Nozomi out of Shin-Yokohama at 14:35. The Nintendo store, Grenier and the Nakazakicho lanes are gone. If he is not there on the day, eat in Chinatown and carry on, or stay on the N’EX to Tokyo and run the old evening.",
+      "resolved": true
     }
   ]
 }

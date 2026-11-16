@@ -961,3 +961,41 @@ test.describe('Montana, and a fifth trip in the switcher', () => {
     expect(r.provisional).toBe(true);
   });
 });
+
+test.describe('the Yokohama engraving decision', () => {
+  test('it is open, names the Tuesday, and the shop is shut on the day it would clash with', async ({ page }) => {
+    await boot(page, '#/decisions');
+    const r = await page.evaluate(async () => {
+      const t = await (await fetch('/data/trip.json')).json();
+      const q = (t.questions || []).find((x) => /Yokohama/i.test(x.question));
+      const todo = (t.checklist || []).find((c) => /engraver/i.test(c.text));
+      return {
+        found: !!q,
+        open: q ? !q.resolved : false,
+        options: q ? q.options.length : 0,
+        recommendsTuesday: q ? /Tuesday 9 Feb/.test(q.recommendation) : false,
+        // the 9th must be a Tuesday and the 10th a Wednesday, which is when he is shut
+        saysClosedWednesday: q ? /CLOSED WEDNESDAYS/.test(q.why) : false,
+        todoDue: todo ? todo.due : null,
+        pin: (t.places || []).some((p) => /Kanteibyo/.test(p.name)),
+      };
+    });
+    expect(r.found).toBe(true);
+    expect(r.open).toBe(true);
+    expect(r.options).toBe(3);
+    expect(r.recommendsTuesday).toBe(true);
+    expect(r.saysClosedWednesday).toBe(true);
+    expect(r.todoDue).toBe('2027-01-20');
+    expect(r.pin).toBe(true);
+    // and the dates it rests on are really those weekdays
+    expect(new Date('2027-02-09T00:00:00Z').getUTCDay()).toBe(2);  // Tuesday
+    expect(new Date('2027-02-10T00:00:00Z').getUTCDay()).toBe(3);  // Wednesday, shut
+  });
+
+  test('the Decisions page shows it as the open one', async ({ page }) => {
+    await boot(page, '#/decisions');
+    const card = page.locator('.card', { hasText: 'Yokohama Chinatown on the way in' });
+    await expect(card).toBeVisible();
+    await expect(card).toContainText('Shin-Yokohama');
+  });
+});

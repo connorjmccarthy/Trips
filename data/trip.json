@@ -5,7 +5,7 @@
     "end": "2027-02-17",
     "homeCurrency": "AUD",
     "jpyPerAud": 110.4,
-    "updatedAt": "2026-11-13T08:21:30Z",
+    "updatedAt": "2026-11-16T06:58:24Z",
     "version": 1,
     "about": "Solo trip, Plan B (no skiing): Osaka, Koyasan, Takayama, Shirakawa-go and Hirayu Onsen. Confirmed: JQ815 BNE→SYD and the Business Classic Reward SYD→MEL→NRT on 8 Feb. Home Tue 16 Feb on QF80 + QF1256 (booked). Everything else is planned from research done 13 Sep 2026; prices marked est. need checking when booking.",
     "seedIds": {
@@ -46,6 +46,7 @@
         "ck9",
         "ck10",
         "ck11",
+        "ck29",
         "ck12",
         "ck13",
         "ck14b",
@@ -173,7 +174,8 @@
         "q8",
         "q10",
         "q11",
-        "q9"
+        "q9",
+        "q14"
       ],
       "places": [
         "p1",
@@ -183,6 +185,7 @@
         "p5",
         "p6",
         "p7",
+        "p7b",
         "p8",
         "p9",
         "p10",
@@ -3731,6 +3734,13 @@
       "notes": "Australians get 90 days visa-free. Passport just needs to be valid for the stay, but check the expiry anyway."
     },
     {
+      "id": "ck29",
+      "group": "Before you go",
+      "text": "ONLY IF you take the Yokohama engraving: confirm the engraver will be there on Tue 9 Feb",
+      "due": "2027-01-20",
+      "notes": "Ding Zuyin, ground floor of the Yokohama Bazaar building at 166 Yamashita-cho, across from Kanteibyo. There is no website and no booking system, and it is one man at a kiosk, so the whole plan rests on him being there. Reports say he works every day except Wednesday and that he can be reached by phone and email outside business hours. ASK THREE THINGS: that he will be working on Tuesday 9 February, what he charges now (reports range from ¥6,000 to ¥10,000), and roughly how long the engraving takes so you know whether 30 minutes in Chinatown is enough. DECIDE WHAT YOU WANT ENGRAVED BEFORE YOU FLY, because you will be making a permanent choice about 30 hours into a journey on no sleep. See the Decisions page. If you cannot reach him, treat the stop as optional on the day: stay on the N’EX to Tokyo and nothing is lost."
+    },
+    {
       "id": "ck12",
       "group": "Before you go",
       "text": "Install eSIM (Ubigi ~US$14 for 10 GB/7 days, or Airalo) and set up Welcome Suica Mobile (iPhone) or plan to buy a physical Welcome Suica at Narita (Android)",
@@ -4063,6 +4073,15 @@
       "lat": 35.6812,
       "lng": 139.7671,
       "notes": "N’EX arrives here; Shinkansen to Osaka and Nagano."
+    },
+    {
+      "id": "p7b",
+      "name": "Kanteibyo, Yokohama Chinatown",
+      "kind": "activity",
+      "town": "Yokohama",
+      "lat": 35.4429,
+      "lng": 139.6453,
+      "notes": "The engraver is on the ground floor of the Yokohama Bazaar building directly across from the temple. Reached by staying on the N’EX past Tokyo; rejoin the Shinkansen at Shin-Yokohama. Undecided, see Decisions."
     },
     {
       "id": "p8",
@@ -4555,6 +4574,18 @@
       "recommendation": "As planned. The Express Pass is the one “splurge” that buys back a whole day.",
       "answer": "",
       "resolved": true
+    },
+    {
+      "id": "q14",
+      "question": "Yokohama Chinatown on the way in, for the camera engraving?",
+      "why": "THE SHORT ANSWER IS YES, AND IT COSTS LESS THAN IT LOOKS, because Yokohama is on your route rather than a detour. TWO FACTS MAKE IT WORK. The Narita Express splits at Tokyo and the rear cars run on to Yokohama, so you stay on instead of getting off. And every Nozomi stops at Shin-Yokohama, so you rejoin the Shinkansen there, which is about 18 minutes shorter than starting from Tokyo Station. You are getting off one stop later and back on one stop earlier, not doubling back. THE DAY, IF YOU TAKE IT: land 07:50 and clear the border by about 09:15 on your Visit Japan Web QR; N’EX at 09:45 through to Yokohama, about 11:20; suitcase into a coin locker at Yokohama Station; Minatomirai Line to Motomachi-Chukagai and walk to Kanteibyo for about 12:00; engraved and back on the street by 12:30; lunch in Chinatown, which beats a station bento by a distance; Shin-Yokohama about 14:10, Nozomi about 14:30, Shin-Osaka about 16:40, hotel about 17:10. Harukoma at 18:00 and Gyoza Club Rock Lee at 18:30 both survive untouched. WHAT IT COSTS YOU: the Nintendo OSAKA store, Grenier and the Nakazakicho and Tenma wander. That matters more than it looks, because Tuesday evening is your ONLY Umeda evening. Wednesday is USJ from 08:30 and ends in Tsuruhashi and the Ura-Namba bars, and Thursday you are on the Nankai to Koyasan at 10:00. So the Nintendo store is gone rather than moved. THE SHOP: Ding Zuyin, hand engraver, ground floor of the Yokohama Bazaar building at 166 Yamashita-cho, directly across from Kanteibyo on Kanteibyo-dori. Fifteen to twenty minutes, done in front of you, no drop-off. He engraves cameras, phones and knives. Reported prices range from ¥6,000 to ¥10,000, so budget ¥10,000, about A$90. CLOSED WEDNESDAYS: the 9th is a Tuesday so you are fine, and the 10th would have been useless anyway because that is USJ. Building hours are 11:00 to 19:30, so arriving at noon is just after opening. THE CAVEATS, HONESTLY. Everything above comes from social media posts rather than an official source; there is no website and no booking system, and it is one man at a kiosk, so confirm he is there before you build a day around it. It fails safe, though: if QF49 lands late you stay on the N’EX to Tokyo and carry on exactly as planned, having lost nothing but the idea. And it is permanent, on a camera you will own for years, decided after about thirty hours awake, so know what you want engraved before you land. WHY NOT THE 16TH, which would be the better story since the trip would already be on the camera: you could leave the Nozomi at Shin-Yokohama at 14:37 instead of Tokyo at 14:55, but Yokohama to Narita is about ninety minutes, QF80 check-in closes at 18:20 and the tax-free refund has to happen first. There is no slack and the failure mode is missing the flight home.",
+      "options": [
+        "Tuesday 9 Feb on the way in, and lose the Nintendo store and Grenier",
+        "Skip it and keep the Umeda evening as planned",
+        "Tuesday 16 Feb on the way home (not recommended: no slack before QF80)"
+      ],
+      "recommendation": "Tuesday 9 Feb. The evening you actually care about, Harukoma and the gyoza, survives in full, and Chinatown lunch is better than a station bento. Ring or email ahead in January and treat it as optional on the day, so a late landing costs you nothing.",
+      "resolved": false
     }
   ]
 }
